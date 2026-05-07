@@ -3,18 +3,18 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Inkaland Explorers | Bienvenido">
-	<main class="relative min-h-dvh flex flex-col items-center justify-center overflow-hidden px-4">
-		<!-- Background decorative elements -->
-		<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#dfa126]/10 blur-[120px] rounded-full"></div>
-		<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 blur-[120px] rounded-full"></div>
+	<main class="relative min-h-dvh w-full flex flex-col items-center justify-center overflow-hidden px-4">
+		<!-- Background decorative elements - balanced -->
+		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-radial from-[#dfa126]/5 to-transparent blur-[120px] pointer-events-none"></div>
+		<div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[60%] h-[40%] bg-[#dfa126]/10 blur-[120px] rounded-full pointer-events-none"></div>
+		<div class="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[60%] h-[40%] bg-white/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-		<div class="z-10 flex flex-col items-center text-center space-y-6 md:space-y-8 animate-in fade-in zoom-in duration-1000 max-w-3xl mx-auto">
+		<div class="z-10 w-full flex flex-col items-center text-center space-y-8 md:space-y-10 animate-in fade-in zoom-in duration-1000 max-w-4xl mx-auto">
 			<!-- Logo Placeholder -->
-			<div class="w-32 h-32 sm:w-36 sm:h-36 md:w-44 md:h-44 relative group px-2">
+			<div class="w-32 h-32 sm:w-36 sm:h-36 md:w-44 md:h-44 relative group">
 				<div class="absolute -inset-1 bg-gradient-to-r from-[#dfa126] to-[#0b403a] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
 				<div class="relative w-full h-full bg-[#F9F6EE] rounded-2xl flex items-center justify-center p-5 sm:p-6 shadow-[0_15px_40px_rgba(0,0,0,0.3)] border border-white/10 overflow-hidden">
 					<div class="absolute inset-0 bg-gradient-to-tr from-[#dfa126]/5 to-transparent"></div>
-					<!-- El usuario subirá el logo a /public/logo.png o similar -->
 					<img 
 						src="/Logo Inkaland.webp" 
 						alt="Inkaland Explorers Logo" 
@@ -29,32 +29,34 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<!-- Welcome Message -->
-			<div class="space-y-3 md:space-y-4 px-4">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2]">
-					Bienvenido a <br class="xs:hidden" />
-					<span class="bg-clip-text text-transparent bg-gradient-to-r from-[#dfa126] via-[#f1c56e] to-[#dfa126] animate-gradient">
+			<div class="space-y-4 md:space-y-6 px-4 w-full flex flex-col items-center">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-center max-w-2xl">
+					Bienvenido a <br />
+					<span class="bg-clip-text text-transparent bg-gradient-to-r from-[#dfa126] via-[#f1c56e] to-[#dfa126] animate-gradient block mt-2">
 						Inkaland Explorers
 					</span>
 				</h1>
-				<p class="text-sm sm:text-base md:text-lg text-gray-300/80 font-light leading-relaxed max-w-xl mx-auto">
+				<p class="text-sm sm:text-base md:text-lg text-gray-300/80 font-light leading-relaxed max-w-xl text-center">
 					Estamos preparando una experiencia inolvidable para tu próximo viaje. 
 					Explora la magia de los Andes con expertos en cultura y aventura.
 				</p>
 			</div>
 
 			<!-- Status Badge -->
-			<div class="inline-flex items-center px-4 py-2 rounded-full glass-panel border border-[#dfa126]/20 text-[#dfa126] text-[10px] md:text-xs font-medium transition-colors hover:bg-[#dfa126]/5">
-				<span class="relative flex h-1.5 w-1.5 mr-2.5">
+			<div class="inline-flex items-center px-5 py-2.5 rounded-full glass-panel border border-[#dfa126]/20 text-[#dfa126] text-[10px] md:text-xs font-medium transition-all hover:bg-[#dfa126]/10 hover:scale-105">
+				<span class="relative flex h-2 w-2 mr-3">
 					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#dfa126] opacity-75"></span>
-					<span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#dfa126]"></span>
+					<span class="relative inline-flex rounded-full h-2 w-2 bg-[#dfa126]"></span>
 				</span>
 				Próximamente Lanzamiento Oficial
 			</div>
 		</div>
 
 		<!-- Footer Note -->
-		<div class="absolute bottom-8 left-0 right-0 px-4 text-center text-gray-400/50 text-[10px] tracking-widest uppercase">
-			© 2026 Inkaland Explorers • Cusco, Perú
+		<div class="absolute bottom-8 left-0 w-full px-4 flex justify-center pointer-events-none">
+			<div class="text-center text-gray-400/50 text-[10px] tracking-[0.15em] uppercase">
+				© 2026 Inkaland Explorers • Cusco, Perú
+			</div>
 		</div>
 	</main>
 </Layout>
