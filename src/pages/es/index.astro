@@ -1,17 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import MainHero from "../components/MainHero";
-import FeaturedPackages from "../components/FeaturedPackages";
-import SiteFooter from "../components/SiteFooter";
+import Layout from "../../layouts/Layout.astro";
+import MainHero from "../../components/MainHero";
+import FeaturedPackages from "../../components/FeaturedPackages";
+import SiteFooter from "../../components/SiteFooter";
 ---
 
-<Layout title="Inkaland Explorers | Luxury Travel in Peru">
+<Layout title="Inkaland Explorers | Viajes de Lujo en Perú">
 	<main class="w-full bg-[#0b403a]">
 		<!-- Main Hero -->
-		<MainHero client:load lang="en" />
+		<MainHero client:load lang="es" />
 
 		<!-- Featured Packages -->
-		<FeaturedPackages client:visible lang="en" />
+		<FeaturedPackages client:visible lang="es" />
 
 		<!-- Footer -->
 		<SiteFooter />
