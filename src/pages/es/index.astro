@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import MainHero from "../../components/MainHero";
 import FeaturedPackages from "../../components/FeaturedPackages";
+import TripInquiryForm from "../../components/TripInquiryForm";
 import SiteFooter from "../../components/SiteFooter";
 ---
 
@@ -12,6 +13,9 @@ import SiteFooter from "../../components/SiteFooter";
 
 		<!-- Featured Packages -->
 		<FeaturedPackages client:visible lang="es" />
+
+		<!-- Call to Action -->
+		<TripInquiryForm client:load lang="es" />
 
 		<!-- Footer -->
 		<SiteFooter />

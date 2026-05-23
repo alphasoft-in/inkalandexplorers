@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 interface Props {
   lang: 'en' | 'es';
+  forceScrolled?: boolean;
 }
 
-const Navbar: React.FC<Props> = ({ lang }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+export default function Navbar({ lang, forceScrolled = false }: Props) {
+  const [isScrolled, setIsScrolled] = useState(forceScrolled);
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -20,19 +22,18 @@ const Navbar: React.FC<Props> = ({ lang }) => {
       switchLang: '/es',
       switchLabel: 'ES',
       destItems: [
-        { label: 'Machu Picchu', href: '/en/destinations/machu-picchu' },
-        { label: 'Cusco', href: '/en/destinations/cusco' },
-        { label: 'Lima', href: '/en/destinations/lima' },
-        { label: 'Paracas', href: '/en/destinations/paracas' },
-        { label: 'Ica', href: '/en/destinations/ica' },
-        { label: 'Arequipa', href: '/en/destinations/arequipa' },
-        { label: 'Salkantay Trekking', href: '/en/destinations/salkantay' },
+        { label: 'Machu Picchu', href: '/destinations/machu-picchu' },
+        { label: 'Cusco', href: '/destinations/cusco' },
+        { label: 'Lima', href: '/destinations/lima' },
+        { label: 'Paracas', href: '/destinations/paracas' },
+        { label: 'Ica', href: '/destinations/ica' },
+        { label: 'Arequipa', href: '/destinations/arequipa' },
+        { label: 'Salkantay Trekking', href: '/destinations/salkantay' },
       ],
       pkgItems: [
-        { label: 'Magical Cusco 5D/4N', href: '/en/packages/magical-cusco' },
-        { label: 'Cusco Adventure 5D/4N', href: '/en/packages/cusco-adventure' },
-        { label: 'Classic Cusco 4D/3N', href: '/en/packages/classic-cusco' },
+        { label: 'All Private Tours', href: '/tours' },
       ]
+
     },
     es: {
       home: 'Inicio',
@@ -53,10 +54,9 @@ const Navbar: React.FC<Props> = ({ lang }) => {
         { label: 'Salkantay Trekking', href: '/es/destinos/salkantay' },
       ],
       pkgItems: [
-        { label: 'Cusco Mágico 5D/4N', href: '/es/paquetes/cusco-magico' },
-        { label: 'Cusco Aventura 5D/4N', href: '/es/paquetes/cusco-aventura' },
-        { label: 'Cusco Clásico 4D/3N', href: '/es/paquetes/cusco-clasico' },
+        { label: 'Todos los Tours', href: '/es/tours' },
       ]
+
     }
   };
 
@@ -64,11 +64,15 @@ const Navbar: React.FC<Props> = ({ lang }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (forceScrolled) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(window.scrollY > 20);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [forceScrolled]);
 
   const toggleDropdown = (name: string) => {
     if (activeDropdown === name) {
@@ -161,15 +165,16 @@ const Navbar: React.FC<Props> = ({ lang }) => {
             </div>
 
             <a 
-              href={`/${lang}/about`} 
+              href={lang === 'en' ? '/about' : '/es/about'} 
               className={`transition-all duration-500 text-sm font-semibold tracking-wide ${isScrolled ? 'text-[#0b403a] hover:text-[#dfa126]' : 'text-white hover:text-[#dfa126]'}`}
             >
               {currentT.about}
             </a>
             
-            <a href={`/${lang}/contact`} className="px-6 py-3 bg-[#dfa126] text-[#0b403a] rounded-full text-sm font-bold hover:bg-[#0b403a] hover:text-white transition-all duration-500 transform hover:scale-105 shadow-lg shadow-[#dfa126]/20">
+            <a href={lang === 'en' ? '/contact' : '/es/contact'} className="px-6 py-3 bg-[#dfa126] text-[#0b403a] rounded-full text-sm font-bold hover:bg-[#0b403a] hover:text-white transition-all duration-500 transform hover:scale-105 shadow-lg shadow-[#dfa126]/20">
               {currentT.contact}
             </a>
+
 
             {/* Language Switcher */}
             <div className={`flex items-center border-l ml-6 pl-6 transition-colors duration-700 ${isScrolled ? 'border-gray-200' : 'border-white/20'}`}>
@@ -220,13 +225,14 @@ const Navbar: React.FC<Props> = ({ lang }) => {
             ))}
           </div>
 
-          <a href={`/${lang}/about`} className="block text-xl font-bold text-[#0b403a]">
+          <a href={lang === 'en' ? '/about' : '/es/about'} className="block text-xl font-bold text-[#0b403a]">
             {currentT.about}
           </a>
           
-          <a href={`/${lang}/contact`} className="block text-xl font-bold text-[#dfa126]">
+          <a href={lang === 'en' ? '/contact' : '/es/contact'} className="block text-xl font-bold text-[#dfa126]">
             {currentT.contact}
           </a>
+
 
           <div className="pt-8 flex justify-center space-x-8">
             <a href="/" className={`text-sm font-bold ${lang === 'en' ? 'text-[#0b403a]' : 'text-gray-400'}`}>EN</a>
@@ -236,6 +242,5 @@ const Navbar: React.FC<Props> = ({ lang }) => {
       </div>
     </nav>
   );
-};
+}
 
-export default Navbar;

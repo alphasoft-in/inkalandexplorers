@@ -1,14 +1,17 @@
 ---
 import '../styles/global.css';
-import Navbar from '../components/Navbar';
+import MainNavbar from '../components/MainNavbar';
+import WhatsAppFloatingButton from '../components/WhatsAppFloatingButton';
 import { getLangFromUrl } from '../i18n/utils';
 
 interface Props {
 	title: string;
 	description?: string;
+	forceScrolled?: boolean;
 }
 
-const { title, description = "Inkaland Explorers - Tu puerta de entrada al mundo Inca" } = Astro.props;
+const { title, description = "Inkaland Explorers - Tu puerta de entrada al mundo Inca", forceScrolled = false } = Astro.props;
+
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -26,9 +29,11 @@ const lang = getLangFromUrl(Astro.url);
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 	</head>
 	<body class="bg-[#0b403a] text-white font-['Inter'] selection:bg-[#dfa126] selection:text-black">
-		<Navbar client:load lang={lang} />
+		<MainNavbar client:load lang={lang} forceScrolled={forceScrolled} />
 		<slot />
+		<WhatsAppFloatingButton client:load />
 	</body>
+
 </html>
 
 <style is:global>
