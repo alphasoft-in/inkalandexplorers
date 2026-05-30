@@ -5,7 +5,7 @@ interface Props {
   lang: 'en' | 'es';
 }
 
-const TripInquiryForm = ({ lang }: Props) => {
+export default function TripInquiryForm({ lang }: Props) {
   const [formData, setFormData] = useState({
     program: '',
     startDate: '',
@@ -22,8 +22,25 @@ const TripInquiryForm = ({ lang }: Props) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert(lang === 'en' ? 'Thank you! We will contact you soon.' : '¡Gracias! Nos pondremos en contacto pronto.');
+    
+    const phoneNumber = "51972438838";
+    
+    const textEn = `Hello Inkaland Explorers, I would like to request a quote:
+Program: ${formData.program}
+Name: ${formData.name}
+Dates: ${formData.startDate} to ${formData.endDate}
+Travelers: ${formData.adults} Adults, ${formData.children} Children`;
+
+    const textEs = `Hola Inkaland Explorers, me gustaría solicitar una cotización:
+Programa: ${formData.program}
+Nombre: ${formData.name}
+Fechas: del ${formData.startDate} al ${formData.endDate}
+Viajeros: ${formData.adults} Adultos, ${formData.children} Niños`;
+
+    const message = lang === 'en' ? textEn : textEs;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -38,48 +55,48 @@ const TripInquiryForm = ({ lang }: Props) => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0b403a]/90 via-[#0b403a]/70 to-[#0b403a]/90"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
           {/* Left Column: Content */}
-          <div className="text-white">
-            <h2 className="font-['Outfit'] text-3xl md:text-4xl font-bold mb-6 leading-tight">
+          <div className="text-white w-full max-w-md">
+            <h2 className="font-['Outfit'] text-2xl md:text-3xl font-bold mb-4 leading-tight">
               {lang === 'en' 
                 ? 'Ready to Begin Your Extraordinary Journey?' 
                 : '¿Listo para Comenzar tu Viaje Extraordinario?'}
             </h2>
-            <p className="text-white/80 text-lg font-light mb-8 leading-relaxed max-w-md">
+            <p className="text-white/80 text-sm font-light mb-8 leading-relaxed max-w-md">
               {lang === 'en'
                 ? 'Fill out the form to receive a personalized quote for your next luxury adventure in Peru.'
                 : 'Completa el formulario para recibir una cotización personalizada para tu próxima aventura de lujo en Perú.'}
             </p>
             
-            <div className="hidden lg:flex flex-col gap-4">
-              <div className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-full bg-[#dfa126]/20 flex items-center justify-center border border-[#dfa126]/30 group-hover:bg-[#dfa126] transition-colors duration-300">
-                  <svg className="w-5 h-5 text-[#dfa126] group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="hidden lg:flex flex-col gap-3">
+              <div className="flex items-center gap-2.5 group">
+                <div className="w-8 h-8 rounded-full bg-[#dfa126]/20 flex items-center justify-center border border-[#dfa126]/30 group-hover:bg-[#dfa126] transition-colors duration-300">
+                  <svg className="w-4 h-4 text-[#dfa126] group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-base font-light">{lang === 'en' ? 'Expert Travel Designers' : 'Diseñadores de Viajes Expertos'}</span>
+                <span className="text-sm font-light">{lang === 'en' ? 'Expert Travel Designers' : 'Diseñadores de Viajes Expertos'}</span>
               </div>
-              <div className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-full bg-[#dfa126]/20 flex items-center justify-center border border-[#dfa126]/30 group-hover:bg-[#dfa126] transition-colors duration-300">
-                  <svg className="w-5 h-5 text-[#dfa126] group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center gap-2.5 group">
+                <div className="w-8 h-8 rounded-full bg-[#dfa126]/20 flex items-center justify-center border border-[#dfa126]/30 group-hover:bg-[#dfa126] transition-colors duration-300">
+                  <svg className="w-4 h-4 text-[#dfa126] group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-base font-light">{lang === 'en' ? '100% Tailor-made Experiences' : 'Experiencias 100% a Medida'}</span>
+                <span className="text-sm font-light">{lang === 'en' ? '100% Tailor-made Experiences' : 'Experiencias 100% a Medida'}</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Form */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="w-full max-w-md flex justify-center">
             <form 
               onSubmit={handleSubmit}
-              className="relative bg-[#F9F6EE] p-6 md:p-8 rounded-3xl shadow-2xl space-y-4 w-full max-w-md border border-[#0b403a]/5"
+              className="relative bg-[#F9F6EE] p-6 rounded-3xl shadow-2xl space-y-4 w-full max-w-md border border-[#0b403a]/5"
             >
-              <h3 className="text-xl font-bold text-[#0b403a] mb-4 text-center font-['Outfit']">
+              <h3 className="text-lg font-bold text-[#0b403a] mb-3 text-center font-['Outfit']">
                 {lang === 'en' ? 'Get a Free Quote' : 'Solicita una Cotización'}
               </h3>
 
@@ -94,9 +111,9 @@ const TripInquiryForm = ({ lang }: Props) => {
                     value={formData.program}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-4 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors appearance-none cursor-pointer text-sm"
+                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-3 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors appearance-none cursor-pointer text-xs"
                   >
-                    <option value="">{lang === 'en' ? 'Choose a tour...' : 'Elige un tour...'}</option>
+                    <option value="" disabled>{lang === 'en' ? 'Choose a tour...' : 'Elige un tour...'}</option>
                     {packages.map(pkg => (
                       <option key={pkg.id} value={pkg[lang].title}>
                         {pkg[lang].title}
@@ -117,7 +134,7 @@ const TripInquiryForm = ({ lang }: Props) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-4 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors placeholder:text-[#0b403a]/30 text-sm"
+                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-3 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors placeholder:text-[#0b403a]/30 text-xs"
                   />
                 </div>
 
@@ -132,7 +149,7 @@ const TripInquiryForm = ({ lang }: Props) => {
                     value={formData.startDate}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-4 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors text-sm"
+                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-3 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors text-xs"
                   />
                 </div>
                 <div>
@@ -145,7 +162,7 @@ const TripInquiryForm = ({ lang }: Props) => {
                     value={formData.endDate}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-4 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors text-sm"
+                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-3 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors text-xs"
                   />
                 </div>
 
@@ -160,7 +177,8 @@ const TripInquiryForm = ({ lang }: Props) => {
                     min="1"
                     value={formData.adults}
                     onChange={handleChange}
-                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-4 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors text-sm"
+                    onWheel={(e) => e.currentTarget.blur()}
+                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-3 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors text-xs"
                   />
                 </div>
                 <div>
@@ -173,7 +191,8 @@ const TripInquiryForm = ({ lang }: Props) => {
                     min="0"
                     value={formData.children}
                     onChange={handleChange}
-                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-4 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors text-sm"
+                    onWheel={(e) => e.currentTarget.blur()}
+                    className="w-full bg-white border border-[#0b403a]/20 rounded-xl px-3 py-2 text-[#0b403a] focus:outline-none focus:border-[#dfa126] transition-colors text-xs"
                   />
                 </div>
               </div>
@@ -185,15 +204,11 @@ const TripInquiryForm = ({ lang }: Props) => {
                 {lang === 'en' ? 'Submit Inquiry' : 'Enviar Solicitud'}
               </button>
               
-              <p className="text-[#0b403a]/40 text-[9px] text-center uppercase tracking-[0.2em]">
-                {lang === 'en' ? 'No commitment required' : 'Sin compromiso de compra'}
-              </p>
+
             </form>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default TripInquiryForm;
+}

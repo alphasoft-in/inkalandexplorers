@@ -1,0 +1,119 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TripInquiryForm from "../../components/TripInquiryForm";
+import SiteFooter from "../../components/SiteFooter";
+---
+
+<Layout title="Nosotros | Inkaland Explorers" forceScrolled={true}>
+	<main class="w-full bg-[#F9F6EE]">
+		<!-- Hero Section -->
+		<section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+			<div class="absolute inset-0 z-0">
+				<img src="/hero-cusco.png" alt="Paisaje de Cusco" class="w-full h-full object-cover" />
+				<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
+				<div class="absolute inset-0 bg-[#0b403a]/30"></div>
+			</div>
+			
+			<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+				<nav class="flex justify-center mb-6 text-[#dfa126] text-xs uppercase tracking-[0.3em] font-bold">
+					<a href="/es" class="hover:text-white transition-colors">Inicio</a>
+					<span class="mx-3 text-white/30">/</span>
+					<span class="text-white/60">Nosotros</span>
+				</nav>
+				<h1 class="font-['Outfit'] text-3xl md:text-5xl font-bold text-white mb-5 leading-tight drop-shadow-2xl">
+					Nosotros
+				</h1>
+				<p class="text-base md:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
+					Un equipo apasionado de expertos locales dedicados a compartir la magia, historia y cultura auténtica del Perú.
+				</p>
+			</div>
+		</section>
+
+		<!-- Introduction Section -->
+		<section class="py-20 px-4">
+			<div class="max-w-6xl mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+					<div>
+						<h2 class="font-['Outfit'] text-4xl md:text-5xl font-bold text-[#0b403a] mb-6">
+							Nuestra Misión y Visión
+						</h2>
+						<p class="text-gray-600 mb-6 leading-relaxed text-lg">
+							En <strong>Inkaland Explorers</strong>, creemos que viajar es más que visitar un destino: se trata de conectarse con la tierra, su gente y su historia. Fuimos fundados con una visión clara: ofrecer experiencias de viaje inmersivas, personalizadas y sostenibles en el corazón de los Andes.
+						</p>
+						<p class="text-gray-600 leading-relaxed text-lg mb-8">
+							Como un equipo 100% local, nos enorgullecemos de mostrar la belleza auténtica de Perú, lejos de las rutas turísticas convencionales. Desde las místicas ruinas de Machu Picchu hasta las vibrantes calles de Cusco, cada viaje que diseñamos busca dejar un impacto positivo tanto en nuestros huéspedes como en nuestras comunidades locales.
+						</p>
+						
+						<div class="flex items-center gap-4">
+							<div class="w-12 h-12 rounded-full bg-[#dfa126]/20 flex items-center justify-center text-[#dfa126]">
+								<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+							</div>
+							<p class="text-[#0b403a] font-bold text-lg">100% Local y Auténtico</p>
+						</div>
+					</div>
+					<div class="relative">
+						<div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10 border border-black/5">
+							<img src="/tour-sacred-valley.png" alt="Guía Local" class="w-full h-full object-cover" />
+						</div>
+						<div class="absolute -bottom-8 -left-8 w-64 h-64 bg-[#dfa126] rounded-full mix-blend-multiply filter blur-3xl opacity-30 z-0"></div>
+						<div class="absolute -top-8 -right-8 w-64 h-64 bg-[#0b403a] rounded-full mix-blend-multiply filter blur-3xl opacity-20 z-0"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Why Choose Us -->
+		<section class="py-20 px-4 bg-[#0b403a]">
+			<div class="max-w-7xl mx-auto">
+				<div class="text-center mb-16">
+					<p class="text-[#dfa126] font-bold tracking-widest uppercase text-sm mb-3">La Diferencia Inkaland</p>
+					<h2 class="font-['Outfit'] text-4xl md:text-5xl font-bold text-white mb-6">
+						¿Por qué viajar con nosotros?
+					</h2>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<!-- Reason 1 -->
+					<div class="bg-white/5 border border-white/10 backdrop-blur-sm p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
+						<div class="w-20 h-20 mx-auto bg-[#dfa126] rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-[#dfa126]/30 rotate-3">
+							<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+						</div>
+						<h3 class="font-['Outfit'] text-2xl font-bold text-white mb-4">Guías Expertos Locales</h3>
+						<p class="text-white/70 leading-relaxed">
+							Nuestros guías son narradores apasionados nacidos y criados en los Andes. Ofrecen conocimientos profundos sobre nuestra cultura, historia y tradiciones.
+						</p>
+					</div>
+
+					<!-- Reason 2 -->
+					<div class="bg-white/5 border border-white/10 backdrop-blur-sm p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
+						<div class="w-20 h-20 mx-auto bg-[#dfa126] rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-[#dfa126]/30 -rotate-3">
+							<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+						</div>
+						<h3 class="font-['Outfit'] text-2xl font-bold text-white mb-4">Experiencias Privadas</h3>
+						<p class="text-white/70 leading-relaxed">
+							Nos especializamos en tours privados y flexibles diseñados en torno a tus intereses, ritmo y horario, garantizando una aventura exclusiva.
+						</p>
+					</div>
+
+					<!-- Reason 3 -->
+					<div class="bg-white/5 border border-white/10 backdrop-blur-sm p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
+						<div class="w-20 h-20 mx-auto bg-[#dfa126] rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-[#dfa126]/30 rotate-3">
+							<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+						</div>
+						<h3 class="font-['Outfit'] text-2xl font-bold text-white mb-4">Turismo Sostenible</h3>
+						<p class="text-white/70 leading-relaxed">
+							Estamos comprometidos con los viajes éticos. Respetamos la naturaleza, apoyamos las economías locales y aseguramos que nuestras huellas dejen un legado positivo.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Call to Action -->
+		<TripInquiryForm client:load lang="es" />
+
+		<!-- Footer -->
+		<SiteFooter />
+	</main>
+</Layout>
+

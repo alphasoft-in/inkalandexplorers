@@ -1,0 +1,178 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SiteFooter from "../../components/SiteFooter";
+import TripInquiryForm from "../../components/TripInquiryForm";
+---
+
+<Layout title="Galería | Inkaland Explorers" forceScrolled={true}>
+	<main class="bg-white">
+		<!-- Hero Section -->
+		<section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+			<div class="absolute inset-0 z-0">
+				<img src="/hero-paracas.png" alt="Fondo de Galería" class="w-full h-full object-cover" />
+				<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
+				<div class="absolute inset-0 bg-[#0b403a]/30"></div>
+			</div>
+			
+			<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+				<nav class="flex justify-center mb-6 text-[#dfa126] text-xs uppercase tracking-[0.3em] font-bold">
+					<a href="/es" class="hover:text-white transition-colors">Inicio</a>
+					<span class="mx-3 text-white/30">/</span>
+					<span class="text-white/60">Galería</span>
+				</nav>
+				<h1 class="font-['Outfit'] text-3xl md:text-5xl font-bold text-white mb-5 leading-tight drop-shadow-2xl">
+					Nuestra Galería
+				</h1>
+				<p class="text-base md:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
+					Explora los impresionantes paisajes y los momentos inolvidables de nuestras aventuras en el Perú.
+				</p>
+			</div>
+		</section>
+
+		<!-- Gallery Grid -->
+		<section class="py-24 px-4 bg-white">
+			<div class="max-w-7xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-xs font-bold text-[#dfa126] uppercase tracking-[0.3em] mb-4">Viaje Visual</h2>
+					<h3 class="text-4xl md:text-5xl font-bold text-[#0b403a] font-['Outfit']">Recuerdos de los Andes</h3>
+				</div>
+
+				<!-- Editorial Gallery Layout -->
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+					
+					<!-- Block 1: Main Feature (2x2) -->
+					<div class="gallery-item md:col-span-2 md:row-span-2 h-[400px] md:h-[600px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/hero-machu-picchu.png">
+						<img src="/hero-machu-picchu.png" alt="Machu Picchu" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
+						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+								Machu Picchu
+							</span>
+						</div>
+					</div>
+
+					<!-- Block 2: Top Right Wide (2x1) -->
+					<div class="gallery-item md:col-span-2 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/hero-salkantay.png">
+						<img src="/hero-salkantay.png" alt="Nevado Salkantay" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
+						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+								Salkantay
+							</span>
+						</div>
+					</div>
+
+					<!-- Block 3: Bottom Right Left (1x1) -->
+					<div class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-vinicunca.png">
+						<img src="/tour-vinicunca.png" alt="Vinicunca" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
+						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+								Vinicunca
+							</span>
+						</div>
+					</div>
+
+					<!-- Block 4: Bottom Right Right (1x1) -->
+					<div class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-humantay.png">
+						<img src="/tour-humantay.png" alt="Laguna Humantay" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
+						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+								Laguna Humantay
+							</span>
+						</div>
+					</div>
+
+					<!-- Block 5: Row 3 Left (1x1) -->
+					<div class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-ausangate.png">
+						<img src="/tour-ausangate.png" alt="Ausangate" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
+						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+								Ausangate
+							</span>
+						</div>
+					</div>
+
+					<!-- Block 6: Row 3 Middle (1x1) -->
+					<div class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-sacred-valley.png">
+						<img src="/tour-sacred-valley.png" alt="Valle Sagrado" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
+						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+								Valle Sagrado
+							</span>
+						</div>
+					</div>
+
+					<!-- Block 7: Row 3 Right Wide (2x1) -->
+					<div class="gallery-item md:col-span-2 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-maras-moray.png">
+						<img src="/tour-maras-moray.png" alt="Maras y Moray" class="w-full h-full object-cover object-top transition-transform duration-[1.5s] group-hover:scale-105" />
+						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+								Maras y Moray
+							</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Call to Action -->
+		<TripInquiryForm client:load lang="es" />
+
+		<!-- Lightbox Overlay -->
+		<div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center opacity-0 transition-opacity duration-300">
+			<button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white bg-black/20 p-2 rounded-full backdrop-blur-sm transition-colors">
+				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+			<img id="lightbox-img" src="" alt="Imagen de Galería" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl" />
+		</div>
+
+		<!-- Footer -->
+		<SiteFooter />
+	</main>
+</Layout>
+
+<script>
+	const lightbox = document.getElementById('lightbox');
+	const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+	const closeBtn = document.getElementById('lightbox-close');
+	const galleryItems = document.querySelectorAll('.gallery-item');
+
+	galleryItems.forEach(item => {
+		item.addEventListener('click', () => {
+			const src = item.getAttribute('data-src');
+			if (src && lightboxImg && lightbox) {
+				lightboxImg.src = src;
+				lightbox.classList.remove('hidden');
+				lightbox.classList.add('flex');
+				// trigger reflow for animation
+				void lightbox.offsetWidth;
+				lightbox.classList.remove('opacity-0');
+				document.body.style.overflow = 'hidden'; // Prevent scrolling
+			}
+		});
+	});
+
+	const closeLightbox = () => {
+		if (lightbox) {
+			lightbox.classList.add('opacity-0');
+			setTimeout(() => {
+				lightbox.classList.remove('flex');
+				lightbox.classList.add('hidden');
+				document.body.style.overflow = ''; // Restore scrolling
+			}, 300);
+		}
+	};
+
+	closeBtn?.addEventListener('click', closeLightbox);
+	lightbox?.addEventListener('click', (e) => {
+		if (e.target === lightbox) closeLightbox();
+	});
+	
+	// Close on Escape key
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
+			closeLightbox();
+		}
+	});
+</script>

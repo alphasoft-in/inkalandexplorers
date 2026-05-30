@@ -23,7 +23,7 @@ const FeaturedPackages: React.FC<Props> = ({ lang }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {packages.map((pkg) => (
+          {packages.filter(pkg => pkg.en.title.toLowerCase().includes('private')).map((pkg) => (
             <div 
               key={pkg.id} 
               className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:border-[#dfa126]/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#0b403a]/10 flex flex-col h-full shadow-sm"
@@ -43,11 +43,10 @@ const FeaturedPackages: React.FC<Props> = ({ lang }) => {
 
               {/* Content */}
                 <div className="p-6">
-                  <div className="flex justify-between items-start mb-2">
+                  <div className="mb-2">
                     <h3 className="font-['Outfit'] text-xl font-bold text-[#0b403a] group-hover:text-[#dfa126] transition-colors">
                       {pkg[lang].title}
                     </h3>
-                    <span className="text-[#dfa126] font-bold text-lg">${pkg.price}</span>
                   </div>
                   <p className="text-gray-600 text-sm mb-6 font-light line-clamp-2">
                     {pkg[lang].description}

@@ -24,13 +24,12 @@ const lang = 'es';
 const t = dest[lang];
 
 
-// Filter tours related to this destination
 const relatedTours = packages.filter(pkg => {
-  const searchTerm = dest.slug.toLowerCase().replace(/-/g, ' ');
-  const titleEs = dest.es.title.toLowerCase();
-  return pkg.destination.toLowerCase().includes(searchTerm) || 
-         pkg.es.title.toLowerCase().includes(searchTerm) ||
-         pkg.es.title.toLowerCase().includes(titleEs);
+  const normalizedSlug = dest.slug.toLowerCase().replace(/[-&|]/g, ' ').replace(/\s+/g, ' ').trim();
+  const normalizedDest = pkg.destination.toLowerCase().replace(/[-&|]/g, ' ').replace(/\s+/g, ' ').trim();
+  const isRelated = normalizedDest.includes(normalizedSlug) || normalizedSlug.includes(normalizedDest.split(' ')[0]);
+  const isNotPrivate = !pkg.en.title.toLowerCase().includes('private');
+  return isRelated && isNotPrivate;
 });
 
 ---
@@ -50,35 +49,16 @@ const relatedTours = packages.filter(pkg => {
 					<span class="mx-3 text-white/30">/</span>
 					<span class="text-white/60">Destinos</span>
 				</nav>
-				<h1 class="font-['Outfit'] text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+				<h1 class="font-['Outfit'] text-3xl md:text-5xl font-bold text-white mb-5 leading-tight drop-shadow-2xl">
 					{t.title}
 				</h1>
-				<p class="text-xl md:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed italic">
-					"{t.description}"
+				<p class="text-base md:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
+					{t.description}
 				</p>
 			</div>
 		</section>
 
 
-
-		<!-- Availability Section (Machu Picchu Only) -->
-		{dest.slug === 'machu-picchu' && (
-			<section class="py-24 bg-[#F9F6EE]">
-				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div class="text-center mb-16">
-						<h2 class="text-sm font-bold text-[#dfa126] uppercase tracking-[0.2em] mb-4">Verificar Disponibilidad</h2>
-						<h3 class="text-4xl font-bold text-[#0b403a] font-['Outfit']">Disponibilidad para Machu Picchu</h3>
-					</div>
-					<div class="bg-white p-4 rounded-3xl shadow-xl border border-black/5 overflow-hidden">
-						<iframe 
-							src="https://www.salkantaytrek.org/availability/disponibilidad.php" 
-							class="w-full h-[800px] border-0"
-							title="Disponibilidad Machu Picchu"
-						></iframe>
-					</div>
-				</div>
-			</section>
-		)}
 
 		<!-- Related Tours -->
 		{relatedTours.length > 0 && (
@@ -86,7 +66,7 @@ const relatedTours = packages.filter(pkg => {
 				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div class="text-center mb-16">
 						<h2 class="text-sm font-bold text-[#dfa126] uppercase tracking-[0.2em] mb-4">Experiencias Curadas</h2>
-						<h3 class="text-4xl font-bold text-[#0b403a] font-['Outfit']">Tours Privados en {t.title}</h3>
+						<h3 class="text-4xl font-bold text-[#0b403a] font-['Outfit']">Tours Grupales en {t.title}</h3>
 					</div>
 
 					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

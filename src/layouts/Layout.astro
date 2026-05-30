@@ -8,9 +8,10 @@ interface Props {
 	title: string;
 	description?: string;
 	forceScrolled?: boolean;
+	activeTabOverride?: 'home' | 'destinations' | 'packages' | 'gallery' | 'about';
 }
 
-const { title, description = "Inkaland Explorers - Tu puerta de entrada al mundo Inca", forceScrolled = false } = Astro.props;
+const { title, description = "Inkaland Explorers - Tu puerta de entrada al mundo Inca", forceScrolled = false, activeTabOverride } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -20,16 +21,17 @@ const lang = getLangFromUrl(Astro.url);
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=block">
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=block" rel="stylesheet">
 	</head>
 	<body class="bg-[#0b403a] text-white font-['Inter'] selection:bg-[#dfa126] selection:text-black">
-		<MainNavbar client:load lang={lang} forceScrolled={forceScrolled} />
+		<MainNavbar client:load lang={lang} forceScrolled={forceScrolled} currentPath={Astro.url.pathname} activeTabOverride={activeTabOverride} />
 		<slot />
 		<WhatsAppFloatingButton client:load />
 	</body>
@@ -53,3 +55,4 @@ const lang = getLangFromUrl(Astro.url);
 		border: 1px solid rgba(255, 255, 255, 0.05);
 	}
 </style>
+

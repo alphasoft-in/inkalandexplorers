@@ -20,12 +20,12 @@ const sliderData: SliderItem[] = [
     id: 1,
     image: '/hero-machu-picchu.png',
     en: {
-      title: 'Magical Cusco 5D/4N',
+      title: 'Magical Machu Picchu 5D/4N',
       subtitle: 'A mystical journey through the Sacred Valley and the wonders of Machu Picchu.',
       cta: 'View Program'
     },
     es: {
-      title: 'Cusco Mágico 5D/4N',
+      title: 'Machu Picchu Mágico 5D/4N',
       subtitle: 'Un viaje místico por el Valle Sagrado y las maravillas de Machu Picchu.',
       cta: 'Ver Programa'
     }
@@ -48,12 +48,12 @@ const sliderData: SliderItem[] = [
     id: 3,
     image: '/hero-salkantay.png',
     en: {
-      title: 'Salkantay Trekking',
+      title: 'Andes Trekking',
       subtitle: 'The ultimate trekking experience through glacial peaks and cloud forests.',
       cta: 'Explore Trek'
     },
     es: {
-      title: 'Salkantay Trekking',
+      title: 'Andes Trekking',
       subtitle: 'La experiencia definitiva de trekking por picos glaciares y selva alta.',
       cta: 'Explorar Trek'
     }
@@ -145,7 +145,7 @@ const MainHero: React.FC<Props> = ({ lang }) => {
                 </a>
                 <a
                   href={`/${lang}/contact`}
-                  className="rounded-full border border-white/30 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
+                  className="rounded-full border border-white/30 bg-black/30 px-8 py-3.5 text-sm font-bold text-white transition-all hover:bg-black/50"
                 >
                   {lang === 'en' ? 'Contact Us' : 'Contáctanos'}
                 </a>
@@ -158,7 +158,7 @@ const MainHero: React.FC<Props> = ({ lang }) => {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/20 bg-black/20 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/10 hidden sm:block"
+        className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/20 bg-black/30 p-3 text-white transition-all hover:bg-black/50 hidden sm:block"
       >
         <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
@@ -166,7 +166,7 @@ const MainHero: React.FC<Props> = ({ lang }) => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/20 bg-black/20 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/10 hidden sm:block"
+        className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/20 bg-black/30 p-3 text-white transition-all hover:bg-black/50 hidden sm:block"
       >
         <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />

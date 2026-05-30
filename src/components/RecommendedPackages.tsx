@@ -9,8 +9,8 @@ interface Props {
 
 const RecommendedPackages: React.FC<Props> = ({ lang, excludeId, limit = 3 }) => {
   const recommended = useMemo(() => {
-    // Filter out current package and shuffle
-    const filtered = packages.filter(pkg => pkg.id !== excludeId);
+    // Filter out current package, filter only private packages, and shuffle
+    const filtered = packages.filter(pkg => pkg.id !== excludeId && pkg.en.title.toLowerCase().includes('private'));
     return [...filtered].sort(() => 0.5 - Math.random()).slice(0, limit);
   }, [excludeId, limit]);
 
