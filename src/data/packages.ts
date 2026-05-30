@@ -1,15 +1,18 @@
+export type SingleDayItinerary = { time: string; activity: string };
+export type MultiDayItinerary = { day: number; title: string; activities: { time: string; description: string }[] };
+
 export interface Package {
   id: number;
   slug: string;
   image: string;
   price: string;
   duration: string;
-  altitude: string;
-  difficulty: string;
-  type: string;
+  altitude?: string;
+  difficulty?: string;
+  type?: string;
   latitude?: number | string;
   longitude?: number | string;
-  departure: string;
+  departure?: string;
   destination: string;
   en: {
 
@@ -17,24 +20,24 @@ export interface Package {
     title: string;
     description: string;
     overview: string;
-    itinerary: { time: string; activity: string }[];
+    itinerary: (SingleDayItinerary | MultiDayItinerary)[];
     includes: string[];
     excludes: string[];
     packing: string[];
-    highlights: string[];
-    tips: string[];
+    highlights?: string[];
+    tips?: string[];
 
   };
   es: {
     title: string;
     description: string;
     overview: string;
-    itinerary: { time: string; activity: string }[];
+    itinerary: (SingleDayItinerary | MultiDayItinerary)[];
     includes: string[];
     excludes: string[];
     packing: string[];
-    highlights: string[];
-    tips: string[];
+    highlights?: string[];
+    tips?: string[];
 
   };
 }
@@ -2071,7 +2074,7 @@ export const packages: Package[] = [
     image: '/tour-arequipa-city.png',
     destination: 'Arequipa',
     duration: 'Half Day',
-    price: 35,
+    price: '35',
     en: {
       title: 'Arequipa City Tour & Santa Catalina Monastery',
       description: 'Discover the charm of the White City, its colonial architecture made of sillar, and the vibrant Santa Catalina Monastery.',
@@ -2159,7 +2162,7 @@ export const packages: Package[] = [
     image: '/tour-colca-full-day.png',
     destination: 'Arequipa',
     duration: 'Full Day',
-    price: 65,
+    price: '65',
     en: {
       title: 'Colca Canyon Full Day Tour from Arequipa',
       description: 'An express journey into the majestic Colca Canyon to see the soaring Andean condors and stunning terraced landscapes.',
@@ -2257,7 +2260,7 @@ export const packages: Package[] = [
     image: '/tour-colca-trek.png',
     destination: 'Arequipa',
     duration: '2 Days / 1 Night',
-    price: 95,
+    price: '95',
     en: {
       title: 'Colca Canyon Trekking - 2 Days / 1 Night',
       description: 'Hike down to the bottom of the Colca Canyon, rest in a lush oasis, and challenge yourself on the steep ascent.',
@@ -2379,7 +2382,7 @@ export const packages: Package[] = [
     image: '/tour-salkantay-5d.png',
     destination: 'Andes Trekking',
     duration: '5 Days / 4 Nights',
-    price: 450,
+    price: '450',
     en: {
       title: 'Salkantay Classic Trek to Machu Picchu',
       description: 'The ultimate 5-day adventure crossing the towering Salkantay pass and descending into the lush jungle before reaching Machu Picchu.',
@@ -2577,7 +2580,7 @@ export const packages: Package[] = [
     image: '/tour-inca-trail-2d.png',
     destination: 'Andes Trekking',
     duration: '2 Days / 1 Night',
-    price: 490,
+    price: '490',
     en: {
       title: 'Short Inca Trail to Machu Picchu 2D/1N',
       description: 'Experience the magic of the Inca Trail on a shorter, 2-day express route perfectly designed for those with limited time.',
@@ -2701,7 +2704,7 @@ export const packages: Package[] = [
     image: '/tour-inca-trail-4d.png',
     destination: 'Andes Trekking',
     duration: '4 Days / 3 Nights',
-    price: 750,
+    price: '750',
     en: {
       title: 'Classic Inca Trail to Machu Picchu 4D/3N',
       description: 'The world-famous 4-day hike following the original ancient stone paths of the Incas through breathtaking cloud forests to the Sun Gate.',
@@ -2861,7 +2864,7 @@ export const packages: Package[] = [
     image: '/tour-salkantay-4d.png',
     destination: 'Andes Trekking',
     duration: '4 Days / 3 Nights',
-    price: 420,
+    price: '420',
     en: {
       title: 'Salkantay Trek to Machu Picchu 4D/3N',
       description: 'An express version of the famous Salkantay Trek, perfectly balancing the challenge of the high Andes with the beauty of the cloud forest.',
@@ -3019,7 +3022,7 @@ export const packages: Package[] = [
     image: '/tour-choquequirao.png',
     destination: 'Andes Trekking',
     duration: '4 Days / 3 Nights',
-    price: 480,
+    price: '480',
     en: {
       title: 'Choquequirao Trek 4D/3N',
       description: 'Journey to the "Sacred Sister of Machu Picchu", an incredible, remote Inca city hidden deep in the Apurimac canyon.',
@@ -3169,7 +3172,7 @@ export const packages: Package[] = [
     image: '/tour-inca-jungle.png',
     destination: 'Andes Trekking',
     duration: '4 Days / 3 Nights',
-    price: 350,
+    price: '350',
     en: {
       title: 'Inca Jungle Trek to Machu Picchu 4D/3N',
       description: 'The ultimate multi-sport adventure combining downhill mountain biking, rafting, zip-lining, and trekking to Machu Picchu.',
@@ -3324,6 +3327,1175 @@ export const packages: Package[] = [
         'Puedes optar por no hacer ciclismo e ir en la van de apoyo si te sientes cansado o inseguro.'
       ]
     }
+  },
+  {
+    id: 31,
+    slug: 'cuatrimotos-morada-dioses',
+    image: '/images/destinations/cusco.webp',
+    destination: 'Cusco',
+    duration: '4 Hours',
+    price: '35',
+    altitude: '3,800m',
+    difficulty: 'Easy',
+    type: 'Group Tour',
+    departure: '08:00 AM, 11:00 AM, 1:00 PM',
+    en: {
+      title: 'ATV Tour Abode of the Gods (Morada de los Dioses)',
+      description: 'Explore the impressive rock sculptures of the Abode of the Gods on an exciting ATV tour.',
+      overview: '<p class="mb-4 mt-0">Join us for an exciting adventure starting from the Plaza de Armas in Cusco. We will head to our base in Tica Tica (Sencca sector). After a safety briefing and a 10-minute practice ride, we will start a 50-minute ATV journey along adventure trails and viewpoints until we reach the Abode of the Gods (Apukunaq Tianan).</p><p class="mb-8 mt-0">Here, you can appreciate the impressive sculptures carved in rock, enjoy the natural landscape, and take beautiful photographs. Finally, we will return to the base and take the transport back to the city.</p>',
+      itinerary: [
+        { time: '08:00 AM / 11:00 AM / 01:00 PM', activity: 'Meet at Plaza de Armas and transport to Tica Tica base' },
+        { time: '+ 25 mins', activity: 'Safety briefing and 10-minute ATV practice' },
+        { time: '+ 1 hour', activity: '50-minute ATV ride to the Abode of the Gods' },
+        { time: '+ 2 hours', activity: 'Explore the rock sculptures and take photos' },
+        { time: '+ 4 hours', activity: 'Return to base and transport back to Cusco' }
+      ],
+      includes: [
+        'Pickup at Plaza de Armas',
+        'Tourist transport',
+        'Professional guide',
+        'First aid kit',
+        'Semi-automatic ATVs'
+      ],
+      excludes: [
+        'Entrance fee to the Abode of the Gods',
+        'Insurance',
+        'Food and meals'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Warm clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'Make sure to bring some cash for the entrance fee to the Abode of the Gods.'
+      ]
+    },
+    es: {
+      title: 'Cuatrimotos Morada de Dioses',
+      description: 'Explora las impresionantes esculturas de la Morada de los Dioses en un emocionante recorrido en cuatrimoto.',
+      overview: '<p class="mb-4 mt-0">Nos reunimos en la Plaza de Armas de Cusco para iniciar la aventura y nos dirigimos en transporte hacia nuestra base ubicada en Tica Tica - sector Sencca (aprox. 25 minutos). Al llegar realizaremos un briefing de seguridad de 5 minutos y una práctica de manejo de 10 minutos con las cuatrimotos.</p><p class="mb-8 mt-0">Luego iniciaremos el recorrido en cuatrimoto durante aproximadamente 50 minutos por caminos de aventura y miradores hasta llegar a la Morada de los Dioses, donde podremos apreciar las impresionantes esculturas talladas en roca, disfrutar del paisaje natural y tomar fotografías. Finalmente retornamos a la base para tomar el transporte de regreso a la ciudad.</p>',
+      itinerary: [
+        { time: '08:00 a.m. / 11:00 a.m. / 13:00 p.m.', activity: 'Recojo en Plaza de Armas y traslado a la base en Tica Tica' },
+        { time: '+ 25 mins', activity: 'Briefing de seguridad y práctica de 10 minutos' },
+        { time: '+ 1 hora', activity: 'Recorrido en cuatrimoto por 50 minutos hacia la Morada de los Dioses' },
+        { time: '+ 2 hours', activity: 'Visita a las esculturas talladas en roca y toma de fotografías' },
+        { time: '+ 4 hours', activity: 'Retorno a la base y transporte de regreso a la ciudad' }
+      ],
+      includes: [
+        'Recojo en Plaza de armas',
+        'Transporte turístico',
+        'Guía profesional',
+        'Botiquín de primeros auxilios',
+        'Cuatrimotos semi automáticas'
+      ],
+      excludes: [
+        'Ingreso a la morada',
+        'Seguro',
+        'Alimentos'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa abrigadora y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'No olvides llevar efectivo para el pago del ingreso a la Morada de los Dioses.'
+      ]
+    }
+  },
+  {
+    id: 32,
+    slug: 'cuatrimotos-maras-moray',
+    image: '/images/destinations/sacred-valley.webp',
+    destination: 'Sacred Valley',
+    duration: 'Half Day (6 Hours)',
+    price: '40',
+    altitude: '3,385m',
+    difficulty: 'Easy',
+    type: 'Group Tour',
+    departure: '07:00 AM, 01:00 PM',
+    en: {
+      title: 'ATV Tour Maras & Moray',
+      description: 'Experience the thrill of riding an ATV through the Sacred Valley, visiting the circular terraces of Moray and the Maras salt mines.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup at the Plaza de Armas in Cusco. We will drive for about 50 minutes to our ATV base in the Sacred Valley area. Upon arrival, the guide will provide a brief instruction on handling the ATVs and a practice session before starting the adventure.</p><p class="mb-8 mt-0">Then we will begin the ATV tour passing through Andean landscapes and local communities, visiting the circular terraces of Moray. Afterwards, we will continue to the viewpoint of the Maras Salt Mines (panoramic view). There is also the option to take the route to Piuray Lagoon, where you can enjoy beautiful natural landscapes. At the end of the tour, we return to the base to board the transport back to Cusco, arriving approximately between 1:00 PM and 2:00 PM (morning shift) or 5:00 PM and 6:00 PM (afternoon shift).</p>',
+      itinerary: [
+        { time: '07:00 AM / 01:00 PM', activity: 'Pickup at Plaza de Armas and transport to Sacred Valley base' },
+        { time: '+ 50 mins', activity: 'ATV handling instruction and practice session' },
+        { time: '+ 1.5 hours', activity: 'ATV ride through Andean landscapes visiting Moray' },
+        { time: '+ 3 hours', activity: 'Continue to Maras Salt Mines viewpoint (or Piuray Lagoon)' },
+        { time: '+ 5 hours', activity: 'Return to base and transport back to Cusco' }
+      ],
+      includes: [
+        'Pickup at Plaza de Armas',
+        'Tourist transport',
+        'Professional guide',
+        'First aid kit',
+        'Semi-automatic ATVs'
+      ],
+      excludes: [
+        'Entrance fee to Maras Salt Mines (direct payment on site)',
+        'Entrance fee to Moray (tourist ticket)'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Warm clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'Make sure to bring cash in Soles to pay for the entrance tickets.'
+      ]
+    },
+    es: {
+      title: 'Cuatrimotos Maras - Moray',
+      description: 'Experimenta la emoción de manejar una cuatrimoto por el Valle Sagrado, visitando los andenes de Moray y las Salineras de Maras.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo en la plaza de armas en Cusco para dirigirnos durante aproximadamente 50 minutos hacia nuestra base de cuatrimotos en la zona del Valle Sagrado. Al llegar, el guía brindará una breve instrucción sobre el manejo de las cuatrimotos y una práctica antes de iniciar la aventura.</p><p class="mb-8 mt-0">Luego comenzaremos el recorrido en cuatrimoto atravesando paisajes andinos y comunidades locales, visitando los andenes circulares de Moray, posteriormente continuaremos hacia el mirador de las Salineras de Maras (vista panorámica). También existe la opción de realizar la ruta hacia la Laguna Piuray, donde se puede disfrutar de hermosos paisajes naturales. Al finalizar el recorrido retornamos a la base para luego abordar el transporte de regreso a Cusco, llegando aproximadamente entre 13:00 y 14:00 hrs o 17:00 y 18:00 hrs según el turno elegido.</p>',
+      itinerary: [
+        { time: '07:00 a.m. / 01:00 p.m.', activity: 'Recojo en Plaza de armas y traslado a la base en el Valle Sagrado' },
+        { time: '+ 50 mins', activity: 'Instrucción sobre el manejo de las cuatrimotos y práctica' },
+        { time: '+ 1.5 horas', activity: 'Recorrido en cuatrimoto visitando los andenes de Moray' },
+        { time: '+ 3 horas', activity: 'Continuación hacia el mirador de las Salineras de Maras (o Laguna Piuray)' },
+        { time: '+ 5 horas', activity: 'Retorno a la base y abordaje del transporte de regreso a Cusco' }
+      ],
+      includes: [
+        'Recojo en Plaza de armas',
+        'Transporte turístico',
+        'Guía profesional',
+        'Botiquín de primeros auxilios',
+        'Cuatrimotos semi automáticas'
+      ],
+      excludes: [
+        'Ingreso a salineras (pago directo en el lugar)',
+        'Ingreso a Moray (boleto turístico)'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa abrigadora y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'Asegúrate de llevar efectivo en soles para el pago de los ingresos.'
+      ]
+    }
+  },
+  {
+    id: 33,
+    slug: 'laguna-humantay-group',
+    image: '/images/destinations/cusco.webp',
+    destination: 'Cusco',
+    duration: 'Full Day (12.5 Hours)',
+    price: '40',
+    altitude: '4,200m',
+    difficulty: 'Moderate',
+    type: 'Group Tour',
+    departure: '04:30 AM',
+    en: {
+      title: 'Humantay Lake Group Tour',
+      description: 'Hike to the stunning turquoise waters of Humantay Lake at the base of the Salkantay glacier.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your accommodation to head towards the town of Mollepata, where we will enjoy an Andean breakfast. Then we continue the journey to Soraypampa, the starting point of the hike to Humantay Lake.</p><p class="mb-4 mt-0">The hike takes approximately 1 hour and 30 minutes to 2 hours, during which we can appreciate impressive mountain landscapes and the Salkantay snow-capped mountain. Upon arriving at the lake, we will have time for photographs and an explanation from the guide about the natural and spiritual importance of the place.</p><p class="mb-8 mt-0">Afterwards, we return to Soraypampa to take the transport back to Mollepata, where we will enjoy a buffet lunch. Finally, we return to Cusco.</p>',
+      itinerary: [
+        { time: '04:30 AM', activity: 'Pickup from your accommodation and transport to Mollepata' },
+        { time: '+ 2 hours', activity: 'Arrive in Mollepata for an Andean breakfast' },
+        { time: '+ 3 hours', activity: 'Continue to Soraypampa and start the hike' },
+        { time: '+ 5 hours', activity: 'Arrive at Humantay Lake (free time and guide explanation)' },
+        { time: '+ 7 hours', activity: 'Hike back to Soraypampa' },
+        { time: '+ 8 hours', activity: 'Transport to Mollepata for a buffet lunch' },
+        { time: '05:00 PM', activity: 'Arrive back in Cusco' }
+      ],
+      includes: [
+        'Pickup from accommodation',
+        'Tourist transport',
+        'Breakfast',
+        'Buffet lunch',
+        'Professional guide',
+        'First aid kit'
+      ],
+      excludes: [
+        'Community entrance fee (direct payment on site)',
+        'Optional horse rental'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Warm clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'Bring cash in Soles for the entrance fee and optional horse rental if needed.'
+      ]
+    },
+    es: {
+      title: 'Laguna Humantay',
+      description: 'Camina hacia las impresionantes aguas turquesas de la Laguna Humantay al pie del nevado Salkantay.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje para dirigirnos hacia el poblado de Mollepata, donde disfrutaremos de un desayuno andino. Luego continuamos el viaje hasta Soraypampa, punto de inicio de la caminata hacia la Laguna Humantay.</p><p class="mb-4 mt-0">La caminata dura aproximadamente 1 hora y 30 minutos a 2 horas, durante la cual podremos apreciar impresionantes paisajes de montañas y el nevado Salkantay. Al llegar a la laguna tendremos tiempo para fotografías y explicación del guía sobre la importancia natural y espiritual del lugar.</p><p class="mb-8 mt-0">Posteriormente retornamos a Soraypampa para tomar el transporte de regreso a Mollepata, donde disfrutaremos del almuerzo buffet. Finalmente retornamos a Cusco.</p>',
+      itinerary: [
+        { time: '04:30 a.m.', activity: 'Recojo desde su hospedaje y transporte hacia Mollepata' },
+        { time: '+ 2 horas', activity: 'Llegada a Mollepata para disfrutar de un desayuno andino' },
+        { time: '+ 3 horas', activity: 'Viaje hasta Soraypampa e inicio de la caminata' },
+        { time: '+ 5 horas', activity: 'Llegada a la Laguna Humantay (fotografías y explicación del guía)' },
+        { time: '+ 7 horas', activity: 'Caminata de retorno a Soraypampa' },
+        { time: '+ 8 horas', activity: 'Transporte de regreso a Mollepata para el almuerzo buffet' },
+        { time: '05:00 p.m.', activity: 'Llegada a Cusco' }
+      ],
+      includes: [
+        'Recojo desde hospedaje',
+        'Transporte turístico',
+        'Desayuno',
+        'Almuerzo buffet',
+        'Guía profesional',
+        'Botiquín de primeros auxilios'
+      ],
+      excludes: [
+        'Ingreso a la comunidad (pago directo en el lugar)',
+        'Caballo opcional'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa abrigadora y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'Lleva dinero en efectivo (soles) para el pago del ingreso y si deseas rentar un caballo.'
+      ]
+    }
+  },
+  {
+    id: 34,
+    slug: 'city-tour-inca',
+    image: '/images/destinations/cusco.webp',
+    destination: 'Cusco',
+    duration: 'Half Day (4-5 Hours)',
+    price: '30',
+    altitude: '3,400m',
+    difficulty: 'Easy',
+    type: 'Group Tour',
+    departure: '09:50 AM, 01:50 PM',
+    en: {
+      title: 'Inca City Tour',
+      description: 'Discover the Inca and colonial heritage of Cusco, combining temples, fortresses, and panoramic landscapes.',
+      overview: '<p class="mb-4 mt-0">The Cusco City Tour is the best option to get to know the main historical and archaeological attractions surrounding the city.</p><p class="mb-8 mt-0">This half-day tour allows you to discover the Inca and colonial heritage of Cusco, combining temples, fortresses, and panoramic landscapes. You will visit the impressive fortress of Sacsayhuaman, explore the archaeological site of Q\'enqo, and visit Puka Pukara and Tambomachay. There is also an optional stop at Coricancha and the Cristo Blanco viewpoint.</p>',
+      itinerary: [
+        { time: '09:50 AM / 01:50 PM', activity: 'Start of the tour and visit to Coricancha (optional)' },
+        { time: '+ 1 hour', activity: 'Visit to the impressive fortress of Sacsayhuaman' },
+        { time: '+ 2 hours', activity: 'Explore the archaeological site of Q\'enqo' },
+        { time: '+ 3 hours', activity: 'Visit Puka Pukara and Tambomachay' },
+        { time: '+ 4 hours', activity: 'Stop at the Cristo Blanco viewpoint (optional) and return to Cusco' }
+      ],
+      includes: [
+        'Professional bilingual tour guide',
+        'Tourist transport',
+        'Small group experience'
+      ],
+      excludes: [
+        'Meals and drinks',
+        'Entrance fees (Boleto Turístico)'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Comfortable clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos'
+      ],
+      tips: [
+        'The Boleto Turístico (Tourist Ticket) is required for most sites on this tour. You can buy it at the first site.'
+      ]
+    },
+    es: {
+      title: 'City Tour Inca',
+      description: 'Descubre la herencia inca y colonial del Cusco, combinando templos, fortalezas y paisajes panorámicos.',
+      overview: '<p class="mb-4 mt-0">El City Tour Cusco es la mejor opción para conocer los principales atractivos históricos y arqueológicos que rodean la ciudad.</p><p class="mb-8 mt-0">Este recorrido de medio día permite descubrir la herencia inca y colonial del Cusco, combinando templos, fortalezas y paisajes panorámicos. Visitarás Sacsayhuamán, Q\'enqo, Puka Pukara y Tambomachay, con paradas opcionales en el Coricancha y el Mirador del Cristo Blanco.</p>',
+      itinerary: [
+        { time: '09:50 a.m. / 01:50 p.m.', activity: 'Inicio del tour y visita al Coricancha (opcional)' },
+        { time: '+ 1 hora', activity: 'Visita a la impresionante fortaleza de Sacsayhuamán' },
+        { time: '+ 2 horas', activity: 'Exploración del sitio arqueológico de Q\'enqo' },
+        { time: '+ 3 horas', activity: 'Visita a Puka Pukara y Tambomachay' },
+        { time: '+ 4 horas', activity: 'Parada en el Mirador del Cristo Blanco (opcional) y retorno a Cusco' }
+      ],
+      includes: [
+        'Guía turístico profesional bilingüe',
+        'Transporte turístico',
+        'Experiencia en grupos reducidos'
+      ],
+      excludes: [
+        'Comidas y bebida',
+        'Entradas (Boleto Turístico)'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa cómoda y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos'
+      ],
+      tips: [
+        'Es indispensable comprar el Boleto Turístico para ingresar a los centros arqueológicos.'
+      ]
+    }
+  },
+  {
+    id: 35,
+    slug: 'glaciar-quelccaya',
+    image: '/images/destinations/andes-trekking.jpg',
+    destination: 'Andes Trekking',
+    duration: 'Full Day (17 Hours)',
+    price: '80',
+    altitude: '5,200m',
+    difficulty: 'Moderate to Challenging',
+    type: 'Group Tour',
+    departure: '03:00 AM',
+    en: {
+      title: 'Quelccaya Glacier',
+      description: 'Explore the impressive ice formations and caves of the Quelccaya Glacier, the largest tropical ice cap in the world.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your accommodation between 2:50 AM and 3:30 AM to travel to Phinaya (approx. 6 hours) crossing altiplano landscapes. On the way, we make a stop in Cusipata to enjoy breakfast.</p><p class="mb-4 mt-0">Then we continue by transport to the foothills of the glacier, where we will start a short walk of approximately 15 minutes to the Quelccaya Glacier (Suyuparina), where we will appreciate impressive ice formations, caves, and unique landscapes.</p><p class="mb-8 mt-0">Afterwards, we return to Phinaya for lunch and continue the journey back to Cusco, making a stop at the Sibinacocha Lagoon. Arrival in Cusco approximately between 7:00 PM and 8:00 PM.</p>',
+      itinerary: [
+        { time: '03:00 AM', activity: 'Pickup from your accommodation and travel towards Phinaya' },
+        { time: '+ 2 hours', activity: 'Stop in Cusipata for breakfast' },
+        { time: '+ 6 hours', activity: 'Arrive at the foothills of the glacier and start a short 15-minute hike' },
+        { time: '+ 7 hours', activity: 'Explore the Quelccaya Glacier (ice formations, caves)' },
+        { time: '+ 9 hours', activity: 'Return to Phinaya for lunch' },
+        { time: '+ 11 hours', activity: 'Start the journey back with a stop at Sibinacocha Lagoon' },
+        { time: '08:00 PM', activity: 'Arrive back in Cusco' }
+      ],
+      includes: [
+        'Round trip transport',
+        'Breakfast and lunch',
+        'Professional guide',
+        'Trekking poles',
+        'First aid kit',
+        'Oxygen tank'
+      ],
+      excludes: [
+        'Entrance fee (S/ 10.00 - S/ 15.00)',
+        'Extra expenses'
+      ],
+      packing: [
+        'Warm clothing (thermal jacket, fleece)',
+        'Gloves, hat, and scarf',
+        'Trekking shoes (non-slip)',
+        'Small backpack',
+        'Sunglasses and sunscreen',
+        'Water and snacks (chocolates, nuts)',
+        'Cash (for entrance fees and extras)',
+        'Rain poncho (depending on the season)'
+      ],
+      tips: [
+        'The altitude is high, so make sure to acclimatize in Cusco for a few days before this tour.'
+      ]
+    },
+    es: {
+      title: 'Glaciar Quelccaya',
+      description: 'Explora las impresionantes formaciones de hielo y cuevas del Glaciar Quelccaya, el glaciar tropical más grande del mundo.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje entre 02:50 a.m. y 03:30 a.m., para viajar hacia Phinaya (aprox. 6 horas) atravesando paisajes del altiplano. En ruta realizamos una parada en Cusipata para disfrutar del desayuno.</p><p class="mb-4 mt-0">Luego continuamos en transporte hasta las faldas del glaciar, donde iniciaremos una caminata corta de aproximadamente 15 minutos hasta el Glaciar Quelccaya (Suyuparina), donde apreciaremos impresionantes formaciones de hielo, cuevas y paisajes únicos.</p><p class="mb-8 mt-0">Posteriormente retornamos a Phinaya para el almuerzo y continuamos el viaje de retorno a Cusco, realizando una parada en la Laguna Sibinacocha. Llegada a Cusco aproximadamente entre 19:00 y 20:00 hrs.</p>',
+      itinerary: [
+        { time: '03:00 a.m.', activity: 'Recojo desde su hospedaje y viaje hacia Phinaya' },
+        { time: '+ 2 horas', activity: 'Parada en Cusipata para disfrutar del desayuno' },
+        { time: '+ 6 horas', activity: 'Llegada a las faldas del glaciar e inicio de caminata de 15 minutos' },
+        { time: '+ 7 horas', activity: 'Exploración del Glaciar Quelccaya (formaciones de hielo y cuevas)' },
+        { time: '+ 9 horas', activity: 'Retorno a Phinaya para el almuerzo' },
+        { time: '+ 11 horas', activity: 'Viaje de retorno con parada en la Laguna Sibinacocha' },
+        { time: '08:00 p.m.', activity: 'Llegada a Cusco' }
+      ],
+      includes: [
+        'Transporte ida y vuelta',
+        'Desayuno y almuerzo',
+        'Guía profesional',
+        'Bastones de trekking',
+        'Botiquín de primeros auxilios',
+        'Balón de oxígeno'
+      ],
+      excludes: [
+        'Ingreso (S/ 10.00 - S/ 15.00)',
+        'Gastos extras'
+      ],
+      packing: [
+        'Ropa abrigadora (casaca térmica, polar)',
+        'Guantes, gorro y bufanda',
+        'Zapatos de trekking (antideslizantes)',
+        'Mochila pequeña',
+        'Lentes de sol y bloqueador solar',
+        'Agua y snacks (chocolates, frutos secos)',
+        'Dinero en efectivo (para ingresos y extras)',
+        'Poncho de lluvia (según temporada)'
+      ],
+      tips: [
+        'Debido a la gran altitud, es recomendable aclimatarse en Cusco un par de días antes de hacer este tour.'
+      ]
+    }
+  },
+  {
+    id: 36,
+    slug: 'paracas-ica-full-day',
+    image: '/images/destinations/paracas.webp',
+    destination: 'Lima',
+    duration: 'Full Day (17 Hours)',
+    price: '60',
+    altitude: 'Sea Level / 406m',
+    difficulty: 'Easy',
+    type: 'Group Tour',
+    departure: '05:00 AM',
+    en: {
+      title: 'Paracas & Ica Full Day',
+      description: 'Explore the Ballestas Islands, ride dune buggies in the Huacachina desert, and taste traditional Pisco and wine.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a departure from Lima at 05:30 AM heading to Paracas. Upon arrival, we head to the El Chaco dock to board the speedboat to the Ballestas Islands, where you can see the Candelabra geoglyph and marine fauna such as sea lions, penguins, and birds.</p><p class="mb-4 mt-0">Then we continue to Ica, arriving at Huacachina where we visit the oasis, take photographs, and do the dune buggy and sandboarding activity in the desert.</p><p class="mb-8 mt-0">Afterwards, we visit the Noelia Chocolate shop to taste typical sweets, and then a winery to learn about the wine and pisco process with tasting included. In the afternoon, there is an optional stop in Chincha for wine, pisco, and sweets tasting, as well as cultural activities. Finally, we begin the return to Lima around 07:00 PM, arriving between 09:30 PM and 10:00 PM.</p>',
+      itinerary: [
+        { time: '05:00 AM', activity: 'Meeting and departure from Lima towards Paracas (05:30 AM)' },
+        { time: '+ 4 hours', activity: 'Arrive in Paracas, board the speedboat for the Ballestas Islands tour' },
+        { time: '+ 7 hours', activity: 'Travel to Ica and visit the Huacachina Oasis (dune buggies & sandboarding)' },
+        { time: '+ 10 hours', activity: 'Visit Noelia Chocolate shop and a traditional winery for Pisco tasting' },
+        { time: '+ 12 hours', activity: 'Optional stop in Chincha for cultural activities and more tasting' },
+        { time: '07:00 PM', activity: 'Start the return journey to Lima' },
+        { time: '10:00 PM', activity: 'Arrival in Lima' }
+      ],
+      includes: [
+        'Round trip tourist transport',
+        'Professional guide',
+        'Ballestas Islands Tour + entrances',
+        'Huacachina Oasis visit',
+        'Dune buggies and sandboarding',
+        'Wine route (Ica and Chincha)',
+        'Tastings (wines, piscos, sweets)',
+        'Noelia Chocolate shop visit',
+        'SOAT insurance and first aid kit'
+      ],
+      excludes: [
+        'Breakfast',
+        'Lunch'
+      ],
+      packing: [
+        'Light and comfortable clothing for the day, warm jacket for the boat ride and evening',
+        'Sunglasses, hat, and sunscreen',
+        'Water and snacks',
+        'Cash for meals and extra expenses',
+        'Camera or smartphone'
+      ],
+      tips: [
+        'Make sure to bring a windbreaker jacket as the boat ride to Ballestas Islands can be very windy and cold.'
+      ]
+    },
+    es: {
+      title: 'Paracas - Ica Full Day',
+      description: 'Explora las Islas Ballestas, sube a los tubulares en el desierto de Huacachina y degusta pisco y vinos tradicionales.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con la salida desde Lima a las 05:30 a.m. con destino a Paracas. A la llegada nos dirigimos al muelle El Chaco para abordar el deslizador rumbo a las Islas Ballestas, donde se aprecia el Candelabro y fauna marina como lobos marinos, pingüinos y aves.</p><p class="mb-4 mt-0">Luego continuamos hacia Ica, llegando a la Huacachina donde se visita el oasis, se toman fotografías y se realiza la actividad de tubulares y sandboarding en el desierto.</p><p class="mb-8 mt-0">Posteriormente se visita la Chocolatería Noelia para degustación de dulces típicos y luego una bodega vitivinícola donde se conoce el proceso del vino y pisco con degustación incluida. Por la tarde se realiza una parada opcional en Chincha para degustación de vinos, piscos y dulces, además de actividades culturales. Finalmente se inicia el retorno a Lima alrededor de las 07:00 p.m., llegando entre las 09:30 p.m. y 10:00 p.m.</p>',
+      itinerary: [
+        { time: '05:00 a.m.', activity: 'Encuentro y salida desde Lima con destino a Paracas (05:30 a.m.)' },
+        { time: '+ 4 horas', activity: 'Llegada a Paracas y tour en deslizador a las Islas Ballestas' },
+        { time: '+ 7 horas', activity: 'Viaje a Ica, visita a Huacachina (tubulares y sandboarding)' },
+        { time: '+ 10 horas', activity: 'Visita a Chocolatería Noelia y bodega vitivinícola (degustación)' },
+        { time: '+ 12 horas', activity: 'Parada opcional en Chincha para actividades culturales y degustación' },
+        { time: '07:00 p.m.', activity: 'Inicio del retorno hacia la ciudad de Lima' },
+        { time: '10:00 p.m.', activity: 'Llegada aproximada a Lima' }
+      ],
+      includes: [
+        'Transporte turístico ida y vuelta',
+        'Guía profesional',
+        'Tour Islas Ballestas + entradas',
+        'Huacachina',
+        'Tubulares y sandboarding',
+        'Ruta del vino (Ica y Chincha)',
+        'Degustaciones (vinos, piscos, dulces)',
+        'Chocolatería Noelia',
+        'Seguro SOAT y botiquín'
+      ],
+      excludes: [
+        'Desayuno',
+        'Almuerzo'
+      ],
+      packing: [
+        'Ropa ligera y cómoda para el día, abrigo para la tarde/noche y el paseo en bote',
+        'Lentes de sol, sombrero o gorra y protector solar',
+        'Agua y snacks',
+        'Dinero en efectivo para comidas y extras',
+        'Cámara fotográfica o celular'
+      ],
+      tips: [
+        'Lleva una casaca cortavientos, ya que el viaje en bote a las Islas Ballestas suele ser frío y ventoso.'
+      ]
+    }
+  },
+  {
+    id: 37,
+    slug: 'lima-city-tour',
+    image: '/images/destinations/lima.webp',
+    destination: 'Lima',
+    duration: 'Half Day (4 Hours)',
+    price: '35',
+    altitude: 'Sea Level / 154m',
+    difficulty: 'Easy',
+    type: 'Group Tour',
+    departure: '09:15 AM, 02:15 PM',
+    en: {
+      title: 'Lima City Tour',
+      description: 'Discover the Historical Center of Lima, the San Francisco Catacombs, and the modern districts of Miraflores and San Isidro.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your hotel in the districts of Miraflores or San Isidro. You will have a panoramic view of the Huaca Pucllana, an ancient pre-Inca ceremonial center.</p><p class="mb-4 mt-0">We continue to the Historical Center of Lima, where we visit the main attractions such as the Plaza de Armas, the Government Palace, the Cathedral, and the San Francisco Convent with its underground catacombs.</p><p class="mb-8 mt-0">Afterwards, the tour continues through the modern area of the city, visiting the Parque del Amor in Miraflores, the El Olivar Park in San Isidro, and main avenues overlooking the Pacific Ocean. Finally, we return to the hotel.</p>',
+      itinerary: [
+        { time: '09:15 AM / 02:15 PM', activity: 'Pickup from your hotel in Miraflores or San Isidro' },
+        { time: '+ 30 mins', activity: 'Panoramic view of Huaca Pucllana' },
+        { time: '+ 1 hour', activity: 'Explore the Historical Center of Lima (Plaza de Armas, Cathedral, Government Palace)' },
+        { time: '+ 2 hours', activity: 'Guided visit to the San Francisco Convent and its underground Catacombs' },
+        { time: '+ 3 hours', activity: 'Tour through the modern districts, visiting Parque del Amor and Parque El Olivar' },
+        { time: '+ 4 hours', activity: 'Return to your hotel' }
+      ],
+      includes: [
+        'Hotel pickup',
+        'Tourist transport',
+        'Professional bilingual guide',
+        'Entrance fees to attractions'
+      ],
+      excludes: [
+        'Meals',
+        'Personal expenses'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Comfortable clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos'
+      ],
+      tips: [
+        'Pickup is only included from hotels located in Miraflores and San Isidro.'
+      ]
+    },
+    es: {
+      title: 'City Tour Lima',
+      description: 'Descubre el Centro Histórico de Lima, las Catacumbas de San Francisco y los distritos modernos de Miraflores y San Isidro.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde el hotel en los distritos de Miraflores o San Isidro. Se realiza una vista panorámica de la Huaca Pucllana, antiguo centro ceremonial preinca.</p><p class="mb-4 mt-0">Se continúa hacia el Centro Histórico de Lima, donde se visitan los principales atractivos como la Plaza de Armas, el Palacio de Gobierno, la Catedral y el Convento de San Francisco con sus catacumbas.</p><p class="mb-8 mt-0">Posteriormente, el recorrido continúa por la zona moderna de la ciudad, visitando el Parque del Amor en Miraflores, el Parque El Olivar en San Isidro y avenidas principales con vista al Océano Pacífico. Finalmente, retorno al hotel.</p>',
+      itinerary: [
+        { time: '09:15 a.m. / 02:15 p.m.', activity: 'Recojo desde el hotel en Miraflores o San Isidro' },
+        { time: '+ 30 mins', activity: 'Vista panorámica de la Huaca Pucllana' },
+        { time: '+ 1 hora', activity: 'Visita al Centro Histórico (Plaza de Armas, Catedral, Palacio de Gobierno)' },
+        { time: '+ 2 horas', activity: 'Recorrido por el Convento de San Francisco y las Catacumbas' },
+        { time: '+ 3 horas', activity: 'Visita a la zona moderna (Parque del Amor, Parque El Olivar)' },
+        { time: '+ 4 horas', activity: 'Retorno al hotel' }
+      ],
+      includes: [
+        'Recojo desde hotel',
+        'Transporte turístico',
+        'Guía profesional bilingüe',
+        'Entradas a los atractivos'
+      ],
+      excludes: [
+        'Alimentación',
+        'Gastos personales'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa cómoda y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos'
+      ],
+      tips: [
+        'El recojo está incluido únicamente para hoteles ubicados en los distritos de Miraflores y San Isidro.'
+      ]
+    }
+  },
+  {
+    id: 38,
+    slug: 'pallay-punchu',
+    image: '/images/destinations/andes-trekking.jpg',
+    destination: 'Andes Trekking',
+    duration: 'Full Day (13.5 Hours)',
+    price: '45',
+    altitude: '4,700m',
+    difficulty: 'Moderate',
+    type: 'Group Tour',
+    departure: '04:30 AM',
+    en: {
+      title: 'Pallay Punchu',
+      description: 'Hike to the incredible sharp colored mountains of Pallay Punchu and enjoy stunning views of the Langui-Layo lagoon.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your accommodation to head south of Cusco to the district of Layo, where we will enjoy breakfast. Then we continue to the starting point of the hike.</p><p class="mb-4 mt-0">The hike to Pallay Punchu, known as the "sharp colored mountain", takes approximately 1 to 2 hours, where we will appreciate impressive rock formations with natural colors and views of the Langui-Layo lagoon.</p><p class="mb-8 mt-0">Upon reaching the viewpoint, we will have time for photos and an explanation from the guide. Afterwards, we return to the transport to head to the restaurant and enjoy lunch, before returning to Cusco.</p>',
+      itinerary: [
+        { time: '04:30 AM', activity: 'Pickup from your accommodation and travel south of Cusco' },
+        { time: '+ 3 hours', activity: 'Arrive in Layo district for breakfast' },
+        { time: '+ 4 hours', activity: 'Travel to the trailhead and start the hike' },
+        { time: '+ 6 hours', activity: 'Arrive at the Pallay Punchu viewpoint (free time for photos and guide explanation)' },
+        { time: '+ 8 hours', activity: 'Hike back to the transport' },
+        { time: '+ 9 hours', activity: 'Head to the restaurant for lunch' },
+        { time: '06:00 PM', activity: 'Arrive back in Cusco' }
+      ],
+      includes: [
+        'Hotel pickup',
+        'Tourist transport',
+        'Breakfast',
+        'Lunch',
+        'Professional guide',
+        'First aid kit'
+      ],
+      excludes: [
+        'Community entrance fee (direct payment on site)',
+        'Optional horse rental'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Warm clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'Bring cash in Soles for the community entrance fee and in case you want to rent a horse for the hike.'
+      ]
+    },
+    es: {
+      title: 'Pallay Punchu',
+      description: 'Camina hacia las increíbles montañas de colores puntiagudos de Pallay Punchu y disfruta de las vistas de la laguna Langui-Layo.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje para dirigirnos hacia el sur de Cusco hasta el distrito de Layo, donde disfrutaremos de un desayuno. Luego continuamos hacia el punto de inicio de la caminata.</p><p class="mb-4 mt-0">La caminata hacia Pallay Punchu, conocida como la "montaña de colores puntiagudos", tiene una duración aproximada de 1 a 2 horas, donde apreciaremos impresionantes formaciones rocosas con colores naturales y vistas a la laguna Langui-Layo.</p><p class="mb-8 mt-0">Al llegar al mirador tendremos tiempo para fotos y explicación del guía. Posteriormente retornamos al transporte para dirigirnos al restaurante y disfrutar del almuerzo, para luego regresar a Cusco.</p>',
+      itinerary: [
+        { time: '04:30 a.m.', activity: 'Recojo desde su hospedaje y viaje hacia el sur de Cusco' },
+        { time: '+ 3 horas', activity: 'Llegada al distrito de Layo para el desayuno' },
+        { time: '+ 4 horas', activity: 'Viaje al punto de inicio y comienzo de la caminata' },
+        { time: '+ 6 horas', activity: 'Llegada al mirador de Pallay Punchu (tiempo para fotos y explicación)' },
+        { time: '+ 8 horas', activity: 'Caminata de retorno al transporte' },
+        { time: '+ 9 horas', activity: 'Traslado al restaurante para disfrutar del almuerzo' },
+        { time: '06:00 p.m.', activity: 'Llegada a Cusco' }
+      ],
+      includes: [
+        'Recojo desde hospedaje',
+        'Transporte turístico',
+        'Desayuno',
+        'Almuerzo',
+        'Guía profesional',
+        'Botiquín de primeros auxilios'
+      ],
+      excludes: [
+        'Ingreso a la comunidad (pago directo en el lugar)',
+        'Caballo opcional'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa abrigadora y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'Lleva dinero en efectivo en soles para pagar el ingreso a la comunidad y por si decides rentar un caballo.'
+      ]
+    }
+  },
+  {
+    id: 39,
+    slug: 'valle-sur',
+    image: '/images/destinations/sacred-valley.webp',
+    destination: 'Cusco',
+    duration: 'Half Day (7 Hours)',
+    price: '25',
+    altitude: '3,200m',
+    difficulty: 'Easy',
+    type: 'Group Tour',
+    departure: '08:40 AM',
+    en: {
+      title: 'South Valley',
+      description: 'Explore the architectural wonders of Tipón, the pre-Inca city of Pikillacta, and the beautiful Andahuaylillas Church.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your accommodation to begin a complete experience through the South Valley.</p><p class="mb-8 mt-0">You will visit important and unique cultural and archaeological attractions, with a VIP service that guarantees comfort, organization, and a better distribution of time during the day. We will explore the impressive Inca water engineering at Tipón, the ancient Wari city of Pikillacta, and the famous San Pedro Apóstol Church in Andahuaylillas, known as the Sistine Chapel of America.</p>',
+      itinerary: [
+        { time: '08:40 AM', activity: 'Pickup from your accommodation and travel to the South Valley' },
+        { time: '+ 1 hour', activity: 'Guided visit to the archaeological site of Tipón (Inca water engineering)' },
+        { time: '+ 3 hours', activity: 'Explore the pre-Inca city of Pikillacta (Wari culture)' },
+        { time: '+ 5 hours', activity: 'Visit the San Pedro Apóstol Church of Andahuaylillas' },
+        { time: '03:30 PM', activity: 'Return to Cusco' }
+      ],
+      includes: [
+        'Hotel pickup',
+        'Professional tour guide',
+        'Tourist transport'
+      ],
+      excludes: [
+        'Entrance fees (Tourist Ticket / Boleto Turístico)',
+        'Meals'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Comfortable clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'You will need the partial Tourist Ticket (Boleto Turístico) for Tipón and Pikillacta, and a separate entrance fee for the Andahuaylillas Church.'
+      ]
+    },
+    es: {
+      title: 'Valle Sur',
+      description: 'Explora las maravillas arquitectónicas de Tipón, la ciudad preinca de Pikillacta y la hermosa iglesia de Andahuaylillas.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje para dar inicio a una experiencia completa por el Valle Sur.</p><p class="mb-8 mt-0">Visitarás importantes atractivos culturales y arqueológicos únicos, con un servicio VIP que garantiza comodidad, organización y una mejor distribución del tiempo durante el día. Exploraremos la impresionante ingeniería hidráulica Inca en Tipón, la antigua ciudad Wari de Pikillacta, y la famosa Iglesia San Pedro Apóstol en Andahuaylillas, conocida como la Capilla Sixtina de América.</p>',
+      itinerary: [
+        { time: '08:40 a.m.', activity: 'Recojo desde su hospedaje y viaje hacia el Valle Sur' },
+        { time: '+ 1 hora', activity: 'Visita guiada al sitio arqueológico de Tipón' },
+        { time: '+ 3 horas', activity: 'Exploración de la ciudad preinca de Pikillacta' },
+        { time: '+ 5 horas', activity: 'Visita a la Iglesia de San Pedro Apóstol de Andahuaylillas' },
+        { time: '03:30 p.m.', activity: 'Retorno a Cusco' }
+      ],
+      includes: [
+        'Recojo a hospedaje',
+        'Guía turístico profesional',
+        'Transporte turístico'
+      ],
+      excludes: [
+        'Entradas (Boleto Turístico)',
+        'Alimentos'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa cómoda y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'Necesitarás el Boleto Turístico parcial para ingresar a Tipón y Pikillacta, y un ticket de ingreso adicional para la Iglesia de Andahuaylillas.'
+      ]
+    }
+  },
+  {
+    id: 40,
+    slug: 'palcoyo',
+    image: '/images/destinations/andes-trekking.jpg',
+    destination: 'Andes Trekking',
+    duration: 'Full Day (12.5 Hours)',
+    price: '35',
+    altitude: '4,900m',
+    difficulty: 'Easy',
+    type: 'Group Tour',
+    departure: '04:30 AM',
+    en: {
+      title: 'Palcoyo Rainbow Mountain',
+      description: 'An easy and short hike to discover 3 rainbow mountains, stunning Andean landscapes, and the Stone Forest.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your accommodation (04:00 - 05:00 a.m.) to head towards Cusipata, where we will enjoy breakfast. Then we continue passing through Checacupe until we reach Palcoyo.</p><p class="mb-4 mt-0">The hike is short and easy (40 min - 1 h), where we can appreciate 3 colored mountains, Andean landscapes, and the Stone Forest (optional).</p><p class="mb-8 mt-0">After the tour, we return to Cusipata for a buffet lunch and then return to Cusco, arriving approximately 04:00 PM - 05:00 PM.</p>',
+      itinerary: [
+        { time: '04:30 AM', activity: 'Pickup from your accommodation and travel towards Cusipata' },
+        { time: '+ 2 hours', activity: 'Arrive in Cusipata for breakfast' },
+        { time: '+ 4 hours', activity: 'Travel through Checacupe and arrive at the Palcoyo trailhead' },
+        { time: '+ 5 hours', activity: 'Short and easy hike (40 min - 1 h) to see 3 rainbow mountains and the Stone Forest' },
+        { time: '+ 7 hours', activity: 'Return hike to the transport' },
+        { time: '+ 9 hours', activity: 'Buffet lunch in Cusipata' },
+        { time: '05:00 PM', activity: 'Arrive back in Cusco' }
+      ],
+      includes: [
+        'Hotel pickup',
+        'Tourist transport',
+        'Breakfast',
+        'Lunch',
+        'Professional guide',
+        'First aid kit'
+      ],
+      excludes: [
+        'Community entrance fee (direct payment on site)',
+        'Optional horse rental'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Warm clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'This is a great alternative to Vinicunca (Rainbow Mountain) if you prefer a much easier and shorter hike with less crowds.'
+      ]
+    },
+    es: {
+      title: 'Montaña Palcoyo',
+      description: 'Una caminata corta y fácil para descubrir 3 montañas de colores, paisajes andinos y el Bosque de Piedras.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje (04:00 - 05:00 a.m.) para dirigirnos hacia Cusipata, donde disfrutaremos del desayuno. Luego continuamos pasando por Checacupe hasta llegar a Palcoyo.</p><p class="mb-4 mt-0">La caminata es corta y fácil (40 min - 1 h), donde podremos apreciar 3 montañas de colores, paisajes andinos y el Bosque de Piedras (opcional).</p><p class="mb-8 mt-0">Después del recorrido retornamos a Cusipata para el almuerzo buffet y luego regreso a Cusco, llegando aproximadamente 16:00 - 17:00 hrs.</p>',
+      itinerary: [
+        { time: '04:30 a.m.', activity: 'Recojo desde su hospedaje y viaje hacia Cusipata' },
+        { time: '+ 2 horas', activity: 'Llegada a Cusipata para disfrutar del desayuno' },
+        { time: '+ 4 horas', activity: 'Viaje pasando por Checacupe hasta llegar a Palcoyo' },
+        { time: '+ 5 horas', activity: 'Caminata corta (40 min - 1h) para ver 3 montañas de colores y el Bosque de Piedras' },
+        { time: '+ 7 horas', activity: 'Caminata de retorno al transporte' },
+        { time: '+ 9 horas', activity: 'Almuerzo buffet en Cusipata' },
+        { time: '05:00 p.m.', activity: 'Llegada a Cusco' }
+      ],
+      includes: [
+        'Recojo desde hospedaje',
+        'Transporte turístico',
+        'Desayuno',
+        'Almuerzo',
+        'Guía profesional',
+        'Botiquín de primeros auxilios'
+      ],
+      excludes: [
+        'Ingreso a la comunidad (pago directo en el lugar)',
+        'Caballo opcional'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa abrigadora y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'Palcoyo es una excelente alternativa a Vinicunca si prefieres una caminata mucho más corta, fácil y con menos turistas.'
+      ]
+    }
+  },
+  {
+    id: 41,
+    slug: 'waqrapukara',
+    image: '/images/destinations/andes-trekking.jpg',
+    destination: 'Andes Trekking',
+    duration: 'Full Day (13.5 Hours)',
+    price: '40',
+    altitude: '4,140m',
+    difficulty: 'Moderate',
+    type: 'Group Tour',
+    departure: '04:30 AM',
+    en: {
+      title: 'Waqrapukara',
+      description: 'Hike to the impressive horn-shaped Inca fortress of Waqrapukara, surrounded by spectacular canyons and rock formations.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your accommodation between 04:00 and 04:30 AM to head south of Cusco to Cusipata, where we will enjoy breakfast. Then we continue to the starting point of the hike.</p><p class="mb-4 mt-0">The hike to Waqrapukara takes approximately 1.5 to 2 hours, where we will appreciate impressive Andean landscapes, canyons, and rock formations.</p><p class="mb-8 mt-0">Upon arrival, we will visit this Inca archaeological complex, known as the "horn-shaped fortress". After the tour, we return by the same route to the transport and head to Cusipata for a buffet lunch. Finally, we return to Cusco, arriving approximately between 05:30 PM and 06:30 PM.</p>',
+      itinerary: [
+        { time: '04:30 AM', activity: 'Pickup from your accommodation and travel south to Cusipata' },
+        { time: '+ 2.5 hours', activity: 'Arrive in Cusipata for breakfast' },
+        { time: '+ 3.5 hours', activity: 'Travel to the trailhead and start the hike' },
+        { time: '+ 5.5 hours', activity: 'Arrive at Waqrapukara and guided tour of the horn-shaped fortress' },
+        { time: '+ 8 hours', activity: 'Hike back to the transport' },
+        { time: '+ 10 hours', activity: 'Buffet lunch in Cusipata' },
+        { time: '06:00 PM', activity: 'Arrive back in Cusco' }
+      ],
+      includes: [
+        'Hotel pickup',
+        'Tourist transport',
+        'Breakfast',
+        'Lunch',
+        'Professional guide',
+        'First aid kit'
+      ],
+      excludes: [
+        'Community entrance fee (direct payment on site)'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Warm clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'Make sure to bring cash in Soles for the community entrance fee and any extra expenses.'
+      ]
+    },
+    es: {
+      title: 'Waqrapukara',
+      description: 'Camina hacia la impresionante fortaleza inca con forma de cuernos de Waqrapukara, rodeada de espectaculares cañones y formaciones rocosas.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje entre 04:00 y 04:30 a.m. para dirigirnos hacia el sur de Cusco hasta Cusipata, donde disfrutaremos del desayuno. Luego continuamos hacia el punto de inicio de la caminata.</p><p class="mb-4 mt-0">La caminata hacia Waqrapukara tiene una duración aproximada de 1.5 a 2 horas, donde apreciaremos impresionantes paisajes andinos, cañones y formaciones rocosas.</p><p class="mb-8 mt-0">Al llegar, visitaremos este complejo arqueológico inca, conocido como la "fortaleza con forma de cuernos". Después del recorrido retornamos por la misma ruta hacia el transporte y nos dirigimos a Cusipata para el almuerzo buffet. Finalmente retornamos a Cusco, llegando aproximadamente entre 17:30 y 18:30 hrs.</p>',
+      itinerary: [
+        { time: '04:30 a.m.', activity: 'Recojo desde su hospedaje y viaje hacia Cusipata' },
+        { time: '+ 2.5 horas', activity: 'Llegada a Cusipata para disfrutar del desayuno' },
+        { time: '+ 3.5 horas', activity: 'Viaje al punto de inicio y comienzo de la caminata' },
+        { time: '+ 5.5 horas', activity: 'Llegada a Waqrapukara y recorrido por la fortaleza' },
+        { time: '+ 8 horas', activity: 'Caminata de retorno al transporte' },
+        { time: '+ 10 horas', activity: 'Almuerzo buffet en Cusipata' },
+        { time: '06:00 p.m.', activity: 'Llegada a Cusco' }
+      ],
+      includes: [
+        'Recojo desde hospedaje',
+        'Transporte turístico',
+        'Desayuno',
+        'Almuerzo',
+        'Guía profesional',
+        'Botiquín de primeros auxilios'
+      ],
+      excludes: [
+        'Ingreso a la comunidad (pago directo en el lugar)'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa abrigadora y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'Lleva dinero en efectivo en soles para pagar el ingreso a la comunidad y gastos personales extra.'
+      ]
+    }
+  },
+  {
+    id: 42,
+    slug: 'cuatrimotos-montana-colores',
+    image: '/images/destinations/andes-trekking.jpg',
+    destination: 'Andes Trekking',
+    duration: 'Full Day (13 Hours)',
+    price: '60',
+    altitude: '5,036m',
+    difficulty: 'Moderate',
+    type: 'Group Tour',
+    departure: '04:30 AM',
+    en: {
+      title: 'Rainbow Mountain ATVs',
+      description: 'Experience an exciting ATV ride combined with a short hike to reach the spectacular Rainbow Mountain.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your accommodation to head south of Cusco for approximately 1 hour and 30 minutes to Cusipata, where we will enjoy breakfast. Then we continue to Kayrahuiri Alto (4,650 m.a.s.l.).</p><p class="mb-4 mt-0">Here we will receive brief instruction and an ATV driving practice before starting the tour. The ATV route takes approx. 30 minutes, crossing impressive landscapes with views of the snow-capped Ausangate. Afterwards, we will take a short 10-minute walk to reach Rainbow Mountain.</p><p class="mb-8 mt-0">At the summit (5,036 m.a.s.l.) we will have free time for photos and to enjoy the landscape. Then we return on ATVs along the same route to our transport, which will take us back to Cusipata to enjoy a buffet lunch. Finally, we return to Cusco.</p>',
+      itinerary: [
+        { time: '04:30 AM', activity: 'Pickup from your accommodation and travel south to Cusipata' },
+        { time: '+ 1.5 hours', activity: 'Arrive in Cusipata for breakfast' },
+        { time: '+ 3 hours', activity: 'Travel to Kayrahuiri Alto (4,650m) for ATV instructions' },
+        { time: '+ 4 hours', activity: '30-minute ATV ride towards Rainbow Mountain' },
+        { time: '+ 4.5 hours', activity: 'Short 10-minute hike to the summit of Rainbow Mountain (5,036m)' },
+        { time: '+ 6 hours', activity: 'Return ATV ride to the transport' },
+        { time: '+ 8 hours', activity: 'Buffet lunch in Cusipata' },
+        { time: '05:30 PM', activity: 'Arrive back in Cusco' }
+      ],
+      includes: [
+        'Hotel pickup (historic center)',
+        'Round trip tourist transport',
+        'Single or double semi-automatic ATV',
+        'Buffet breakfast and lunch',
+        'Professional guide',
+        'First aid kit and oxygen'
+      ],
+      excludes: [
+        'Rainbow Mountain entrance fee',
+        'Extra expenses'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Warm clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'No prior ATV driving experience is required. The machines are semi-automatic and easy to use.'
+      ]
+    },
+    es: {
+      title: 'Cuatrimotos Montaña de Colores',
+      description: 'Experimenta un emocionante paseo en cuatrimotos combinado con una corta caminata para llegar a la espectacular Montaña de Colores.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje para dirigirnos hacia el sur de Cusco durante aproximadamente 1 hora y 30 minutos hasta Cusipata, donde disfrutaremos de un desayuno. Luego continuamos hacia Kayrahuiri Alto (4,650 m.s.n.m.).</p><p class="mb-4 mt-0">Aquí recibiremos una breve instrucción y práctica de manejo de cuatrimotos antes de comenzar el recorrido. La ruta en cuatrimoto tiene una duración aprox. de 30 minutos, atravesando impresionantes paisajes con vistas al nevado Ausangate. Posteriormente realizaremos una caminata corta de 10 min. hasta llegar a la Montaña de Colores.</p><p class="mb-8 mt-0">En la cima (5,036 m.s.n.m.) tendremos tiempo libre para fotos y disfrutar del paisaje. Luego retornamos en cuatrimotos por la misma ruta hasta nuestro transporte, que nos llevará nuevamente a Cusipata para disfrutar del almuerzo buffet. Finalmente retornamos a Cusco.</p>',
+      itinerary: [
+        { time: '04:30 a.m.', activity: 'Recojo desde su hospedaje y viaje hacia Cusipata' },
+        { time: '+ 1.5 horas', activity: 'Llegada a Cusipata para disfrutar del desayuno' },
+        { time: '+ 3 horas', activity: 'Viaje a Kayrahuiri Alto (4,650m) e instrucción de cuatrimotos' },
+        { time: '+ 4 horas', activity: 'Ruta de 30 minutos en cuatrimotos hacia la Montaña de Colores' },
+        { time: '+ 4.5 horas', activity: 'Caminata corta de 10 min. hasta la cima (5,036m)' },
+        { time: '+ 6 horas', activity: 'Retorno en cuatrimotos al transporte' },
+        { time: '+ 8 horas', activity: 'Almuerzo buffet en Cusipata' },
+        { time: '05:30 p.m.', activity: 'Llegada a Cusco' }
+      ],
+      includes: [
+        'Recojo desde hospedaje (centro histórico)',
+        'Transporte turístico ida y vuelta',
+        'Cuatrimoto simple o doble semiauto.',
+        'Desayuno y almuerzo buffet',
+        'Guía profesional',
+        'Equipo de primeros auxilios (oxígeno)'
+      ],
+      excludes: [
+        'Ingreso a la montaña de colores',
+        'Gastos extras'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa abrigadora y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'No se necesita experiencia previa manejando cuatrimotos. Las máquinas son semiautomáticas y fáciles de usar.'
+      ]
+    }
+  },
+  {
+    id: 43,
+    slug: 'valle-sagrado-vip',
+    image: '/images/destinations/sacred-valley.webp',
+    destination: 'Sacred Valley',
+    duration: 'Full Day (12.5 Hours)',
+    price: '30',
+    altitude: '2,800m',
+    difficulty: 'Easy',
+    type: 'Group Tour',
+    departure: '06:30 AM',
+    en: {
+      title: 'VIP Sacred Valley',
+      description: 'A complete VIP experience through the Sacred Valley of the Incas, visiting Chinchero, Moray, Maras, Ollantaytambo, and Pisac.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your accommodation to begin a complete experience through the Sacred Valley of the Incas, visiting traditional villages, archaeological centers, and unique Andean landscapes.</p><p class="mb-4 mt-0">You will travel with a VIP service that guarantees comfort, organization, and a better distribution of time throughout the day.</p><p class="mb-8 mt-0">The itinerary includes visits to the Chinchero textile center, the impressive circular terraces of Moray, the Maras Salt Mines, a buffet lunch in Urubamba, the Ollantaytambo fortress, and the Pisac archaeological center and market. Finally, we return to Cusco, arriving around 07:00 PM.</p>',
+      itinerary: [
+        { time: '06:30 AM', activity: 'Pickup from your accommodation and travel to the Sacred Valley' },
+        { time: '+ 1.5 hours', activity: 'Visit Chinchero (Textile Center)' },
+        { time: '+ 3 hours', activity: 'Explore Moray (Inca circular terraces)' },
+        { time: '+ 4 hours', activity: 'Visit the Maras Salt Mines' },
+        { time: '+ 6 hours', activity: 'Buffet lunch in Urubamba' },
+        { time: '+ 8 hours', activity: 'Guided tour of the Ollantaytambo archaeological complex' },
+        { time: '+ 10 hours', activity: 'Visit Pisac (Archaeological Center and market)' },
+        { time: '07:00 PM', activity: 'Arrive back in Cusco' }
+      ],
+      includes: [
+        'Professional bilingual tour guide',
+        'Hotel pickup',
+        'Tourist transport',
+        'Buffet lunch'
+      ],
+      excludes: [
+        'Entrance fees (Tourist Ticket / Boleto Turístico)',
+        'Maras salt mines entrance fee (S/. 15 soles)'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Comfortable clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'You will need the partial or full Tourist Ticket (Boleto Turístico) for Chinchero, Moray, Ollantaytambo, and Pisac, and 15 Soles in cash for Maras.'
+      ]
+    },
+    es: {
+      title: 'Valle Sagrado VIP',
+      description: 'Una experiencia VIP completa por el Valle Sagrado de los Incas, visitando Chinchero, Moray, Maras, Ollantaytambo y Pisac.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje para dar inicio a una experiencia completa por el Valle Sagrado de los Incas, recorriendo pueblos tradicionales, centros arqueológicos y paisajes andinos únicos.</p><p class="mb-4 mt-0">Viajarás con un servicio VIP que garantiza comodidad, organización y una mejor distribución del tiempo durante todo el día.</p><p class="mb-8 mt-0">El itinerario incluye visitas al centro textil de Chinchero, las terrazas circulares de Moray, las Salineras de Maras, un almuerzo buffet en Urubamba, la fortaleza de Ollantaytambo y el centro arqueológico y mercado de Pisac. Finalmente, retornamos a Cusco alrededor de las 07:00 p.m.</p>',
+      itinerary: [
+        { time: '06:30 a.m.', activity: 'Recojo desde su hospedaje y viaje hacia el Valle Sagrado' },
+        { time: '+ 1.5 horas', activity: 'Visita a Chinchero (Centro Textil)' },
+        { time: '+ 3 horas', activity: 'Exploración de Moray (Terrazas circulares incas)' },
+        { time: '+ 4 horas', activity: 'Visita a las Salineras de Maras' },
+        { time: '+ 6 horas', activity: 'Almuerzo buffet en Urubamba' },
+        { time: '+ 8 horas', activity: 'Tour guiado en el complejo arqueológico de Ollantaytambo' },
+        { time: '+ 10 horas', activity: 'Visita a Pisac (Centro Arqueológico y mercado)' },
+        { time: '07:00 p.m.', activity: 'Llegada a Cusco' }
+      ],
+      includes: [
+        'Guía turístico profesional bilingüe',
+        'Recojo a hospedaje',
+        'Transporte turístico',
+        'Almuerzo buffet'
+      ],
+      excludes: [
+        'Entradas (Boleto Turístico)',
+        'Entrada a salineras S/. 15 soles'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa cómoda y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'Necesitarás el Boleto Turístico parcial o general para ingresar a Chinchero, Moray, Ollantaytambo y Pisac, además de 15 soles en efectivo para las Salineras.'
+      ]
+    }
+  },
+  {
+    id: 44,
+    slug: 'montana-de-colores',
+    image: '/images/destinations/andes-trekking.jpg',
+    destination: 'Andes Trekking',
+    duration: 'Full Day (12.5 Hours)',
+    price: '30',
+    altitude: '5,200m',
+    difficulty: 'Moderate to Challenging',
+    type: 'Group Tour',
+    departure: '04:30 AM',
+    en: {
+      title: 'Rainbow Mountain (Vinicunca)',
+      description: 'Hike to the famous Rainbow Mountain and marvel at its spectacular colors and high Andean landscapes.',
+      overview: '<p class="mb-4 mt-0">The tour starts with a pickup from your accommodation to head south of Cusco for approximately 2 hours to the district of Cusipata, where we will enjoy an Andean breakfast. Then we continue the journey to the starting point of the hike.</p><p class="mb-4 mt-0">The hike to Rainbow Mountain (Vinicunca) takes approximately 1.5 to 2 hours, depending on your pace. During the tour, you can appreciate high Andean fauna such as llamas and alpacas.</p><p class="mb-8 mt-0">Upon reaching the viewpoint (approx. 5,200 m.a.s.l.), we will have time for photos and the guide\'s explanation about the geological formation of the mountain. Afterwards, we return along the same path to the transport to head back to Cusipata and enjoy a buffet lunch. Finally, we return to Cusco.</p>',
+      itinerary: [
+        { time: '04:30 AM', activity: 'Pickup from your accommodation and travel south to Cusipata' },
+        { time: '+ 2 hours', activity: 'Arrive in Cusipata for an Andean breakfast' },
+        { time: '+ 3 hours', activity: 'Travel to the trailhead and start the hike' },
+        { time: '+ 5 hours', activity: 'Arrive at the Rainbow Mountain viewpoint (5,200m) for photos and guide explanation' },
+        { time: '+ 7 hours', activity: 'Hike back to the transport' },
+        { time: '+ 9 hours', activity: 'Buffet lunch in Cusipata' },
+        { time: '05:00 PM', activity: 'Arrive back in Cusco' }
+      ],
+      includes: [
+        'Hotel pickup',
+        'Tourist transport',
+        'Breakfast',
+        'Buffet lunch',
+        'Professional guide',
+        'First aid kit'
+      ],
+      excludes: [
+        'Community entrance fee (direct payment on site)',
+        'Optional horse rental'
+      ],
+      packing: [
+        'Personal documents (Passport or ID)',
+        'Warm clothes and light jacket',
+        'Hat or cap and sunscreen',
+        'Water and light snacks',
+        'Camera or smartphone for photos',
+        'Rain poncho (during the rainy season)'
+      ],
+      tips: [
+        'Bring cash in Soles for the entrance fee, and optionally to rent a horse if you feel the altitude makes the hike too challenging.'
+      ]
+    },
+    es: {
+      title: 'Montaña de Colores (Vinicunca)',
+      description: 'Camina hasta la famosa Montaña de Colores y maravíllate con sus espectaculares colores y paisajes altoandinos.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje para dirigirnos hacia el sur de Cusco durante aproximadamente 2 horas hasta el distrito de Cusipata, donde disfrutaremos de un desayuno andino. Luego continuamos el viaje hasta el punto de inicio de la caminata.</p><p class="mb-4 mt-0">La caminata hacia la Montaña de Colores (Vinicunca) tiene una duración aproximada de 1 hora y 30 minutos a 2 horas, dependiendo del ritmo del pasajero. Durante el recorrido se aprecia fauna altoandina como llamas y alpacas.</p><p class="mb-8 mt-0">Al llegar al mirador (5,200 msnm aprox.) tendremos tiempo para fotos y explicación del guía sobre la formación geológica de la montaña. Posteriormente retornamos por el mismo camino hasta el transporte para dirigirnos nuevamente a Cusipata y disfrutar del almuerzo buffet. Finalmente retornamos a Cusco.</p>',
+      itinerary: [
+        { time: '04:30 a.m.', activity: 'Recojo desde su hospedaje y viaje hacia Cusipata' },
+        { time: '+ 2 horas', activity: 'Llegada a Cusipata para disfrutar de un desayuno andino' },
+        { time: '+ 3 horas', activity: 'Viaje al punto de inicio y comienzo de la caminata' },
+        { time: '+ 5 horas', activity: 'Llegada al mirador (5,200m) para fotos y explicación del guía' },
+        { time: '+ 7 horas', activity: 'Caminata de retorno al transporte' },
+        { time: '+ 9 horas', activity: 'Almuerzo buffet en Cusipata' },
+        { time: '05:00 p.m.', activity: 'Llegada a Cusco' }
+      ],
+      includes: [
+        'Recojo desde hospedaje',
+        'Transporte turístico',
+        'Desayuno',
+        'Almuerzo buffet',
+        'Guía profesional',
+        'Botiquín de primeros auxilios'
+      ],
+      excludes: [
+        'Ingreso a la comunidad (pago directo en el lugar)',
+        'Caballo opcional'
+      ],
+      packing: [
+        'Documentos personales (pasaporte o DNI)',
+        'Ropa abrigadora y chaqueta ligera',
+        'Sombrero o gorra y protector solar',
+        'Agua y refrigerios ligeros',
+        'Cámara o celular para fotos',
+        'Poncho de agua (temporada de lluvias)'
+      ],
+      tips: [
+        'Lleva dinero en efectivo en soles para pagar el ingreso, y de manera opcional para rentar un caballo si la altitud hace la caminata muy exigente.'
+      ]
+    }
   }
 ];
-
