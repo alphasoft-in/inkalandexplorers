@@ -145,7 +145,7 @@ const MainHero: React.FC<Props> = ({ lang }) => {
                 </a>
                 <a
                   href={`/${lang}/contact`}
-                  className="rounded-full border border-white/30 bg-black/30 px-8 py-3.5 text-sm font-bold text-white transition-all hover:bg-black/50"
+                  className="rounded-full border border-white/30 bg-black/30 backdrop-blur-md px-8 py-3.5 text-sm font-bold text-white transition-all hover:bg-black/50"
                 >
                   {lang === 'en' ? 'Contact Us' : 'Contáctanos'}
                 </a>
