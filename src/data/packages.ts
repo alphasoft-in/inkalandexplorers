@@ -3749,7 +3749,7 @@ export const packages: Package[] = [
     price: '60',
     altitude: 'Sea Level / 406m',
     difficulty: 'Easy',
-    type: 'Group Tour',
+    type: 'Lima Tours',
     departure: '05:00 AM',
     en: {
       title: 'Paracas & Ica Full Day',
@@ -3839,7 +3839,7 @@ export const packages: Package[] = [
     price: '35',
     altitude: 'Sea Level / 154m',
     difficulty: 'Easy',
-    type: 'Group Tour',
+    type: 'Lima Tours',
     departure: '09:15 AM, 02:15 PM',
     en: {
       title: 'Lima City Tour',
