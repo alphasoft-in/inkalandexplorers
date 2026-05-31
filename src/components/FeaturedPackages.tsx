@@ -59,7 +59,7 @@ const FeaturedPackages: React.FC<Props> = ({ lang }) => {
                       {lang === 'en' ? 'Details' : 'Detalles'}
                     </a>
                     <a 
-                      href={`https://wa.me/51951231364?text=${encodeURIComponent(lang === 'en' ? `Hello Inkaland Explorers, I'd like to inquire about the tour: ${pkg.en.title}` : `Hola Inkaland Explorers, me gustaría consultar sobre el tour: ${pkg.es.title}`)}`}
+                      href={`https://wa.me/51972438838?text=${encodeURIComponent(lang === 'en' ? `Hello Inkaland Explorers, I'd like to inquire about the tour: ${pkg.en.title}` : `Hola Inkaland Explorers, me gustaría consultar sobre el tour: ${pkg.es.title}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full bg-[#25D366] text-white text-center py-3 rounded-xl font-bold hover:bg-[#128C7E] transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/20"

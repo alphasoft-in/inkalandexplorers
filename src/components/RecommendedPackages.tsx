@@ -69,7 +69,7 @@ const RecommendedPackages: React.FC<Props> = ({ lang, excludeId, limit = 3 }) =>
                     </svg>
                   </a>
                   <a 
-                    href={`https://wa.me/51951231364?text=${encodeURIComponent(lang === 'en' ? `Hello Inkaland Explorers, I'd like to inquire about the tour: ${pkg.en.title}` : `Hola Inkaland Explorers, me gustaría consultar sobre el tour: ${pkg.es.title}`)}`}
+                    href={`https://wa.me/51972438838?text=${encodeURIComponent(lang === 'en' ? `Hello Inkaland Explorers, I'd like to inquire about the tour: ${pkg.en.title}` : `Hola Inkaland Explorers, me gustaría consultar sobre el tour: ${pkg.es.title}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center bg-[#25D366] text-white font-bold text-xs py-3 rounded-xl hover:bg-[#128C7E] transition-all duration-300 gap-2 shadow-lg shadow-[#25D366]/20"
