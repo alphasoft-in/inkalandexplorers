@@ -953,7 +953,8 @@ export const packages: Package[] = [
   {
     id: 11,
     slug: 'ausangate-7-lakes-hike',
-    image: '/tour-ausangate.png',
+    image: '/cusco/ausangate-desde-cusco.png',
+    heroImage: '/cusco/bc-ausangate-desde-cusco.png',
     price: '130',
     duration: 'Full Day',
     altitude: '4,200m – 4,850m',
@@ -1275,7 +1276,8 @@ export const packages: Package[] = [
   {
     id: 14,
     slug: 'vinicunca-rainbow-mountain-day-trip',
-    image: '/tour-vinicunca.png',
+    image: '/cusco/vinicunca.png',
+    heroImage: '/cusco/bc-vinicunca.png',
     price: '50',
     duration: 'Full Day',
     altitude: '4,600m – 5,200m',

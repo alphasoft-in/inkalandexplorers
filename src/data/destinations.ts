@@ -22,7 +22,7 @@ export const destinations: Destination[] = [
   {
     id: 1,
     slug: 'cusco',
-    image: '/machu-picchu/bc-machu-picchu.png',
+    image: '/cusco/bc-cusco.png',
 
     en: {
       title: 'Cusco',
