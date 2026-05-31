@@ -5,6 +5,7 @@ export interface Package {
   id: number;
   slug: string;
   image: string;
+  heroImage?: string;
   price: string;
   duration: string;
   altitude?: string;
@@ -1062,7 +1063,7 @@ export const packages: Package[] = [
   {
     id: 12,
     slug: 'machu-picchu-day-tour-from-cusco',
-    image: '/destination-machu-picchu.png',
+    image: '/machu-picchu/machupicchu-cusco.png',
     price: '280',
     duration: 'Full Day',
     altitude: '2,040m – 2,430m',
@@ -1164,7 +1165,7 @@ export const packages: Package[] = [
   {
     id: 13,
     slug: 'sacred-valley-machu-picchu-2-days',
-    image: '/tour-sacred-valley.png',
+    image: '/machu-picchu/machu-picchu-2d1n.png',
     price: '380',
     duration: '2 Days / 1 Night',
     altitude: '2,040m – 3,762m',

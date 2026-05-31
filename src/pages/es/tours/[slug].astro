@@ -27,7 +27,7 @@ const activeTabOverride = isPrivate ? undefined : 'packages';
 		<!-- Hero Section -->
 		<section class="relative h-[65vh] min-h-[550px] flex items-center justify-center overflow-hidden">
 			<div class="absolute inset-0 z-0">
-				<img src={pkg.image} alt={t.title} class="w-full h-full object-cover" />
+				<img src={pkg.heroImage || pkg.image} alt={t.title} class="w-full h-full object-cover" />
 				<!-- Multi-layer overlay for depth and legibility -->
 				<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/80"></div>
 				<div class="absolute inset-0 bg-[#0b403a]/40"></div>
