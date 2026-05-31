@@ -119,12 +119,28 @@ import TripInquiryForm from "../components/TripInquiryForm";
 
 		<!-- Lightbox Overlay -->
 		<div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center opacity-0 transition-opacity duration-300">
-			<button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white bg-black/20 p-2 rounded-full backdrop-blur-sm transition-colors">
+			<button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white bg-black/20 p-2 rounded-full backdrop-blur-sm transition-colors z-20">
 				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
 				</svg>
 			</button>
-			<img id="lightbox-img" src="" alt="Gallery Image" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl" />
+			
+			<button id="lightbox-prev" class="absolute left-2 md:left-6 text-white/70 hover:text-white bg-black/20 p-2 md:p-3 rounded-full backdrop-blur-sm transition-colors z-20">
+				<svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+				</svg>
+			</button>
+
+			<div class="flex flex-col items-center justify-center max-w-[85vw] max-h-[90vh]">
+				<img id="lightbox-img" src="" alt="Gallery Image" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl relative z-10" />
+				<div id="lightbox-caption" class="w-full text-center text-[#dfa126] font-bold uppercase tracking-[0.2em] text-sm z-20 mt-4 drop-shadow-md"></div>
+			</div>
+			
+			<button id="lightbox-next" class="absolute right-2 md:right-6 text-white/70 hover:text-white bg-black/20 p-2 md:p-3 rounded-full backdrop-blur-sm transition-colors z-20">
+				<svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+				</svg>
+			</button>
 		</div>
 
 		<!-- Footer -->
@@ -136,13 +152,37 @@ import TripInquiryForm from "../components/TripInquiryForm";
 	const lightbox = document.getElementById('lightbox');
 	const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
 	const closeBtn = document.getElementById('lightbox-close');
+	const prevBtn = document.getElementById('lightbox-prev');
+	const nextBtn = document.getElementById('lightbox-next');
+	const lightboxCaption = document.getElementById('lightbox-caption');
 	const galleryItems = document.querySelectorAll('.gallery-item');
+	
+	let currentIndex = 0;
+	const imagesData = Array.from(galleryItems).map(item => {
+		const img = item.querySelector('img');
+		return {
+			src: item.getAttribute('data-src'),
+			caption: img ? img.getAttribute('alt') : ''
+		};
+	});
 
-	galleryItems.forEach(item => {
+	const showImage = (index: number) => {
+		if (index < 0) index = imagesData.length - 1;
+		if (index >= imagesData.length) index = 0;
+		currentIndex = index;
+		const data = imagesData[currentIndex];
+		if (data.src && lightboxImg) {
+			lightboxImg.src = data.src;
+			if (lightboxCaption) {
+				lightboxCaption.textContent = data.caption;
+			}
+		}
+	};
+
+	galleryItems.forEach((item, index) => {
 		item.addEventListener('click', () => {
-			const src = item.getAttribute('data-src');
-			if (src && lightboxImg && lightbox) {
-				lightboxImg.src = src;
+			if (lightboxImg && lightbox) {
+				showImage(index);
 				lightbox.classList.remove('hidden');
 				lightbox.classList.add('flex');
 				// trigger reflow for animation
@@ -151,6 +191,16 @@ import TripInquiryForm from "../components/TripInquiryForm";
 				document.body.style.overflow = 'hidden'; // Prevent scrolling
 			}
 		});
+	});
+
+	prevBtn?.addEventListener('click', (e) => {
+		e.stopPropagation();
+		showImage(currentIndex - 1);
+	});
+
+	nextBtn?.addEventListener('click', (e) => {
+		e.stopPropagation();
+		showImage(currentIndex + 1);
 	});
 
 	const closeLightbox = () => {
@@ -169,10 +219,12 @@ import TripInquiryForm from "../components/TripInquiryForm";
 		if (e.target === lightbox) closeLightbox();
 	});
 	
-	// Close on Escape key
+	// Keyboard navigation
 	document.addEventListener('keydown', (e) => {
-		if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
-			closeLightbox();
+		if (lightbox && !lightbox.classList.contains('hidden')) {
+			if (e.key === 'Escape') closeLightbox();
+			if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+			if (e.key === 'ArrowRight') showImage(currentIndex + 1);
 		}
 	});
 </script>
