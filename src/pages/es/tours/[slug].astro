@@ -17,7 +17,7 @@ const { pkg } = Astro.props;
 const lang = 'es' as string;
 const t = pkg[lang as 'en' | 'es'];
 const isPrivate = pkg.en.title.toLowerCase().includes('private');
-const activeTabOverride = isPrivate ? 'none' : 'packages';
+const activeTabOverride = isPrivate ? undefined : 'packages';
 ---
 
 <Layout title={`${t.title} | Inkaland Explorers`} forceScrolled={true} activeTabOverride={activeTabOverride}>
