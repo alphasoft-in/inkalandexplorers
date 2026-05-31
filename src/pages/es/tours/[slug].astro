@@ -17,9 +17,19 @@ const { pkg } = Astro.props;
 const lang = 'es' as string;
 const t = pkg[lang as 'en' | 'es'];
 const isPrivate = pkg.en.title.toLowerCase().includes('private');
+
+let activeDestItem = undefined;
+const dest = (pkg.destination || '').toLowerCase();
+if (dest.includes('machu picchu')) activeDestItem = 'machu-picchu';
+else if (dest.includes('lima')) activeDestItem = 'lima';
+else if (dest.includes('paracas')) activeDestItem = 'paracas-ica';
+else if (dest.includes('arequipa')) activeDestItem = 'arequipa';
+else if (dest.includes('andes trekking')) activeDestItem = 'andes-trekking';
+else if (dest.includes('cusco') || dest.includes('sacred valley') || dest.includes('humantay') || dest.includes('maras') || dest.includes('palccoyo') || dest.includes('vinicunca') || dest.includes('south valley')) activeDestItem = 'cusco';
+
 ---
 
-<Layout title={`${t.title} | Inkaland Explorers`} forceScrolled={true} activeTabOverride="none">
+<Layout title={`${t.title} | Inkaland Explorers`} forceScrolled={true} activeTabOverride={activeDestItem ? "destinations" : "none"} activeDestItemOverride={activeDestItem}>
 	<main class="bg-white">
 
 

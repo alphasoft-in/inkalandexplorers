@@ -5,9 +5,10 @@ interface Props {
   forceScrolled?: boolean;
   currentPath?: string;
   activeTabOverride?: 'home' | 'destinations' | 'packages' | 'gallery' | 'about' | 'none';
+  activeDestItemOverride?: string;
 }
 
-export default function Navbar({ lang, forceScrolled = false, currentPath = '', activeTabOverride }: Props) {
+export default function Navbar({ lang, forceScrolled = false, currentPath = '', activeTabOverride, activeDestItemOverride }: Props) {
   const [isScrolled, setIsScrolled] = useState(forceScrolled);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -65,7 +66,7 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
   const currentT = t[lang];
 
   const isActiveHome = activeTabOverride === 'home' || (!activeTabOverride && (currentPath === '/' || currentPath === '/es' || currentPath === '/es/'));
-  const isActiveDestinations = activeTabOverride === 'destinations' || (!activeTabOverride && (currentPath.includes('/destinations') || currentPath.includes('/destinos')));
+  const isActiveDestinations = activeTabOverride === 'destinations' || (!activeTabOverride && (currentPath.includes('/destinations') || currentPath.includes('/destinos') || !!activeDestItemOverride));
   const isActivePackages = activeTabOverride === 'packages' || (!activeTabOverride && currentPath.includes('/tours'));
   const isActiveGallery = activeTabOverride === 'gallery' || (!activeTabOverride && currentPath.includes('/gallery'));
   const isActiveAbout = activeTabOverride === 'about' || (!activeTabOverride && currentPath.includes('/about'));
@@ -156,7 +157,7 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
             <div className="relative group">
               <button 
                 onClick={() => toggleDropdown('dest')}
-                className={`nav-btn-destinations ${getLinkClass(isActiveDestinations, true)}`}
+                className={getLinkClass(isActiveDestinations, true)}
               >
                 {currentT.destinations}
                 <svg className={`ml-1 w-4 h-4 transition-transform duration-300 ${activeDropdown === 'dest' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,12 +168,12 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
                 <div className="bg-white/95 backdrop-blur-xl border border-gray-100 rounded-lg shadow-2xl overflow-hidden py-2">
                   {currentT.destItems.map((item) => {
                     const itemSlug = item.href.split('/').pop();
-                    const isActive = currentPath === item.href || currentPath === item.href + '/';
+                    const isActive = currentPath === item.href || currentPath === item.href + '/' || activeDestItemOverride === itemSlug;
                     return (
                     <a 
                       key={item.label}
                       href={item.href}
-                      className={`nav-dropdown-${itemSlug} block px-6 py-3 text-sm transition-colors ${isActive ? 'bg-[#F9F6EE] text-[#dfa126] font-bold' : 'text-[#0b403a] hover:bg-[#F9F6EE] hover:text-[#dfa126]'}`}
+                      className={`block px-6 py-3 text-sm transition-colors ${isActive ? 'bg-[#F9F6EE] text-[#dfa126] font-bold' : 'text-[#0b403a] hover:bg-[#F9F6EE] hover:text-[#dfa126]'}`}
                     >
                       {item.label}
                     </a>
