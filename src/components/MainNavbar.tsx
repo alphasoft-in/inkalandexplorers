@@ -4,7 +4,7 @@ interface Props {
   lang: 'en' | 'es';
   forceScrolled?: boolean;
   currentPath?: string;
-  activeTabOverride?: 'home' | 'destinations' | 'packages' | 'gallery' | 'about';
+  activeTabOverride?: 'home' | 'destinations' | 'packages' | 'gallery' | 'about' | 'none';
 }
 
 export default function Navbar({ lang, forceScrolled = false, currentPath = '', activeTabOverride }: Props) {
