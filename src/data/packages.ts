@@ -46,7 +46,7 @@ export const packages: Package[] = [
   {
     id: 1,
     slug: 'humantay-lake-private-tour',
-    image: '/tour-humantay.png',
+    image: '/private/humantay-lake.png',
     price: '110',
     duration: 'Full Day',
     altitude: '2850m – 4200m',
@@ -162,7 +162,7 @@ export const packages: Package[] = [
   {
     id: 2,
     slug: 'machu-picchu-full-day',
-    image: '/hero-machu-picchu.png',
+    image: '/private/machu-picchu.png',
     price: '350',
 
     duration: 'Full Day',
@@ -268,11 +268,10 @@ export const packages: Package[] = [
       ]
     }
   },
-
   {
     id: 3,
     slug: 'machu-picchu-sacred-valley-2-days',
-    image: '/tour-sacred-valley.png',
+    image: '/private/valle-sagrado.png',
     price: '440',
     duration: '2 Days',
     altitude: '2,040m – 3,700m',
@@ -383,7 +382,7 @@ export const packages: Package[] = [
   {
     id: 4,
     slug: 'maras-moray-private-tour',
-    image: '/tour-maras-moray.png',
+    image: '/private/maras-moray.png',
     price: '65',
     duration: 'Half Day',
     altitude: '3,300m – 3,500m',
@@ -462,7 +461,7 @@ export const packages: Package[] = [
   {
     id: 5,
     slug: 'palccoyo-rainbow-mountain',
-    image: '/tour-palccoyo.png',
+    image: '/private/palcoyo-rainbow.png',
     price: '110',
     duration: 'Full Day',
     altitude: '4,900m',
@@ -559,7 +558,7 @@ export const packages: Package[] = [
   {
     id: 6,
     slug: 'south-valley-private-tour',
-    image: '/tour-south-valley.png',
+    image: '/private/valle-sur.png',
     price: '63',
     duration: 'Half Day',
     altitude: '3,100m – 3,500m',
@@ -666,7 +665,7 @@ export const packages: Package[] = [
   {
     id: 7,
     slug: 'sacred-valley-private-tour',
-    image: '/tour-sacred-valley.png',
+    image: '/private/valle-sagrado-desde-cusco.png',
     price: '70',
     duration: 'Full Day',
     altitude: '2,800m – 3,700m',
@@ -764,7 +763,7 @@ export const packages: Package[] = [
   {
     id: 8,
     slug: 'rainbow-mountain-vinicunca',
-    image: '/tour-vinicunca.png',
+    image: '/private/vinicunca-desde-cusco.png',
     price: '110',
     duration: 'Full Day',
     altitude: '5,036m',
@@ -881,7 +880,7 @@ export const packages: Package[] = [
   {
     id: 9,
     slug: 'cusco-city-tour-private',
-    image: '/hero-cusco.png',
+    image: '/private/cusco-privado.png',
     price: '50',
     duration: 'Half Day',
     altitude: '3,300m – 3,700m',

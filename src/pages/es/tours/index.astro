@@ -6,7 +6,7 @@ import { packages } from "../../../data/packages";
 
 const lang = 'es';
 
-const groupTours = packages.filter(pkg => pkg.type === 'Group Tour');
+const groupTours = packages.filter(pkg => pkg.type && pkg.type.includes('Group Tour'));
 ---
 
 <Layout title="Tours Grupales | Inkaland Explorers" forceScrolled={true}>
