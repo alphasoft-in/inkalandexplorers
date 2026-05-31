@@ -156,7 +156,7 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
             <div className="relative group">
               <button 
                 onClick={() => toggleDropdown('dest')}
-                className={getLinkClass(isActiveDestinations, true)}
+                className={`nav-btn-destinations ${getLinkClass(isActiveDestinations, true)}`}
               >
                 {currentT.destinations}
                 <svg className={`ml-1 w-4 h-4 transition-transform duration-300 ${activeDropdown === 'dest' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -166,12 +166,13 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
               <div className="absolute left-0 mt-2 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform group-hover:translate-y-0 translate-y-4">
                 <div className="bg-white/95 backdrop-blur-xl border border-gray-100 rounded-lg shadow-2xl overflow-hidden py-2">
                   {currentT.destItems.map((item) => {
+                    const itemSlug = item.href.split('/').pop();
                     const isActive = currentPath === item.href || currentPath === item.href + '/';
                     return (
                     <a 
                       key={item.label}
                       href={item.href}
-                      className={`block px-6 py-3 text-sm transition-colors ${isActive ? 'bg-[#F9F6EE] text-[#dfa126] font-bold' : 'text-[#0b403a] hover:bg-[#F9F6EE] hover:text-[#dfa126]'}`}
+                      className={`nav-dropdown-${itemSlug} block px-6 py-3 text-sm transition-colors ${isActive ? 'bg-[#F9F6EE] text-[#dfa126] font-bold' : 'text-[#0b403a] hover:bg-[#F9F6EE] hover:text-[#dfa126]'}`}
                     >
                       {item.label}
                     </a>

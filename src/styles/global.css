@@ -24,3 +24,19 @@
   scrollbar-width: thin;
   scrollbar-color: #cbd5e1 #f8f9fa;
 }
+
+/* Dynamic Navbar Active State (No-Flash SSG Workaround) */
+html[data-nav-ref] .nav-btn-destinations {
+  color: #dfa126 !important;
+}
+
+html[data-nav-ref="machu-picchu"] .nav-dropdown-machu-picchu,
+html[data-nav-ref="cusco"] .nav-dropdown-cusco,
+html[data-nav-ref="lima"] .nav-dropdown-lima,
+html[data-nav-ref="paracas-ica"] .nav-dropdown-paracas-ica,
+html[data-nav-ref="arequipa"] .nav-dropdown-arequipa,
+html[data-nav-ref="andes-trekking"] .nav-dropdown-andes-trekking {
+  background-color: #F9F6EE !important;
+  color: #dfa126 !important;
+  font-weight: bold !important;
+}
