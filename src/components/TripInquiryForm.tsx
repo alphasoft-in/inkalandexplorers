@@ -115,8 +115,8 @@ Viajeros: ${formData.adults} Adultos, ${formData.children} Niños`;
                   >
                     <option value="" disabled>{lang === 'en' ? 'Choose a tour...' : 'Elige un tour...'}</option>
                     {packages.map(pkg => (
-                      <option key={pkg.id} value={pkg[lang].title}>
-                        {pkg[lang].title}
+                      <option key={pkg.id} value={`${pkg[lang].title} ($${pkg.price} USD)`}>
+                        {pkg[lang].title} - ${pkg.price} USD
                       </option>
                     ))}
                   </select>
