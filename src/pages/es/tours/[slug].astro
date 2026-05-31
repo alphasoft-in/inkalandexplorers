@@ -73,7 +73,7 @@ const activeTabOverride = isPrivate ? 'packages' : 'destinations';
 					</div>
 					<div>
 						<p class="text-sm font-medium text-gray-500 mb-1">Tipo de Tour</p>
-						<p class="text-[#0b403a] text-sm">{pkg.type}</p>
+						<p class="text-[#0b403a] text-sm">{pkg.type || 'N/A'}</p>
 					</div>
 				</div>
 
@@ -103,7 +103,7 @@ const activeTabOverride = isPrivate ? 'packages' : 'destinations';
 					</div>
 					<div>
 						<p class="text-sm font-medium text-gray-500 mb-1">Elevación</p>
-						<p class="text-[#0b403a] text-sm">{pkg.altitude}</p>
+						<p class="text-[#0b403a] text-sm">{pkg.altitude || 'N/A'}</p>
 					</div>
 				</div>
 
@@ -117,7 +117,7 @@ const activeTabOverride = isPrivate ? 'packages' : 'destinations';
 					</div>
 					<div>
 						<p class="text-sm font-medium text-gray-500 mb-1">Dificultad</p>
-						<p class="text-[#0b403a] text-sm">{pkg.difficulty}</p>
+						<p class="text-[#0b403a] text-sm">{pkg.difficulty || 'N/A'}</p>
 					</div>
 				</div>
 
@@ -132,7 +132,7 @@ const activeTabOverride = isPrivate ? 'packages' : 'destinations';
 					</div>
 					<div>
 						<p class="text-sm font-medium text-gray-500 mb-1">Salida</p>
-						<p class="text-[#0b403a] text-sm">{pkg.departure}</p>
+						<p class="text-[#0b403a] text-sm">{pkg.departure || 'N/A'}</p>
 					</div>
 				</div>
 
@@ -203,14 +203,31 @@ const activeTabOverride = isPrivate ? 'packages' : 'destinations';
 						<div>
 							<h2 class="font-['Outfit'] text-3xl font-bold text-[#0b403a] mb-6">Itinerario Detallado</h2>
 							<div class="space-y-0 relative before:absolute before:left-[11px] before:top-4 before:bottom-4 before:w-0.5 before:bg-[#0b403a]/10">
-								{t.itinerary.map((item: { time: string; activity: string }) => (
-									<div class="relative pl-10 pb-5 last:pb-0">
-
-										<div class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-white border-4 border-[#0b403a] z-10"></div>
-										<p class="text-[10px] uppercase tracking-widest font-bold text-[#dfa126] mb-0.5">{item.time}</p>
-										<p class="text-gray-700 font-light text-sm leading-relaxed whitespace-pre-line">{item.activity}</p>
-									</div>
-								))}
+								{t.itinerary.map((item: any) => {
+									if ('day' in item) {
+										return (
+											<div class="relative pl-10 pb-8 last:pb-0">
+												<div class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-white border-4 border-[#0b403a] z-10"></div>
+												<p class="text-sm uppercase tracking-widest font-bold text-[#dfa126] mb-2">Día {item.day}: {item.title}</p>
+												<div class="space-y-4">
+													{item.activities.map((act: any) => (
+														<div class="pl-4 border-l-2 border-[#dfa126]/30">
+															<p class="text-[10px] uppercase tracking-widest font-bold text-[#dfa126] mb-0.5">{act.time}</p>
+															<p class="text-gray-700 font-light text-sm leading-relaxed whitespace-pre-line">{act.description}</p>
+														</div>
+													))}
+												</div>
+											</div>
+										);
+									}
+									return (
+										<div class="relative pl-10 pb-5 last:pb-0">
+											<div class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-white border-4 border-[#0b403a] z-10"></div>
+											<p class="text-[10px] uppercase tracking-widest font-bold text-[#dfa126] mb-0.5">{item.time}</p>
+											<p class="text-gray-700 font-light text-sm leading-relaxed whitespace-pre-line">{item.activity}</p>
+										</div>
+									);
+								})}
 							</div>
 						</div>
 

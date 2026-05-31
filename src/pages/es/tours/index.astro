@@ -1,0 +1,90 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import SiteFooter from "../../../components/SiteFooter";
+import TripInquiryForm from "../../../components/TripInquiryForm";
+import { packages } from "../../../data/packages";
+
+const lang = 'es';
+
+const groupTours = packages.filter(pkg => pkg.type === 'Group Tour');
+---
+
+<Layout title="Tours Grupales | Inkaland Explorers" forceScrolled={true}>
+	<main class="bg-white">
+		<!-- Hero Section -->
+		<section class="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+			<div class="absolute inset-0 z-0">
+				<img src="/hero-machu-picchu.png" alt="Tours Grupales" class="w-full h-full object-cover" />
+				<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
+				<div class="absolute inset-0 bg-[#0b403a]/30"></div>
+			</div>
+			<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+				<nav class="flex justify-center mb-6 text-[#dfa126] text-xs uppercase tracking-[0.3em] font-bold">
+					<a href="/es" class="hover:text-white transition-colors">Inicio</a>
+					<span class="mx-3 text-white/30">/</span>
+					<span class="text-white/60">Tours</span>
+				</nav>
+				<h1 class="font-['Outfit'] text-3xl md:text-5xl font-bold text-white mb-5 leading-tight drop-shadow-2xl">
+					Tours Grupales
+				</h1>
+				<p class="text-base md:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
+					Únete a otros viajeros en estas experiencias únicas por los Andes.
+				</p>
+			</div>
+		</section>
+
+		<!-- Tours Grid -->
+		<section class="py-24 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-sm font-bold text-[#dfa126] uppercase tracking-[0.2em] mb-4">Experiencias Curadas</h2>
+					<h3 class="text-4xl font-bold text-[#0b403a] font-['Outfit']">Todos los Tours Grupales</h3>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{groupTours.map((pkg) => (
+						<div class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 flex flex-col">
+							<a href={`/es/tours/${pkg.slug}`} class="block relative h-64 overflow-hidden">
+								<img src={pkg.image} alt={pkg.es.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+								<div class="absolute top-4 right-4 px-4 py-1 bg-white/90 backdrop-blur-md rounded-full text-[#0b403a] text-sm font-bold shadow-lg">
+									Desde ${pkg.price}
+								</div>
+							</a>
+							<div class="p-8 flex flex-col flex-grow">
+								<div class="flex items-center text-[#dfa126] text-xs font-bold uppercase tracking-widest mb-3">
+									<span class="mr-2">{pkg.duration}</span>
+									<span class="mx-2 text-gray-300">|</span>
+									<span>{pkg.difficulty}</span>
+								</div>
+								<a href={`/es/tours/${pkg.slug}`} class="block">
+									<h4 class="text-xl font-bold text-[#0b403a] mb-3 font-['Outfit'] group-hover:text-[#dfa126] transition-colors">{pkg.es.title}</h4>
+								</a>
+								<p class="text-gray-500 text-sm line-clamp-2 mb-6 leading-relaxed flex-grow">{pkg.es.description}</p>
+								
+								<div class="grid grid-cols-2 gap-4 mt-auto">
+									<a href={`/es/tours/${pkg.slug}`} class="flex items-center justify-center text-[#0b403a] font-bold text-xs border border-[#0b403a]/20 py-3 rounded-xl hover:bg-[#0b403a] hover:text-white transition-all duration-300">
+										Ver Detalles
+										<svg class="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+										</svg>
+									</a>
+									<a 
+										href={`https://wa.me/51951231364?text=${encodeURIComponent(`Hola Inkaland Explorers, me gustaría consultar sobre el tour: ${pkg.es.title}`)}`}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="flex items-center justify-center bg-[#dfa126] text-[#0b403a] font-bold text-xs py-3 rounded-xl hover:bg-[#c88d1d] transition-colors shadow-md"
+									>
+										Reservar
+									</a>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<TripInquiryForm client:visible lang="es" />
+	</main>
+	<SiteFooter lang="es" />
+</Layout>

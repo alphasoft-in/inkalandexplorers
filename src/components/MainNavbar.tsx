@@ -33,7 +33,7 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
         { label: 'Andes Trekking', href: '/destinations/andes-trekking' },
       ],
       pkgItems: [
-        { label: 'All Private Tours', href: '/tours' },
+        { label: 'ATV Abode of the Gods', href: '/tours/cuatrimotos-morada-dioses' },
       ]
 
     },
@@ -56,7 +56,7 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
         { label: 'Andes Trekking', href: '/es/destinos/andes-trekking' },
       ],
       pkgItems: [
-        { label: 'Todos los Tours', href: '/es/tours' },
+        { label: 'Cuatrimotos Morada Dioses', href: '/es/tours/cuatrimotos-morada-dioses' },
       ]
 
     }
@@ -77,13 +77,13 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
     
     if (isActive) return `${base} text-[#dfa126]`;
     
-    const inactiveColor = isScrolled ? "text-[#0b403a]" : "text-white";
+    const inactiveColor = (isScrolled || mobileMenuOpen) ? "text-[#0b403a]" : "text-white";
     const hoverColor = isDropdown ? "group-hover:text-[#dfa126]" : "hover:text-[#dfa126]";
     return `${base} ${inactiveColor} ${hoverColor}`;
   };
 
   const getMobileLinkClass = (isActive: boolean) => {
-    return `block text-xl font-bold transition-colors ${isActive ? 'text-[#dfa126]' : 'text-[#0b403a]'}`;
+    return `block text-base font-bold transition-colors ${isActive ? 'text-[#dfa126]' : 'text-[#0b403a]'}`;
   };
 
   useEffect(() => {
@@ -102,6 +102,18 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [forceScrolled]);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const toggleDropdown = (name: string) => {
     if (activeDropdown === name) {
       setActiveDropdown(null);
@@ -113,7 +125,7 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
   return (
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out ${
-        isScrolled 
+        (isScrolled || mobileMenuOpen) 
           ? 'bg-white py-3 shadow-xl shadow-black/5' 
           : 'bg-transparent py-7'
       }`}
@@ -126,7 +138,7 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
               <img 
                 src="/Logo Inkaland.webp" 
                 alt="Logo" 
-                className={`h-16 w-auto transition-all duration-700 ease-in-out hover:scale-105 ${!isScrolled ? 'brightness-0 invert' : ''}`} 
+                className={`h-16 w-auto transition-all duration-700 ease-in-out hover:scale-105 ${!(isScrolled || mobileMenuOpen) ? 'brightness-0 invert' : ''}`} 
               />
             </a>
           </div>
@@ -168,33 +180,13 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
               </div>
             </div>
 
-            {/* Packages Dropdown */}
-            <div className="relative group">
-              <button 
-                onClick={() => toggleDropdown('pkg')}
-                className={getLinkClass(isActivePackages, true)}
-              >
-                {currentT.packages}
-                <svg className={`ml-1 w-4 h-4 transition-transform duration-300 ${activeDropdown === 'pkg' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div className="absolute left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform group-hover:translate-y-0 translate-y-4">
-                <div className="bg-white/95 backdrop-blur-xl border border-gray-100 rounded-lg shadow-2xl overflow-hidden py-2">
-                  {currentT.pkgItems.map((item) => {
-                    const isActive = currentPath === item.href || currentPath === item.href + '/';
-                    return (
-                    <a 
-                      key={item.label}
-                      href={item.href}
-                      className={`block px-6 py-3 text-sm transition-colors ${isActive ? 'bg-[#F9F6EE] text-[#dfa126] font-bold' : 'text-[#0b403a] hover:bg-[#F9F6EE] hover:text-[#dfa126]'}`}
-                    >
-                      {item.label}
-                    </a>
-                  )})}
-                </div>
-              </div>
-            </div>
+            {/* Packages Link */}
+            <a 
+              href={lang === 'en' ? '/tours' : '/es/tours'} 
+              className={getLinkClass(isActivePackages)}
+            >
+              {currentT.packages}
+            </a>
 
             <a 
               href={lang === 'en' ? '/gallery' : '/es/gallery'} 
@@ -218,14 +210,14 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
             </a>
 
             {/* Language Switcher */}
-            <div className={`flex items-center border-l pl-6 transition-colors duration-700 ${isScrolled ? 'border-gray-200' : 'border-white/20'}`}>
+            <div className={`flex items-center border-l pl-6 transition-colors duration-700 ${(isScrolled || mobileMenuOpen) ? 'border-gray-200' : 'border-white/20'}`}>
               <a 
                 href={currentT.switchLang}
-                className={`text-xs font-bold transition-all duration-500 flex items-center ${isScrolled ? 'text-gray-400' : 'text-white/60'}`}
+                className={`text-xs font-bold transition-all duration-500 flex items-center ${(isScrolled || mobileMenuOpen) ? 'text-gray-400' : 'text-white/60'}`}
               >
-                <span className={lang === 'en' ? (isScrolled ? 'text-[#0b403a]' : 'text-white') : 'hover:text-[#dfa126]'}>EN</span>
+                <span className={lang === 'en' ? ((isScrolled || mobileMenuOpen) ? 'text-[#0b403a]' : 'text-white') : 'hover:text-[#dfa126]'}>EN</span>
                 <span className="mx-2 opacity-30">|</span>
-                <span className={lang === 'es' ? (isScrolled ? 'text-[#0b403a]' : 'text-white') : 'hover:text-[#dfa126]'}>ES</span>
+                <span className={lang === 'es' ? ((isScrolled || mobileMenuOpen) ? 'text-[#0b403a]' : 'text-white') : 'hover:text-[#dfa126]'}>ES</span>
               </a>
             </div>
           </div>
@@ -234,7 +226,7 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
           <div className="lg:hidden flex items-center">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`transition-all duration-700 p-2 ${isScrolled ? 'text-[#0b403a]' : 'text-white'}`}
+              className={`transition-all duration-700 p-2 ${(isScrolled || mobileMenuOpen) ? 'text-[#0b403a]' : 'text-white'}`}
             >
               {mobileMenuOpen ? (
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -251,53 +243,48 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-gray-100 transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 visible max-h-[calc(100vh-80px)]' : 'opacity-0 invisible max-h-0'} overflow-y-auto`}>
-        <div className="px-6 py-8 space-y-6 text-center">
+      <div className={`lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-gray-100 transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 visible h-[calc(100vh-80px)]' : 'opacity-0 invisible h-0'} overflow-y-auto`}>
+        <div className="px-6 py-4 space-y-2 text-center">
           <a href={lang === 'en' ? '/' : '/es'} onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass(isActiveHome)}>
             {currentT.home}
           </a>
           
-          <div className="space-y-4 pt-2 border-t border-gray-100/50">
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{currentT.destinations}</p>
+          <div className="space-y-2 pt-2 border-t border-gray-100/50">
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{currentT.destinations}</p>
             {currentT.destItems.map((item) => {
               const isActive = currentPath === item.href || currentPath === item.href + '/';
               return (
-              <a key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className={`block text-lg font-semibold ${isActive ? 'text-[#dfa126]' : 'text-[#0b403a]'}`}>
+              <a key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className={`block text-[15px] font-semibold ${isActive ? 'text-[#dfa126]' : 'text-[#0b403a]'}`}>
                 {item.label}
               </a>
             )})}
           </div>
 
-          <div className="space-y-4 pt-6 border-t border-gray-100/50">
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{currentT.packages}</p>
-            {currentT.pkgItems.map((item) => {
-              const isActive = currentPath === item.href || currentPath === item.href + '/';
-              return (
-              <a key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className={`block text-lg font-semibold ${isActive ? 'text-[#dfa126]' : 'text-[#0b403a]'}`}>
-                {item.label}
-              </a>
-            )})}
+          <div className="pt-2 border-t border-gray-100/50">
+            <a href={lang === 'en' ? '/tours' : '/es/tours'} onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass(isActivePackages)}>
+              {currentT.packages}
+            </a>
           </div>
 
-          <div className="pt-6 border-t border-gray-100/50">
+          <div className="pt-2 border-t border-gray-100/50">
             <a href={lang === 'en' ? '/gallery' : '/es/gallery'} onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass(isActiveGallery)}>
               {currentT.gallery}
             </a>
           </div>
 
-          <div className="pt-6 border-t border-gray-100/50">
+          <div className="pt-2 border-t border-gray-100/50">
             <a href={lang === 'en' ? '/about' : '/es/about'} onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass(isActiveAbout)}>
               {currentT.about}
             </a>
           </div>
           
-          <div className="pt-4">
-            <a href={lang === 'en' ? '/contact' : '/es/contact'} onClick={() => setMobileMenuOpen(false)} className="inline-block px-8 py-3 bg-[#dfa126] text-[#0b403a] rounded-full text-lg font-bold">
+          <div className="pt-2">
+            <a href={lang === 'en' ? '/contact' : '/es/contact'} onClick={() => setMobileMenuOpen(false)} className="inline-block px-6 py-2 bg-[#dfa126] text-[#0b403a] rounded-full text-sm font-bold">
               {currentT.contact}
             </a>
           </div>
 
-          <div className="pt-6 flex justify-center space-x-8 pb-4">
+          <div className="pt-2 flex justify-center space-x-8 pb-2">
             <a href="/" onClick={() => setMobileMenuOpen(false)} className={`text-sm font-bold ${lang === 'en' ? 'text-[#0b403a]' : 'text-gray-400'}`}>EN</a>
             <a href="/es" onClick={() => setMobileMenuOpen(false)} className={`text-sm font-bold ${lang === 'es' ? 'text-[#0b403a]' : 'text-gray-400'}`}>ES</a>
           </div>

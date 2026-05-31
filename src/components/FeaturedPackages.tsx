@@ -42,16 +42,16 @@ const FeaturedPackages: React.FC<Props> = ({ lang }) => {
               </div>
 
               {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <div className="mb-2">
                     <h3 className="font-['Outfit'] text-xl font-bold text-[#0b403a] group-hover:text-[#dfa126] transition-colors">
                       {pkg[lang].title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 text-sm mb-6 font-light line-clamp-2">
+                  <p className="text-gray-600 text-sm mb-6 font-light line-clamp-2 flex-grow">
                     {pkg[lang].description}
                   </p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-3 mt-auto">
                     <a 
                       href={lang === 'es' ? `/es/tours/${pkg.slug}` : `/tours/${pkg.slug}`}
                       className="block w-full border border-[#0b403a] text-[#0b403a] text-center py-3 rounded-xl font-medium hover:bg-[#0b403a] hover:text-white transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center justify-center"
