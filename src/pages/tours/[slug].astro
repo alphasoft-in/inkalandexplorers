@@ -371,7 +371,7 @@ const activeTabOverride = isPrivate ? 'none' : 'packages';
 									Enquire via WhatsApp
 								</a>
 								<a 
-									href={`https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=inkalandexplorers@gmail.com&item_name=${encodeURIComponent(t.title)}&currency_code=USD`}
+									href={`https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=inkalandexplorers@gmail.com&item_name=${encodeURIComponent(t.title)}&amount=${t.price}&undefined_quantity=1&currency_code=USD`}
 									target="_blank"
 									rel="noopener noreferrer"
 									class="block w-full bg-[#0070ba] text-white text-center font-bold py-2.5 rounded-xl hover:bg-[#003087] transition-all duration-300 transform hover:scale-[1.02] active:scale-95 uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 shadow-lg"
