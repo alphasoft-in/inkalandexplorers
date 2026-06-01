@@ -7,11 +7,13 @@ interface SliderItem {
     title: string;
     subtitle: string;
     cta: string;
+    href?: string;
   };
   es: {
     title: string;
     subtitle: string;
     cta: string;
+    href?: string;
   };
 }
 
@@ -22,12 +24,14 @@ const sliderData: SliderItem[] = [
     en: {
       title: 'Magical Machu Picchu 5D/4N',
       subtitle: 'A mystical journey through the Sacred Valley and the wonders of Machu Picchu.',
-      cta: 'View Program'
+      cta: 'View Program',
+      href: '/tours/magical-machu-picchu-5d-4n'
     },
     es: {
       title: 'Machu Picchu Mágico 5D/4N',
       subtitle: 'Un viaje místico por el Valle Sagrado y las maravillas de Machu Picchu.',
-      cta: 'Ver Programa'
+      cta: 'Ver Programa',
+      href: '/es/tours/magical-machu-picchu-5d-4n'
     }
   },
   {
@@ -138,7 +142,7 @@ const MainHero: React.FC<Props> = ({ lang }) => {
               </p>
               <div className="flex justify-center space-x-4">
                 <a
-                  href={`/${lang}/packages`}
+                  href={slide[lang].href || `/${lang === 'en' ? '' : 'es/'}packages`}
                   className="rounded-full bg-[#dfa126] px-8 py-3.5 text-sm font-bold text-[#0b403a] shadow-lg shadow-[#dfa126]/20 transition-all hover:scale-105 hover:bg-[#f1c56e]"
                 >
                   {slide[lang].cta}
