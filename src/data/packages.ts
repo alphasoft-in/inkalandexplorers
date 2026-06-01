@@ -3668,7 +3668,7 @@ export const packages: Package[] = [
     image: '/images/destinations/andes-trekking.jpg',
     destination: 'Andes Trekking',
     duration: 'Full Day (17 Hours)',
-    price: '80',
+    price: '65',
     latitude: -13.9333,
     longitude: -70.8333,
     altitude: '5,200m',
