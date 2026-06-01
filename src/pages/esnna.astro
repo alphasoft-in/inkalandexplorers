@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SiteFooter from "../components/SiteFooter";
+---
+
+<Layout title="ESNNA | Inkaland Explorers" forceScrolled={true} activeTabOverride="none">
+	<main class="w-full bg-[#F9F6EE] pt-28 pb-20">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<nav class="flex mb-8 text-[#0b403a] text-xs uppercase tracking-[0.2em] font-bold">
+				<a href="/" class="hover:text-[#dfa126] transition-colors">Home</a>
+				<span class="mx-3 opacity-50">/</span>
+				<span class="text-[#dfa126]">ESNNA</span>
+			</nav>
+
+			<div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-black/5">
+				<h1 class="font-['Outfit'] text-3xl md:text-5xl font-bold text-[#0b403a] mb-8 leading-tight">
+					Prevention of ESNNA
+				</h1>
+				<div class="prose prose-lg text-gray-600 max-w-none">
+					<p class="mb-6 leading-relaxed">
+						<strong>Inkaland Explorers</strong> is firmly committed to the prevention and eradication of the Sexual Exploitation of Children and Adolescents (ESNNA) in the context of travel and tourism in Peru.
+					</p>
+					
+					<h3 class="font-['Outfit'] text-2xl font-bold text-[#0b403a] mt-8 mb-4">Our Commitment</h3>
+					<p class="mb-4 leading-relaxed">
+						In compliance with Peruvian legislation (Law N° 29408, General Tourism Law, and Law N° 30802), we adopt strict measures to ensure our operations, collaborators, and clients do not participate in, promote, or tolerate activities related to the sexual exploitation of minors.
+					</p>
+
+					<ul class="list-disc pl-6 mb-6 space-y-2">
+						<li>We train our staff and guides to identify and report any suspicious activity to the local authorities.</li>
+						<li>We require all our clients to respect local laws regarding the protection of minors.</li>
+						<li>We collaborate with local authorities and communities to create safe environments for children and adolescents in tourist destinations.</li>
+					</ul>
+
+					<h3 class="font-['Outfit'] text-2xl font-bold text-[#0b403a] mt-8 mb-4">Reporting</h3>
+					<p class="mb-4 leading-relaxed">
+						If you witness or suspect any case of sexual exploitation of minors during your trip, we urge you to report it immediately to our guides or contact the local authorities directly through the Peruvian National Police or the toll-free hotline <strong>1818</strong>.
+					</p>
+					<p class="mb-6 leading-relaxed">
+						Let's work together to protect our children and promote responsible, ethical, and sustainable tourism in Peru.
+					</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<SiteFooter lang="en" />
+</Layout>

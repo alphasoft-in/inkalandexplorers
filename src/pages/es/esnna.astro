@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SiteFooter from "../../components/SiteFooter";
+---
+
+<Layout title="ESNNA | Inkaland Explorers" forceScrolled={true} activeTabOverride="none">
+	<main class="w-full bg-[#F9F6EE] pt-28 pb-20">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<nav class="flex mb-8 text-[#0b403a] text-xs uppercase tracking-[0.2em] font-bold">
+				<a href="/es/" class="hover:text-[#dfa126] transition-colors">Inicio</a>
+				<span class="mx-3 opacity-50">/</span>
+				<span class="text-[#dfa126]">ESNNA</span>
+			</nav>
+
+			<div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-black/5">
+				<h1 class="font-['Outfit'] text-3xl md:text-5xl font-bold text-[#0b403a] mb-8 leading-tight">
+					Prevención de la ESNNA
+				</h1>
+				<div class="prose prose-lg text-gray-600 max-w-none">
+					<p class="mb-6 leading-relaxed">
+						<strong>Inkaland Explorers</strong> está firmemente comprometido con la prevención y erradicación de la Explotación Sexual de Niñas, Niños y Adolescentes (ESNNA) en el ámbito del turismo en el Perú.
+					</p>
+					
+					<h3 class="font-['Outfit'] text-2xl font-bold text-[#0b403a] mt-8 mb-4">Nuestro Compromiso</h3>
+					<p class="mb-4 leading-relaxed">
+						En cumplimiento con la legislación peruana (Ley N° 29408, Ley General de Turismo, y Ley N° 30802), adoptamos medidas estrictas para asegurar que nuestras operaciones, colaboradores y clientes no participen, promuevan ni toleren actividades relacionadas con la explotación sexual de menores.
+					</p>
+
+					<ul class="list-disc pl-6 mb-6 space-y-2">
+						<li>Capacitamos a nuestro personal y guías para identificar y reportar cualquier actividad sospechosa a las autoridades locales.</li>
+						<li>Exigimos a todos nuestros clientes el respeto a las leyes locales en materia de protección al menor.</li>
+						<li>Colaboramos con autoridades locales y comunidades para crear entornos seguros para la niñez y adolescencia en los destinos turísticos.</li>
+					</ul>
+
+					<h3 class="font-['Outfit'] text-2xl font-bold text-[#0b403a] mt-8 mb-4">Denuncias</h3>
+					<p class="mb-4 leading-relaxed">
+						Si eres testigo o sospechas de algún caso de explotación sexual de menores durante tu viaje, te instamos a reportarlo inmediatamente a nuestros guías o comunicarte directamente con las autoridades locales a través de la Policía Nacional del Perú o la línea gratuita <strong>1818</strong>.
+					</p>
+					<p class="mb-6 leading-relaxed">
+						Trabajemos juntos para proteger a nuestra niñez y promover un turismo responsable, ético y sostenible en el Perú.
+					</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<SiteFooter lang="es" />
+</Layout>
