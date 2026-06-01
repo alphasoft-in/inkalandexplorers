@@ -40,12 +40,14 @@ const sliderData: SliderItem[] = [
     en: {
       title: 'Cusco Adventure 4D/3N',
       subtitle: 'High-adrenaline experiences in the heart of the Inca Empire.',
-      cta: 'View Program'
+      cta: 'View Program',
+      href: '/tours/cusco-adventure-4d-3n'
     },
     es: {
       title: 'Cusco Aventura 4D/3N',
       subtitle: 'Experiencias de pura adrenalina en el corazón del Imperio Inca.',
-      cta: 'Ver Programa'
+      cta: 'Ver Programa',
+      href: '/es/tours/cusco-adventure-4d-3n'
     }
   },
   {
@@ -54,12 +56,14 @@ const sliderData: SliderItem[] = [
     en: {
       title: 'Andes Trekking',
       subtitle: 'The ultimate trekking experience through glacial peaks and cloud forests.',
-      cta: 'Explore Trek'
+      cta: 'Explore Trek',
+      href: '/destinations/andes-trekking'
     },
     es: {
       title: 'Andes Trekking',
       subtitle: 'La experiencia definitiva de trekking por picos glaciares y selva alta.',
-      cta: 'Explorar Trek'
+      cta: 'Explorar Trek',
+      href: '/es/destinos/andes-trekking'
     }
   },
   {
@@ -68,12 +72,14 @@ const sliderData: SliderItem[] = [
     en: {
       title: 'Paracas & Ica Wonders',
       subtitle: 'Discover the red sand beaches and the magic of the desert oases.',
-      cta: 'View Coastal'
+      cta: 'View Coastal',
+      href: '/destinations/paracas-ica'
     },
     es: {
       title: 'Paracas e Ica Mágico',
       subtitle: 'Descubre las playas de arena roja y la magia de los oasis del desierto.',
-      cta: 'Ver Costa'
+      cta: 'Ver Costa',
+      href: '/es/destinos/paracas-ica'
     }
   },
   {
@@ -82,12 +88,14 @@ const sliderData: SliderItem[] = [
     en: {
       title: 'Arequipa & Colca Canyon',
       subtitle: 'Witness the majestic flight of the Condor in the deepest canyon.',
-      cta: 'Explore Arequipa'
+      cta: 'Explore Arequipa',
+      href: '/destinations/arequipa'
     },
     es: {
       title: 'Arequipa y Cañón del Colca',
       subtitle: 'Presencia el majestuoso vuelo del Cóndor en el cañón más profundo.',
-      cta: 'Explorar Arequipa'
+      cta: 'Explorar Arequipa',
+      href: '/es/destinos/arequipa'
     }
   }
 ];

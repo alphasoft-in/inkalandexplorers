@@ -4628,5 +4628,94 @@ export const packages: Package[] = [
       excludes: ['Exclusión de prueba 1', 'Exclusión de prueba 2'],
       packing: ['Articulo 1', 'Articulo 2']
     }
+  },
+  {
+    id: 46,
+    slug: 'cusco-adventure-4d-3n',
+    image: '/tour-placeholder.png',
+    heroImage: '/bc-placeholder.png',
+    price: '0',
+    duration: '4 Days / 3 Nights',
+    altitude: 'Various',
+    difficulty: 'Moderate to Challenging',
+    type: 'Adventure',
+    departure: 'Cusco',
+    destination: 'Cusco',
+    en: {
+      title: 'Cusco Adventure 4D/3N',
+      description: 'High-adrenaline experiences in the heart of the Inca Empire.',
+      overview: '<p class="mb-4 mt-0">Placeholder overview for Cusco Adventure 4D/3N. Please update this text.</p>',
+      itinerary: [
+        {
+          day: 1,
+          title: 'Arrival and acclimatization',
+          activities: [
+            { time: 'TBD', description: 'Arrival and transfer' }
+          ]
+        },
+        {
+          day: 2,
+          title: 'Adventure Activity 1',
+          activities: [
+            { time: 'TBD', description: 'Placeholder activity' }
+          ]
+        },
+        {
+          day: 3,
+          title: 'Adventure Activity 2',
+          activities: [
+            { time: 'TBD', description: 'Placeholder activity' }
+          ]
+        },
+        {
+          day: 4,
+          title: 'Departure',
+          activities: [
+            { time: 'TBD', description: 'Transfer to airport' }
+          ]
+        }
+      ],
+      includes: ['Placeholder inclusion 1'],
+      excludes: ['Placeholder exclusion 1'],
+      packing: ['Placeholder item 1']
+    },
+    es: {
+      title: 'Cusco Aventura 4D/3N',
+      description: 'Experiencias de pura adrenalina en el corazón del Imperio Inca.',
+      overview: '<p class="mb-4 mt-0">Resumen de prueba para Cusco Aventura 4D/3N. Por favor actualizar.</p>',
+      itinerary: [
+        {
+          day: 1,
+          title: 'Llegada y aclimatación',
+          activities: [
+            { time: 'TBD', description: 'Llegada y traslado' }
+          ]
+        },
+        {
+          day: 2,
+          title: 'Actividad de Aventura 1',
+          activities: [
+            { time: 'TBD', description: 'Actividad de prueba' }
+          ]
+        },
+        {
+          day: 3,
+          title: 'Actividad de Aventura 2',
+          activities: [
+            { time: 'TBD', description: 'Actividad de prueba' }
+          ]
+        },
+        {
+          day: 4,
+          title: 'Salida',
+          activities: [
+            { time: 'TBD', description: 'Traslado al aeropuerto' }
+          ]
+        }
+      ],
+      includes: ['Inclusión de prueba 1'],
+      excludes: ['Exclusión de prueba 1'],
+      packing: ['Articulo 1']
+    }
   }
 ];
