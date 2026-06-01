@@ -34,12 +34,12 @@ const sliderData: SliderItem[] = [
     id: 2,
     image: '/hero-cusco.png',
     en: {
-      title: 'Cusco Adventure 5D/4N',
+      title: 'Cusco Adventure 4D/3N',
       subtitle: 'High-adrenaline experiences in the heart of the Inca Empire.',
       cta: 'View Program'
     },
     es: {
-      title: 'Cusco Aventura 5D/4N',
+      title: 'Cusco Aventura 4D/3N',
       subtitle: 'Experiencias de pura adrenalina en el corazón del Imperio Inca.',
       cta: 'Ver Programa'
     }

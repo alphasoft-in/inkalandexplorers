@@ -20,7 +20,7 @@ export const ui = {
     'dest.arequipa': 'Arequipa',
     'dest.salkantay': 'Andes Trekking',
     'pkg.magical_cusco': 'Magical Machu Picchu 5D/4N',
-    'pkg.cusco_adventure': 'Cusco Adventure 5D/4N',
+    'pkg.cusco_adventure': 'Cusco Adventure 4D/3N',
     'pkg.classic_cusco': 'Classic Cusco 4D/3N',
   },
   es: {
@@ -37,7 +37,7 @@ export const ui = {
     'dest.arequipa': 'Arequipa',
     'dest.salkantay': 'Andes Trekking',
     'pkg.magical_cusco': 'Machu Picchu Mágico 5D/4N',
-    'pkg.cusco_adventure': 'Cusco Aventura 5D/4N',
+    'pkg.cusco_adventure': 'Cusco Aventura 4D/3N',
     'pkg.classic_cusco': 'Cusco Clásico 4D/3N',
   },
 } as const;

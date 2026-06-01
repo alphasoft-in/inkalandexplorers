@@ -4525,5 +4525,108 @@ export const packages: Package[] = [
         'Lleva dinero en efectivo en soles para pagar el ingreso, y de manera opcional para rentar un caballo si la altitud hace la caminata muy exigente.'
       ]
     }
+  },
+  {
+    id: 45,
+    slug: 'magical-machu-picchu-5d-4n',
+    image: '/tour-placeholder.png',
+    heroImage: '/bc-placeholder.png',
+    price: '0',
+    duration: '5 Days / 4 Nights',
+    altitude: 'Various',
+    difficulty: 'Moderate',
+    type: 'Cultural | Sightseeing',
+    departure: 'Cusco',
+    destination: 'Machu Picchu',
+    en: {
+      title: 'Magical Machu Picchu 5D/4N',
+      description: 'A magical 5-day journey through Cusco, the Sacred Valley, and Machu Picchu.',
+      overview: '<p class="mb-4 mt-0">Placeholder overview for Magical Machu Picchu 5D/4N. Please update this text.</p>',
+      itinerary: [
+        {
+          day: 1,
+          title: 'Arrival in Cusco',
+          activities: [
+            { time: 'TBD', description: 'Arrival and transfer to hotel' }
+          ]
+        },
+        {
+          day: 2,
+          title: 'Sacred Valley Tour',
+          activities: [
+            { time: 'TBD', description: 'Tour of the Sacred Valley' }
+          ]
+        },
+        {
+          day: 3,
+          title: 'Machu Picchu',
+          activities: [
+            { time: 'TBD', description: 'Visit to Machu Picchu' }
+          ]
+        },
+        {
+          day: 4,
+          title: 'Cusco City Tour',
+          activities: [
+            { time: 'TBD', description: 'Explore the city of Cusco' }
+          ]
+        },
+        {
+          day: 5,
+          title: 'Departure',
+          activities: [
+            { time: 'TBD', description: 'Transfer to the airport' }
+          ]
+        }
+      ],
+      includes: ['Placeholder inclusion 1', 'Placeholder inclusion 2'],
+      excludes: ['Placeholder exclusion 1', 'Placeholder exclusion 2'],
+      packing: ['Placeholder item 1', 'Placeholder item 2']
+    },
+    es: {
+      title: 'Machu Picchu Mágico 5D/4N',
+      description: 'Un viaje mágico de 5 días por Cusco, el Valle Sagrado y Machu Picchu.',
+      overview: '<p class="mb-4 mt-0">Resumen para Machu Picchu Mágico 5D/4N. Por favor actualice este texto.</p>',
+      itinerary: [
+        {
+          day: 1,
+          title: 'Llegada a Cusco',
+          activities: [
+            { time: 'TBD', description: 'Llegada y traslado al hotel' }
+          ]
+        },
+        {
+          day: 2,
+          title: 'Valle Sagrado',
+          activities: [
+            { time: 'TBD', description: 'Tour por el Valle Sagrado' }
+          ]
+        },
+        {
+          day: 3,
+          title: 'Machu Picchu',
+          activities: [
+            { time: 'TBD', description: 'Visita a Machu Picchu' }
+          ]
+        },
+        {
+          day: 4,
+          title: 'City Tour Cusco',
+          activities: [
+            { time: 'TBD', description: 'Exploración de la ciudad de Cusco' }
+          ]
+        },
+        {
+          day: 5,
+          title: 'Salida',
+          activities: [
+            { time: 'TBD', description: 'Traslado al aeropuerto' }
+          ]
+        }
+      ],
+      includes: ['Inclusión de prueba 1', 'Inclusión de prueba 2'],
+      excludes: ['Exclusión de prueba 1', 'Exclusión de prueba 2'],
+      packing: ['Articulo 1', 'Articulo 2']
+    }
   }
 ];
