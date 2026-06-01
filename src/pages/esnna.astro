@@ -3,45 +3,83 @@ import Layout from "../layouts/Layout.astro";
 import SiteFooter from "../components/SiteFooter";
 ---
 
-<Layout title="ESNNA | Inkaland Explorers" forceScrolled={true} activeTabOverride="none">
-	<main class="w-full bg-[#F9F6EE] pt-28 pb-20">
-		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<nav class="flex mb-8 text-[#0b403a] text-xs uppercase tracking-[0.2em] font-bold">
-				<a href="/" class="hover:text-[#dfa126] transition-colors">Home</a>
-				<span class="mx-3 opacity-50">/</span>
-				<span class="text-[#dfa126]">ESNNA</span>
-			</nav>
-
-			<div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-black/5">
-				<h1 class="font-['Outfit'] text-3xl md:text-5xl font-bold text-[#0b403a] mb-8 leading-tight">
+<Layout title="ESNNA | Inkaland Explorers" forceScrolled={true}>
+	<main class="w-full bg-[#F9F6EE]">
+		<!-- Hero Section -->
+		<section class="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+			<div class="absolute inset-0 z-0">
+				<img src="/hero-machu-picchu.png" alt="ESNNA" class="w-full h-full object-cover" />
+				<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
+				<div class="absolute inset-0 bg-[#0b403a]/40"></div>
+			</div>
+			
+			<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center mt-16">
+				<nav class="flex justify-center mb-6 text-[#dfa126] text-xs uppercase tracking-[0.3em] font-bold">
+					<a href="/" class="hover:text-white transition-colors">Home</a>
+					<span class="mx-3 text-white/30">/</span>
+					<span class="text-white/60">ESNNA</span>
+				</nav>
+				<h1 class="font-['Outfit'] text-3xl md:text-5xl font-bold text-white mb-5 leading-tight drop-shadow-2xl">
 					Prevention of ESNNA
 				</h1>
-				<div class="prose prose-lg text-gray-600 max-w-none">
-					<p class="mb-6 leading-relaxed">
-						<strong>Inkaland Explorers</strong> is firmly committed to the prevention and eradication of the Sexual Exploitation of Children and Adolescents (ESNNA) in the context of travel and tourism in Peru.
-					</p>
-					
-					<h3 class="font-['Outfit'] text-2xl font-bold text-[#0b403a] mt-8 mb-4">Our Commitment</h3>
-					<p class="mb-4 leading-relaxed">
-						In compliance with Peruvian legislation (Law N° 29408, General Tourism Law, and Law N° 30802), we adopt strict measures to ensure our operations, collaborators, and clients do not participate in, promote, or tolerate activities related to the sexual exploitation of minors.
-					</p>
+				<p class="text-base md:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
+					Our firm commitment to protecting children and adolescents in tourism.
+				</p>
+			</div>
+		</section>
 
-					<ul class="list-disc pl-6 mb-6 space-y-2">
-						<li>We train our staff and guides to identify and report any suspicious activity to the local authorities.</li>
-						<li>We require all our clients to respect local laws regarding the protection of minors.</li>
-						<li>We collaborate with local authorities and communities to create safe environments for children and adolescents in tourist destinations.</li>
-					</ul>
+		<!-- Content Section -->
+		<section class="py-20 px-4">
+			<div class="max-w-4xl mx-auto">
+				<div class="bg-white rounded-3xl p-8 md:p-14 shadow-xl shadow-black/5 border border-black/5">
+					<div class="prose prose-lg text-gray-600 max-w-none">
+						<p class="mb-6 leading-relaxed text-lg">
+							<strong>Inkaland Explorers</strong> is firmly committed to the prevention and eradication of the Sexual Exploitation of Children and Adolescents (ESNNA) in the context of travel and tourism in Peru.
+						</p>
+						
+						<h3 class="font-['Outfit'] text-2xl font-bold text-[#0b403a] mt-10 mb-5 flex items-center">
+							<div class="w-8 h-8 rounded-full bg-[#dfa126]/20 flex items-center justify-center text-[#dfa126] mr-3">
+								<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/></svg>
+							</div>
+							Our Commitment
+						</h3>
+						<p class="mb-5 leading-relaxed">
+							In compliance with Peruvian legislation (Law N° 29408, General Tourism Law, and Law N° 30802), we adopt strict measures to ensure our operations, collaborators, and clients do not participate in, promote, or tolerate activities related to the sexual exploitation of minors.
+						</p>
 
-					<h3 class="font-['Outfit'] text-2xl font-bold text-[#0b403a] mt-8 mb-4">Reporting</h3>
-					<p class="mb-4 leading-relaxed">
-						If you witness or suspect any case of sexual exploitation of minors during your trip, we urge you to report it immediately to our guides or contact the local authorities directly through the Peruvian National Police or the toll-free hotline <strong>1818</strong>.
-					</p>
-					<p class="mb-6 leading-relaxed">
-						Let's work together to protect our children and promote responsible, ethical, and sustainable tourism in Peru.
-					</p>
+						<ul class="list-none mb-8 space-y-4">
+							<li class="flex items-start">
+								<svg class="w-6 h-6 text-[#dfa126] mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+								<span>We train our staff and guides to identify and report any suspicious activity to the local authorities.</span>
+							</li>
+							<li class="flex items-start">
+								<svg class="w-6 h-6 text-[#dfa126] mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+								<span>We require all our clients to respect local laws regarding the protection of minors.</span>
+							</li>
+							<li class="flex items-start">
+								<svg class="w-6 h-6 text-[#dfa126] mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+								<span>We collaborate with local authorities and communities to create safe environments for children and adolescents in tourist destinations.</span>
+							</li>
+						</ul>
+
+						<h3 class="font-['Outfit'] text-2xl font-bold text-[#0b403a] mt-10 mb-5 flex items-center">
+							<div class="w-8 h-8 rounded-full bg-[#dfa126]/20 flex items-center justify-center text-[#dfa126] mr-3">
+								<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+							</div>
+							Reporting
+						</h3>
+						<p class="mb-5 leading-relaxed">
+							If you witness or suspect any case of sexual exploitation of minors during your trip, we urge you to report it immediately to our guides or contact the local authorities directly through the Peruvian National Police or the toll-free hotline <strong class="text-[#0b403a] bg-[#dfa126]/20 px-2 py-0.5 rounded">1818</strong>.
+						</p>
+						<div class="bg-[#0b403a] text-white p-6 rounded-2xl mt-8 text-center shadow-lg">
+							<p class="leading-relaxed font-light m-0">
+								Let's work together to protect our children and promote responsible, ethical, and sustainable tourism in Peru.
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</main>
 	<SiteFooter lang="en" />
 </Layout>
