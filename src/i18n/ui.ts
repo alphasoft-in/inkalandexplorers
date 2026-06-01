@@ -22,6 +22,11 @@ export const ui = {
     'pkg.magical_cusco': 'Magical Machu Picchu 5D/4N',
     'pkg.cusco_adventure': 'Cusco Adventure 4D/3N',
     'pkg.classic_cusco': 'Classic Cusco 4D/3N',
+    'footer.about_title': 'About Inkaland',
+    'footer.about_desc': 'We are a travel agency specializing in authentic, unforgettable experiences across Peru, taking you from the depths of the Colca Canyon to the heights of Machu Picchu.',
+    'footer.links_title': 'Quick Links',
+    'footer.contact_title': 'Contact Us',
+    'footer.payment_title': 'Secure Payment',
   },
   es: {
     'nav.home': 'Inicio',
@@ -39,5 +44,10 @@ export const ui = {
     'pkg.magical_cusco': 'Machu Picchu Mágico 5D/4N',
     'pkg.cusco_adventure': 'Cusco Aventura 4D/3N',
     'pkg.classic_cusco': 'Cusco Clásico 4D/3N',
+    'footer.about_title': 'Sobre Inkaland',
+    'footer.about_desc': 'Somos una agencia de viajes especializada en experiencias auténticas e inolvidables en todo el Perú, llevándote desde las profundidades del Cañón del Colca hasta las alturas de Machu Picchu.',
+    'footer.links_title': 'Enlaces Rápidos',
+    'footer.contact_title': 'Contáctanos',
+    'footer.payment_title': 'Pago Seguro',
   },
 } as const;
