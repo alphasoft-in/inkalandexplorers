@@ -34,7 +34,7 @@ export default function SiteFooter({ lang = 'en' }: Props) {
             <li><a href={`${basePrefix}/destinations`} className="text-gray-300 hover:text-[#dfa126] transition-colors font-light text-sm">{t('nav.destinations')}</a></li>
             <li><a href={`${basePrefix}/packages`} className="text-gray-300 hover:text-[#dfa126] transition-colors font-light text-sm">{t('nav.packages')}</a></li>
             <li><a href={`${basePrefix}/about`} className="text-gray-300 hover:text-[#dfa126] transition-colors font-light text-sm">{t('nav.about')}</a></li>
-            <li><a href={`${basePrefix}/contact`} className="text-gray-300 hover:text-[#dfa126] transition-colors font-light text-sm">{t('nav.contact')}</a></li>
+            <li><a href={`${basePrefix}/esnna`} className="text-gray-300 hover:text-[#dfa126] transition-colors font-light text-sm">{t('nav.esnna')}</a></li>
           </ul>
         </div>
 
