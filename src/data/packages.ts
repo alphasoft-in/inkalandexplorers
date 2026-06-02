@@ -1389,7 +1389,8 @@ export const packages: Package[] = [
   {
     id: 15,
     slug: 'humantay-lagoon-trek-day-trip',
-    image: '/tour-humantay.png',
+    image: '/cusco/humantay-lagoon.png',
+    heroImage: '/cusco/bc-humantay-lagoon.png',
     price: '40',
     duration: 'Full Day',
     altitude: '3,900m – 4,200m',
@@ -3335,7 +3336,8 @@ export const packages: Package[] = [
   {
     id: 31,
     slug: 'cuatrimotos-morada-dioses',
-    image: '/images/destinations/cusco.webp',
+    image: '/cusco/morada-de-los-dioses.png',
+    heroImage: '/cusco/bc-morada-de-los-dioses.png',
     destination: 'Cusco',
     duration: '4 Hours',
     price: '35',
@@ -3346,7 +3348,7 @@ export const packages: Package[] = [
     type: 'Group Tour',
     departure: '08:00 AM, 11:00 AM, 1:00 PM',
     en: {
-      title: 'ATV Tour Abode of the Gods (Morada de los Dioses)',
+      title: 'ATV Tour Abode of the Gods',
       description: 'Explore the impressive rock sculptures of the Abode of the Gods on an exciting ATV tour.',
       overview: '<p class="mb-4 mt-0">Join us for an exciting adventure starting from the Plaza de Armas in Cusco. We will head to our base in Tica Tica (Sencca sector). After a safety briefing and a 10-minute practice ride, we will start a 50-minute ATV journey along adventure trails and viewpoints until we reach the Abode of the Gods (Apukunaq Tianan).</p><p class="mb-8 mt-0">Here, you can appreciate the impressive sculptures carved in rock, enjoy the natural landscape, and take beautiful photographs. Finally, we will return to the base and take the transport back to the city.</p>',
       itinerary: [
@@ -3501,7 +3503,8 @@ export const packages: Package[] = [
   {
     id: 33,
     slug: 'laguna-humantay-group',
-    image: '/images/destinations/cusco.webp',
+    image: '/cusco/humantay-lake-group.png',
+    heroImage: '/cusco/bc-humantay-lake-group.png',
     destination: 'Cusco',
     duration: 'Full Day (12.5 Hours)',
     price: '40',
@@ -3589,7 +3592,8 @@ export const packages: Package[] = [
   {
     id: 34,
     slug: 'city-tour-inca',
-    image: '/images/destinations/cusco.webp',
+    image: '/cusco/inca-city-tour.png',
+    heroImage: '/cusco/bc-inca-city-tour.png',
     destination: 'Cusco',
     duration: 'Half Day (4-5 Hours)',
     price: '30',
@@ -4013,7 +4017,8 @@ export const packages: Package[] = [
   {
     id: 39,
     slug: 'valle-sur',
-    image: '/images/destinations/sacred-valley.webp',
+    image: '/cusco/valle-sour.png',
+    heroImage: '/cusco/bc-valle-sur.png',
     destination: 'Cusco',
     duration: 'Half Day (7 Hours)',
     price: '25',
@@ -4529,8 +4534,8 @@ export const packages: Package[] = [
   {
     id: 45,
     slug: 'magical-machu-picchu-5d-4n',
-    image: '/tour-placeholder.png',
-    heroImage: '/bc-placeholder.png',
+    image: '/machu-picchu/magical-machu-picchu.png',
+    heroImage: '/machu-picchu/bc-magical-machu-picchu.png',
     price: '0',
     duration: '5 Days / 4 Nights',
     altitude: 'Various',
@@ -4538,6 +4543,8 @@ export const packages: Package[] = [
     type: 'Cultural | Sightseeing',
     departure: 'Cusco',
     destination: 'Machu Picchu',
+    latitude: '-13.1631',
+    longitude: '-72.5450',
     en: {
       title: 'Magical Machu Picchu 5D/4N',
       description: 'A magical 5-day journey through Cusco, the Sacred Valley, and Machu Picchu.',
@@ -4632,8 +4639,8 @@ export const packages: Package[] = [
   {
     id: 46,
     slug: 'cusco-adventure-4d-3n',
-    image: '/tour-placeholder.png',
-    heroImage: '/bc-placeholder.png',
+    image: '/cusco/cusco-adventure.png',
+    heroImage: '/cusco/bc-cusco-adventure.png',
     price: '0',
     duration: '4 Days / 3 Nights',
     altitude: 'Various',
