@@ -7,24 +7,44 @@ import TripInquiryForm from "../components/TripInquiryForm";
 <Layout title="Gallery | Inkaland Explorers" forceScrolled={true}>
 	<main class="bg-white">
 		<!-- Hero Section -->
-		<section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+		<section
+			class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden"
+		>
 			<div class="absolute inset-0 z-0">
-				<img src="/hero-paracas.png" alt="Gallery Background" class="w-full h-full object-cover" />
-				<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
+				<img
+					src="/galeria/bc-gallery.png"
+					alt="Gallery Background"
+					class="w-full h-full object-cover"
+				/>
+				<div
+					class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"
+				>
+				</div>
 				<div class="absolute inset-0 bg-[#0b403a]/30"></div>
 			</div>
-			
-			<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-				<nav class="flex justify-center mb-6 text-[#dfa126] text-xs uppercase tracking-[0.3em] font-bold">
-					<a href="/" class="hover:text-white transition-colors">Home</a>
+
+			<div
+				class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center"
+			>
+				<nav
+					class="flex justify-center mb-6 text-[#dfa126] text-xs uppercase tracking-[0.3em] font-bold"
+				>
+					<a href="/" class="hover:text-white transition-colors"
+						>Home</a
+					>
 					<span class="mx-3 text-white/30">/</span>
 					<span class="text-white/60">Gallery</span>
 				</nav>
-				<h1 class="font-['Outfit'] text-3xl md:text-5xl font-bold text-white mb-5 leading-tight drop-shadow-2xl">
+				<h1
+					class="font-['Outfit'] text-3xl md:text-5xl font-bold text-white mb-5 leading-tight drop-shadow-2xl"
+				>
 					Our Gallery
 				</h1>
-				<p class="text-base md:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
-					Explore the breathtaking landscapes and unforgettable moments of our adventures in Peru.
+				<p
+					class="text-base md:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed"
+				>
+					Explore the breathtaking landscapes and unforgettable
+					moments of our adventures in Peru.
 				</p>
 			</div>
 		</section>
@@ -33,83 +53,166 @@ import TripInquiryForm from "../components/TripInquiryForm";
 		<section class="py-24 px-4 bg-white">
 			<div class="max-w-7xl mx-auto">
 				<div class="text-center mb-16">
-					<h2 class="text-xs font-bold text-[#dfa126] uppercase tracking-[0.3em] mb-4">Visual Journey</h2>
-					<h3 class="text-4xl md:text-5xl font-bold text-[#0b403a] font-['Outfit']">Memories from the Andes</h3>
+					<h2
+						class="text-xs font-bold text-[#dfa126] uppercase tracking-[0.3em] mb-4"
+					>
+						Visual Journey
+					</h2>
+					<h3
+						class="text-4xl md:text-5xl font-bold text-[#0b403a] font-['Outfit']"
+					>
+						Memories from the Andes
+					</h3>
 				</div>
 
 				<!-- Editorial Gallery Layout -->
 				<div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
-					
 					<!-- Block 1: Main Feature (2x2) -->
-					<div class="gallery-item md:col-span-2 md:row-span-2 h-[400px] md:h-[600px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/hero-machu-picchu.png">
-						<img src="/hero-machu-picchu.png" alt="Machu Picchu" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
-						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+					<div
+						class="gallery-item md:col-span-2 md:row-span-2 h-[400px] md:h-[600px] rounded-2xl overflow-hidden group relative cursor-pointer"
+						data-src="/hero-machu-picchu.png"
+					>
+						<img
+							src="/hero-machu-picchu.png"
+							alt="Machu Picchu"
+							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+						/>
+						<div
+							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
+						>
+							<span
+								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+							>
 								Machu Picchu
 							</span>
 						</div>
 					</div>
 
 					<!-- Block 2: Top Right Wide (2x1) -->
-					<div class="gallery-item md:col-span-2 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/hero-salkantay.png">
-						<img src="/hero-salkantay.png" alt="Salkantay Pass" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
-						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+					<div
+						class="gallery-item md:col-span-2 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
+						data-src="/hero-salkantay.png"
+					>
+						<img
+							src="/hero-salkantay.png"
+							alt="Salkantay Pass"
+							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+						/>
+						<div
+							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
+						>
+							<span
+								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+							>
 								Salkantay Pass
 							</span>
 						</div>
 					</div>
 
 					<!-- Block 3: Bottom Right Left (1x1) -->
-					<div class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-vinicunca.png">
-						<img src="/tour-vinicunca.png" alt="Rainbow Mountain" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
-						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+					<div
+						class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
+						data-src="/tour-vinicunca.png"
+					>
+						<img
+							src="/tour-vinicunca.png"
+							alt="Rainbow Mountain"
+							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+						/>
+						<div
+							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
+						>
+							<span
+								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+							>
 								Vinicunca
 							</span>
 						</div>
 					</div>
 
 					<!-- Block 4: Bottom Right Right (1x1) -->
-					<div class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-humantay.png">
-						<img src="/tour-humantay.png" alt="Humantay Lake" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
-						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+					<div
+						class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
+						data-src="/tour-humantay.png"
+					>
+						<img
+							src="/tour-humantay.png"
+							alt="Humantay Lake"
+							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+						/>
+						<div
+							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
+						>
+							<span
+								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+							>
 								Humantay
 							</span>
 						</div>
 					</div>
 
 					<!-- Block 5: Row 3 Left (1x1) -->
-					<div class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-ausangate.png">
-						<img src="/tour-ausangate.png" alt="Ausangate" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
-						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+					<div
+						class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
+						data-src="/tour-ausangate.png"
+					>
+						<img
+							src="/tour-ausangate.png"
+							alt="Ausangate"
+							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+						/>
+						<div
+							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
+						>
+							<span
+								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+							>
 								Ausangate
 							</span>
 						</div>
 					</div>
 
 					<!-- Block 6: Row 3 Middle (1x1) -->
-					<div class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-sacred-valley.png">
-						<img src="/tour-sacred-valley.png" alt="Sacred Valley" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
-						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+					<div
+						class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
+						data-src="/tour-sacred-valley.png"
+					>
+						<img
+							src="/tour-sacred-valley.png"
+							alt="Sacred Valley"
+							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+						/>
+						<div
+							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
+						>
+							<span
+								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+							>
 								Sacred Valley
 							</span>
 						</div>
 					</div>
 
 					<!-- Block 7: Row 3 Right Wide (2x1) -->
-					<div class="gallery-item md:col-span-2 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer" data-src="/tour-maras-moray.png">
-						<img src="/tour-maras-moray.png" alt="Maras and Moray" class="w-full h-full object-cover object-top transition-transform duration-[1.5s] group-hover:scale-105" />
-						<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-							<span class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+					<div
+						class="gallery-item md:col-span-2 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
+						data-src="/tour-maras-moray.png"
+					>
+						<img
+							src="/tour-maras-moray.png"
+							alt="Maras and Moray"
+							class="w-full h-full object-cover object-top transition-transform duration-[1.5s] group-hover:scale-105"
+						/>
+						<div
+							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
+						>
+							<span
+								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+							>
 								Maras & Moray
 							</span>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</section>
@@ -118,27 +221,77 @@ import TripInquiryForm from "../components/TripInquiryForm";
 		<TripInquiryForm client:load lang="en" />
 
 		<!-- Lightbox Overlay -->
-		<div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center opacity-0 transition-opacity duration-300">
-			<button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white bg-black/20 p-2 rounded-full backdrop-blur-sm transition-colors z-20">
-				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-				</svg>
-			</button>
-			
-			<button id="lightbox-prev" class="absolute left-2 md:left-6 text-white/70 hover:text-white bg-black/20 p-2 md:p-3 rounded-full backdrop-blur-sm transition-colors z-20">
-				<svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+		<div
+			id="lightbox"
+			class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center opacity-0 transition-opacity duration-300"
+		>
+			<button
+				id="lightbox-close"
+				class="absolute top-6 right-6 text-white/70 hover:text-white bg-black/20 p-2 rounded-full backdrop-blur-sm transition-colors z-20"
+			>
+				<svg
+					class="w-8 h-8"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M6 18L18 6M6 6l12 12"></path>
 				</svg>
 			</button>
 
-			<div class="flex flex-col items-center justify-center max-w-[85vw] max-h-[90vh]">
-				<img id="lightbox-img" src="" alt="Gallery Image" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl relative z-10" />
-				<div id="lightbox-caption" class="w-full text-center text-[#dfa126] font-bold uppercase tracking-[0.2em] text-sm z-20 mt-4 drop-shadow-md"></div>
+			<button
+				id="lightbox-prev"
+				class="absolute left-2 md:left-6 text-white/70 hover:text-white bg-black/20 p-2 md:p-3 rounded-full backdrop-blur-sm transition-colors z-20"
+			>
+				<svg
+					class="w-6 h-6 md:w-8 md:h-8"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M15 19l-7-7 7-7"></path>
+				</svg>
+			</button>
+
+			<div
+				class="flex flex-col items-center justify-center max-w-[85vw] max-h-[90vh]"
+			>
+				<img
+					id="lightbox-img"
+					src=""
+					alt="Gallery Image"
+					class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl relative z-10"
+				/>
+				<div
+					id="lightbox-caption"
+					class="w-full text-center text-[#dfa126] font-bold uppercase tracking-[0.2em] text-sm z-20 mt-4 drop-shadow-md"
+				>
+				</div>
 			</div>
-			
-			<button id="lightbox-next" class="absolute right-2 md:right-6 text-white/70 hover:text-white bg-black/20 p-2 md:p-3 rounded-full backdrop-blur-sm transition-colors z-20">
-				<svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+
+			<button
+				id="lightbox-next"
+				class="absolute right-2 md:right-6 text-white/70 hover:text-white bg-black/20 p-2 md:p-3 rounded-full backdrop-blur-sm transition-colors z-20"
+			>
+				<svg
+					class="w-6 h-6 md:w-8 md:h-8"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M9 5l7 7-7 7"></path>
 				</svg>
 			</button>
 		</div>
@@ -149,20 +302,22 @@ import TripInquiryForm from "../components/TripInquiryForm";
 </Layout>
 
 <script>
-	const lightbox = document.getElementById('lightbox');
-	const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
-	const closeBtn = document.getElementById('lightbox-close');
-	const prevBtn = document.getElementById('lightbox-prev');
-	const nextBtn = document.getElementById('lightbox-next');
-	const lightboxCaption = document.getElementById('lightbox-caption');
-	const galleryItems = document.querySelectorAll('.gallery-item');
-	
+	const lightbox = document.getElementById("lightbox");
+	const lightboxImg = document.getElementById(
+		"lightbox-img",
+	) as HTMLImageElement;
+	const closeBtn = document.getElementById("lightbox-close");
+	const prevBtn = document.getElementById("lightbox-prev");
+	const nextBtn = document.getElementById("lightbox-next");
+	const lightboxCaption = document.getElementById("lightbox-caption");
+	const galleryItems = document.querySelectorAll(".gallery-item");
+
 	let currentIndex = 0;
-	const imagesData = Array.from(galleryItems).map(item => {
-		const img = item.querySelector('img');
+	const imagesData = Array.from(galleryItems).map((item) => {
+		const img = item.querySelector("img");
 		return {
-			src: item.getAttribute('data-src'),
-			caption: img ? img.getAttribute('alt') : ''
+			src: item.getAttribute("data-src"),
+			caption: img ? img.getAttribute("alt") : "",
 		};
 	});
 
@@ -180,51 +335,51 @@ import TripInquiryForm from "../components/TripInquiryForm";
 	};
 
 	galleryItems.forEach((item, index) => {
-		item.addEventListener('click', () => {
+		item.addEventListener("click", () => {
 			if (lightboxImg && lightbox) {
 				showImage(index);
-				lightbox.classList.remove('hidden');
-				lightbox.classList.add('flex');
+				lightbox.classList.remove("hidden");
+				lightbox.classList.add("flex");
 				// trigger reflow for animation
 				void lightbox.offsetWidth;
-				lightbox.classList.remove('opacity-0');
-				document.body.style.overflow = 'hidden'; // Prevent scrolling
+				lightbox.classList.remove("opacity-0");
+				document.body.style.overflow = "hidden"; // Prevent scrolling
 			}
 		});
 	});
 
-	prevBtn?.addEventListener('click', (e) => {
+	prevBtn?.addEventListener("click", (e) => {
 		e.stopPropagation();
 		showImage(currentIndex - 1);
 	});
 
-	nextBtn?.addEventListener('click', (e) => {
+	nextBtn?.addEventListener("click", (e) => {
 		e.stopPropagation();
 		showImage(currentIndex + 1);
 	});
 
 	const closeLightbox = () => {
 		if (lightbox) {
-			lightbox.classList.add('opacity-0');
+			lightbox.classList.add("opacity-0");
 			setTimeout(() => {
-				lightbox.classList.remove('flex');
-				lightbox.classList.add('hidden');
-				document.body.style.overflow = ''; // Restore scrolling
+				lightbox.classList.remove("flex");
+				lightbox.classList.add("hidden");
+				document.body.style.overflow = ""; // Restore scrolling
 			}, 300);
 		}
 	};
 
-	closeBtn?.addEventListener('click', closeLightbox);
-	lightbox?.addEventListener('click', (e) => {
+	closeBtn?.addEventListener("click", closeLightbox);
+	lightbox?.addEventListener("click", (e) => {
 		if (e.target === lightbox) closeLightbox();
 	});
-	
+
 	// Keyboard navigation
-	document.addEventListener('keydown', (e) => {
-		if (lightbox && !lightbox.classList.contains('hidden')) {
-			if (e.key === 'Escape') closeLightbox();
-			if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
-			if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+	document.addEventListener("keydown", (e) => {
+		if (lightbox && !lightbox.classList.contains("hidden")) {
+			if (e.key === "Escape") closeLightbox();
+			if (e.key === "ArrowLeft") showImage(currentIndex - 1);
+			if (e.key === "ArrowRight") showImage(currentIndex + 1);
 		}
 	});
 </script>
