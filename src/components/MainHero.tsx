@@ -141,23 +141,29 @@ const MainHero: React.FC<Props> = ({ lang }) => {
             <div className={`max-w-4xl text-center transition-all duration-1000 delay-300 transform ${
               index === current ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              <h2 className="mb-4 font-['Outfit'] text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+              <h2 className="mb-4 font-['Outfit'] text-3xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl">
                 <span className="block">{slide[lang].title}</span>
-                <span className="mt-2 block h-1.5 w-24 mx-auto bg-[#dfa126] rounded-full" />
+                <span className="mt-3 block h-1.5 w-20 sm:w-24 mx-auto bg-[#dfa126] rounded-full" />
               </h2>
-              <p className="mb-8 mx-auto max-w-2xl text-lg font-light text-gray-200 sm:text-xl md:text-2xl">
+              <p className="mb-8 mx-auto max-w-2xl text-base font-light text-gray-200 sm:text-xl md:text-2xl px-2 sm:px-0">
                 {slide[lang].subtitle}
               </p>
-              <div className="flex justify-center space-x-4">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 w-full px-6 sm:px-0">
                 <a
                   href={slide[lang].href || `/${lang === 'en' ? '' : 'es/'}packages`}
-                  className="rounded-full bg-[#dfa126] px-8 py-3.5 text-sm font-bold text-[#0b403a] shadow-lg shadow-[#dfa126]/20 transition-all hover:scale-105 hover:bg-[#f1c56e]"
+                  className="w-full sm:w-auto text-center rounded-full bg-white px-6 py-3 text-xs sm:text-sm font-bold text-[#0b403a] shadow-xl shadow-white/10 transition-all duration-300 transform hover:scale-105 hover:bg-[#dfa126] hover:text-white"
                 >
                   {slide[lang].cta}
                 </a>
                 <a
-                  href={`/${lang}/contact`}
-                  className="rounded-full border border-white/30 bg-black/30 backdrop-blur-md px-8 py-3.5 text-sm font-bold text-white transition-all hover:bg-black/50"
+                  href={`https://wa.me/51972438838?text=${encodeURIComponent(
+                    lang === 'en' 
+                      ? `Hello Inkaland Explorers, I'd like to inquire about: ${slide[lang].title}`
+                      : `Hola Inkaland Explorers, me gustaría consultar sobre: ${slide[lang].title}`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto text-center rounded-full border border-white/30 bg-black/30 backdrop-blur-md px-6 py-3 text-xs sm:text-sm font-bold text-white transition-all hover:bg-black/50"
                 >
                   {lang === 'en' ? 'Contact Us' : 'Contáctanos'}
                 </a>

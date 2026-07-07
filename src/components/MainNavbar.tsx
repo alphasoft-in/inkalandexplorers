@@ -73,14 +73,19 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
 
   const getLinkClass = (isActive: boolean, isDropdown = false) => {
     const base = isDropdown 
-      ? "flex items-center transition-all duration-500 text-sm font-semibold tracking-wide"
-      : "transition-all duration-500 text-sm font-semibold tracking-wide";
+      ? "flex items-center transition-colors duration-500 text-sm font-semibold tracking-wide"
+      : "transition-colors duration-500 text-sm font-semibold tracking-wide relative after:content-[''] after:absolute after:-bottom-1.5 after:left-1/2 after:-translate-x-1/2 after:h-[3px] after:rounded-full after:transition-all after:duration-300";
     
-    if (isActive) return `${base} text-[#dfa126]`;
+    if (isActive) {
+      if (isDropdown) return `${base} text-[#dfa126]`;
+      return `${base} text-[#dfa126] after:w-full after:bg-[#dfa126]`;
+    }
     
-    const inactiveColor = (isScrolled || mobileMenuOpen) ? "text-[#0b403a]" : "text-white";
-    const hoverColor = isDropdown ? "group-hover:text-[#dfa126]" : "hover:text-[#dfa126]";
-    return `${base} ${inactiveColor} ${hoverColor}`;
+    if (isDropdown) {
+        return `${base} text-[#0b403a] hover:text-[#dfa126]`;
+    }
+    
+    return `${base} text-[#0b403a] after:w-0 after:bg-[#dfa126] hover:text-[#dfa126] hover:after:w-full`;
   };
 
   const getMobileLinkClass = (isActive: boolean) => {
@@ -145,7 +150,7 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
           </div>
 
           {/* Desktop Navigation - Center Links */}
-          <div className="hidden lg:flex items-center space-x-8 xl:space-x-12">
+          <div className={`hidden lg:flex items-center space-x-8 xl:space-x-12 px-8 py-3 rounded-full transition-all duration-500 ${isScrolled ? '' : 'bg-white/95 backdrop-blur-md shadow-lg shadow-black/5 border border-white/20'}`}>
             <a 
               href={lang === 'en' ? '/' : '/es'} 
               className={getLinkClass(isActiveHome)}
@@ -205,9 +210,11 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
             </a>
           </div>
 
-          {/* Desktop Actions - Right Aligned */}
           <div className="hidden lg:flex items-center space-x-6">
-            <a href={lang === 'en' ? '/contact' : '/es/contact'} className="px-6 py-3 bg-[#dfa126] text-[#0b403a] rounded-full text-sm font-bold hover:bg-[#0b403a] hover:text-white transition-all duration-500 transform hover:scale-105 shadow-lg shadow-[#dfa126]/20">
+            <a 
+              href={lang === 'en' ? '/contact' : '/es/contact'} 
+              className={`px-6 py-3 rounded-full text-sm font-bold transition-all duration-500 transform hover:scale-105 ${(isScrolled || mobileMenuOpen) ? 'bg-[#0b403a] text-white hover:bg-[#dfa126] hover:text-white shadow-lg shadow-[#0b403a]/20' : 'bg-white text-[#0b403a] hover:bg-[#dfa126] hover:text-white shadow-lg shadow-white/20'}`}
+            >
               {currentT.contact}
             </a>
 
@@ -281,7 +288,11 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
           </div>
           
           <div className="pt-2">
-            <a href={lang === 'en' ? '/contact' : '/es/contact'} onClick={() => setMobileMenuOpen(false)} className="inline-block px-6 py-2 bg-[#dfa126] text-[#0b403a] rounded-full text-sm font-bold">
+            <a 
+              href={lang === 'en' ? '/contact' : '/es/contact'} 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="inline-block px-6 py-2 bg-[#0b403a] text-white rounded-full text-sm font-bold hover:bg-[#dfa126] hover:text-white transition-colors shadow-md shadow-[#0b403a]/20"
+            >
               {currentT.contact}
             </a>
           </div>

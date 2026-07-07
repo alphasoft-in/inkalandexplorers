@@ -199,7 +199,7 @@ Viajeros: ${formData.adults} Adultos, ${formData.children} Niños`;
 
               <button 
                 type="submit"
-                className="w-full bg-[#dfa126] text-[#0b403a] font-bold py-3 rounded-xl hover:bg-[#0b403a] hover:text-white transition-all duration-300 transform hover:scale-[1.01] active:scale-95 shadow-lg shadow-[#dfa126]/20 mt-2 uppercase tracking-widest text-xs"
+                className="w-full bg-[#0b403a] text-white font-bold py-3 rounded-xl hover:bg-[#dfa126] hover:text-[#0b403a] transition-all duration-300 transform hover:scale-[1.01] active:scale-95 shadow-lg shadow-[#0b403a]/20 mt-2 uppercase tracking-widest text-xs"
               >
                 {lang === 'en' ? 'Submit Inquiry' : 'Enviar Solicitud'}
               </button>

@@ -1506,7 +1506,8 @@ export const packages: Package[] = [
   {
     id: 16,
     slug: 'lima-city-tour-historic-center',
-    image: '/tour-lima-city.png',
+    image: '/lima/lima-city-tour.png',
+    heroImage: '/lima/bc-lima-city-tour.png',
     price: '45',
     duration: 'Half Day (4 hours)',
     altitude: 'Sea Level',
@@ -1600,7 +1601,8 @@ export const packages: Package[] = [
   {
     id: 17,
     slug: 'lima-culinary-experience-market',
-    image: '/tour-lima-culinary.png',
+    image: '/lima/lima-culinaria.png',
+    heroImage: '/lima/bc-lima-culinaria.png',
     price: '85',
     duration: 'Half Day (5 hours)',
     altitude: 'Sea Level',
@@ -1696,7 +1698,8 @@ export const packages: Package[] = [
   {
     id: 18,
     slug: 'pachacamac-ruins-barranco-tour',
-    image: '/tour-lima-barranco.png',
+    image: '/lima/pachacamac.png',
+    heroImage: '/lima/bc-pachacamac.png',
     price: '55',
     duration: 'Half Day (4.5 hours)',
     altitude: 'Sea Level',
@@ -1788,7 +1791,8 @@ export const packages: Package[] = [
   {
     id: 19,
     slug: 'ballestas-islands-paracas-reserve',
-    image: '/tour-paracas-ballestas.png',
+    image: '/ica/islas-ballestas.png',
+    heroImage: '/ica/bc-islas-ballestas.png',
     price: '40',
     duration: 'Full Day',
     altitude: 'Sea Level',
@@ -1888,7 +1892,8 @@ export const packages: Package[] = [
   {
     id: 20,
     slug: 'huacachina-oasis-sandboarding',
-    image: '/tour-huacachina.png',
+    image: '/ica/sandboarding.png',
+    heroImage: '/ica/bc-sandboarding.png',
     price: '35',
     duration: 'Half Day (3 hours)',
     altitude: '400m',
@@ -1982,7 +1987,8 @@ export const packages: Package[] = [
   {
     id: 21,
     slug: 'nazca-lines-overflight-ica',
-    image: '/tour-nazca-lines.png',
+    image: '/ica/vuelo-sobre-lineas-de-nazca.png',
+    heroImage: '/ica/bc-vuelo-sobre-lineas-de-nazca.png',
     price: '110',
     duration: 'Half Day (1.5 hours flight)',
     altitude: '2,000 ft (Flight Altitude)',
@@ -2076,7 +2082,8 @@ export const packages: Package[] = [
   {
     id: 22,
     slug: 'arequipa-city-tour',
-    image: '/tour-arequipa-city.png',
+    image: '/arequipa/monasterio-de-santa-catalina.png',
+    heroImage: '/arequipa/bc-monasterio-de-santa-catalina.png',
     destination: 'Arequipa',
     duration: 'Half Day',
     price: '35',
@@ -2164,7 +2171,8 @@ export const packages: Package[] = [
   {
     id: 23,
     slug: 'colca-canyon-full-day',
-    image: '/tour-colca-full-day.png',
+    image: '/arequipa/cañon-del-colca.png',
+    heroImage: '/arequipa/bc-cañon-del-colca.png',
     destination: 'Arequipa',
     duration: 'Full Day',
     price: '65',
@@ -2262,7 +2270,8 @@ export const packages: Package[] = [
   {
     id: 24,
     slug: 'colca-canyon-trek-2-days',
-    image: '/tour-colca-trek.png',
+    image: '/arequipa/cañon-del-colca2d.png',
+    heroImage: '/arequipa/bc-cañon-del-colca2d.png',
     destination: 'Arequipa',
     duration: '2 Days / 1 Night',
     price: '95',
@@ -2384,7 +2393,8 @@ export const packages: Package[] = [
   {
     id: 25,
     slug: 'salkantay-classic-trek-5-days',
-    image: '/tour-salkantay-5d.png',
+    image: '/andes/salkantay-trekking-clasico.png',
+    heroImage: '/andes/bc-salkantay-trekking-clasico.png',
     destination: 'Andes Trekking',
     duration: '5 Days / 4 Nights',
     price: '450',
@@ -2582,7 +2592,8 @@ export const packages: Package[] = [
   {
     id: 26,
     slug: 'inca-trail-2-days',
-    image: '/tour-inca-trail-2d.png',
+    image: '/andes/short-inca-trail2d.png',
+    heroImage: '/andes/bc-short-inca-trail2d.png',
     destination: 'Andes Trekking',
     duration: '2 Days / 1 Night',
     price: '490',
@@ -2706,7 +2717,8 @@ export const packages: Package[] = [
   {
     id: 27,
     slug: 'inca-trail-4-days',
-    image: '/tour-inca-trail-4d.png',
+    image: '/andes/incatrail-clasico4d.png',
+    heroImage: '/andes/bc-incatrail-clasico4d.png',
     destination: 'Andes Trekking',
     duration: '4 Days / 3 Nights',
     price: '750',
@@ -2866,7 +2878,8 @@ export const packages: Package[] = [
   {
     id: 28,
     slug: 'salkantay-trek-4-days',
-    image: '/tour-salkantay-4d.png',
+    image: '/andes/salkantay-trek-machupicchu4d.png',
+    heroImage: '/andes/bc-salkantay-trek-machupicchu4d.png',
     destination: 'Andes Trekking',
     duration: '4 Days / 3 Nights',
     price: '420',
@@ -3024,7 +3037,8 @@ export const packages: Package[] = [
   {
     id: 29,
     slug: 'choquequirao-trek-4-days',
-    image: '/tour-choquequirao.png',
+    image: '/andes/choquequirao4d.png',
+    heroImage: '/andes/bc-choquequirao4d.png',
     destination: 'Andes Trekking',
     duration: '4 Days / 3 Nights',
     price: '480',
@@ -3174,7 +3188,8 @@ export const packages: Package[] = [
   {
     id: 30,
     slug: 'inca-jungle-4-days',
-    image: '/tour-inca-jungle.png',
+    image: '/andes/inca-jungle4d.png',
+    heroImage: '/andes/bc-inca-jungle4d.png',
     destination: 'Andes Trekking',
     duration: '4 Days / 3 Nights',
     price: '350',
@@ -3421,7 +3436,8 @@ export const packages: Package[] = [
   {
     id: 32,
     slug: 'cuatrimotos-maras-moray',
-    image: '/images/destinations/sacred-valley.webp',
+    image: '/grupos/atv-maras-moray.png',
+    heroImage: '/grupos/bc-atv-maras-moray.png',
     destination: 'Sacred Valley',
     duration: 'Half Day (6 Hours)',
     price: '40',
@@ -3669,7 +3685,8 @@ export const packages: Package[] = [
   {
     id: 35,
     slug: 'glaciar-quelccaya',
-    image: '/images/destinations/andes-trekking.jpg',
+    image: '/andes/quelccaya-glacier.png',
+    heroImage: '/andes/bc-quelccaya-glacier.png',
     destination: 'Andes Trekking',
     duration: 'Full Day (17 Hours)',
     price: '65',
@@ -3929,7 +3946,8 @@ export const packages: Package[] = [
   {
     id: 38,
     slug: 'pallay-punchu',
-    image: '/images/destinations/andes-trekking.jpg',
+    image: '/andes/pallay-punchu.png',
+    heroImage: '/andes/bc-pallay-punchu.png',
     destination: 'Andes Trekking',
     duration: 'Full Day (13.5 Hours)',
     price: '45',
@@ -4096,7 +4114,8 @@ export const packages: Package[] = [
   {
     id: 40,
     slug: 'palcoyo',
-    image: '/images/destinations/andes-trekking.jpg',
+    image: '/andes/palcoyo.png',
+    heroImage: '/andes/bc-palcoyo.png',
     destination: 'Andes Trekking',
     duration: 'Full Day (12.5 Hours)',
     price: '35',
@@ -4184,7 +4203,8 @@ export const packages: Package[] = [
   {
     id: 41,
     slug: 'waqrapukara',
-    image: '/images/destinations/andes-trekking.jpg',
+    image: '/andes/waqrapukara.png',
+    heroImage: '/andes/bc-waqrapukara.png',
     destination: 'Andes Trekking',
     duration: 'Full Day (13.5 Hours)',
     price: '40',
@@ -4270,7 +4290,8 @@ export const packages: Package[] = [
   {
     id: 42,
     slug: 'cuatrimotos-montana-colores',
-    image: '/images/destinations/andes-trekking.jpg',
+    image: '/andes/rainbow-fullday.png',
+    heroImage: '/andes/bc-rainbow-fullday.png',
     destination: 'Andes Trekking',
     duration: 'Full Day (13 Hours)',
     price: '60',
@@ -4360,7 +4381,8 @@ export const packages: Package[] = [
   {
     id: 43,
     slug: 'valle-sagrado-vip',
-    image: '/images/destinations/sacred-valley.webp',
+    image: '/grupos/valle-sagrado.png',
+    heroImage: '/grupos/bc-valle-sagrado.png',
     destination: 'Sacred Valley',
     duration: 'Full Day (12.5 Hours)',
     price: '30',
@@ -4446,7 +4468,8 @@ export const packages: Package[] = [
   {
     id: 44,
     slug: 'montana-de-colores',
-    image: '/images/destinations/andes-trekking.jpg',
+    image: '/cusco/vinicunca.png',
+    heroImage: '/cusco/bc-vinicunca.png',
     destination: 'Andes Trekking',
     duration: 'Full Day (12.5 Hours)',
     price: '30',

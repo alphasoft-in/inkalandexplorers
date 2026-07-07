@@ -7,18 +7,39 @@ import { getLangFromUrl } from '../i18n/utils';
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
 	forceScrolled?: boolean;
 	activeTabOverride?: 'home' | 'destinations' | 'packages' | 'gallery' | 'about' | 'none';
 	activeDestItemOverride?: string;
 }
 
-const { title, description = "Inkaland Explorers - Tu puerta de entrada al mundo Inca", forceScrolled = false, activeTabOverride, activeDestItemOverride } = Astro.props;
+const { 
+	title, 
+	description = "Inkaland Explorers - Tu puerta de entrada al mundo Inca", 
+	image = "/hero-machu-picchu.png",
+	forceScrolled = false, 
+	activeTabOverride, 
+	activeDestItemOverride 
+} = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+const pathname = Astro.url.pathname;
+
+// Generate Canonical and Hreflang URLs safely
+const canonicalURL = Astro.site ? new URL(pathname, Astro.site) : Astro.url;
+
+let esPath = pathname.startsWith('/es') ? pathname : `/es${pathname === '/' ? '' : pathname}`;
+let enPath = pathname.startsWith('/es') ? pathname.replace('/es', '') || '/' : pathname;
+esPath = esPath.replace('/destinations', '/destinos');
+enPath = enPath.replace('/destinos', '/destinations');
+
+const enURL = Astro.site ? new URL(enPath, Astro.site) : new URL(enPath, Astro.url.origin);
+const esURL = Astro.site ? new URL(esPath, Astro.site) : new URL(esPath, Astro.url.origin);
+const imageURL = Astro.site ? new URL(image, Astro.site) : new URL(image, Astro.url.origin);
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class="overflow-x-hidden">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -26,12 +47,35 @@ const lang = getLangFromUrl(Astro.url);
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Hreflang (Multilingual SEO) -->
+		<link rel="alternate" hreflang="en" href={enURL} />
+		<link rel="alternate" hreflang="es" href={esURL} />
+		<link rel="alternate" hreflang="x-default" href={enURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={imageURL} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={imageURL} />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=block">
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=block" rel="stylesheet">
 	</head>
-	<body class="bg-[#0b403a] text-white font-['Inter'] selection:bg-[#dfa126] selection:text-black">
+	<body class="bg-[#0b403a] text-white font-['Inter'] selection:bg-[#dfa126] selection:text-black overflow-x-hidden w-full relative">
 		<MainNavbar client:load lang={lang} forceScrolled={forceScrolled} currentPath={Astro.url.pathname} activeTabOverride={activeTabOverride} activeDestItemOverride={activeDestItemOverride} />
 		<slot />
 		<WhatsAppFloatingButton client:load />

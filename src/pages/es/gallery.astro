@@ -2,6 +2,31 @@
 import Layout from "../../layouts/Layout.astro";
 import SiteFooter from "../../components/SiteFooter";
 import TripInquiryForm from "../../components/TripInquiryForm";
+import { packages } from "../../data/packages";
+
+const uniqueImages = new Map();
+packages.forEach(pkg => {
+    if (pkg.image && !uniqueImages.has(pkg.image)) {
+        uniqueImages.set(pkg.image, {
+            src: pkg.image,
+            title: pkg.es.title
+        });
+    }
+});
+
+const galleryItems = Array.from(uniqueImages.values());
+
+const getGridClasses = (index: number) => {
+    const pos = index % 7;
+    if (pos === 0) return "md:col-span-2 md:row-span-2 h-[400px] md:h-[600px]";
+    if (pos === 1) return "md:col-span-2 h-[250px] md:h-[288px]";
+    if (pos === 2) return "md:col-span-1 h-[250px] md:h-[288px]";
+    if (pos === 3) return "md:col-span-1 h-[250px] md:h-[288px]";
+    if (pos === 4) return "md:col-span-1 h-[250px] md:h-[288px]";
+    if (pos === 5) return "md:col-span-1 h-[250px] md:h-[288px]";
+    if (pos === 6) return "md:col-span-2 h-[250px] md:h-[288px]";
+    return "";
+};
 ---
 
 <Layout title="Galería | Inkaland Explorers" forceScrolled={true}>
@@ -12,7 +37,7 @@ import TripInquiryForm from "../../components/TripInquiryForm";
 		>
 			<div class="absolute inset-0 z-0">
 				<img
-					src="/bc-gallery.png"
+					src="/galeria/bc-gallery.png"
 					alt="Fondo de Galería"
 					class="w-full h-full object-cover"
 				/>
@@ -66,153 +91,28 @@ import TripInquiryForm from "../../components/TripInquiryForm";
 				</div>
 
 				<!-- Editorial Gallery Layout -->
-				<div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
-					<!-- Block 1: Main Feature (2x2) -->
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-min">
+					{galleryItems.map((item, index) => (
 					<div
-						class="gallery-item md:col-span-2 md:row-span-2 h-[400px] md:h-[600px] rounded-2xl overflow-hidden group relative cursor-pointer"
-						data-src="/hero-machu-picchu.png"
+						class={`gallery-item ${getGridClasses(index)} rounded-2xl overflow-hidden group relative cursor-pointer`}
+						data-src={item.src}
 					>
 						<img
-							src="/hero-machu-picchu.png"
-							alt="Machu Picchu"
+							src={item.src}
+							alt={item.title}
 							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
 						/>
 						<div
-							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
+							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-4 text-center"
 						>
 							<span
-								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 line-clamp-2"
 							>
-								Machu Picchu
+								{item.title}
 							</span>
 						</div>
 					</div>
-
-					<!-- Block 2: Top Right Wide (2x1) -->
-					<div
-						class="gallery-item md:col-span-2 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
-						data-src="/hero-salkantay.png"
-					>
-						<img
-							src="/hero-salkantay.png"
-							alt="Nevado Salkantay"
-							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
-						/>
-						<div
-							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
-						>
-							<span
-								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
-							>
-								Salkantay
-							</span>
-						</div>
-					</div>
-
-					<!-- Block 3: Bottom Right Left (1x1) -->
-					<div
-						class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
-						data-src="/tour-vinicunca.png"
-					>
-						<img
-							src="/tour-vinicunca.png"
-							alt="Vinicunca"
-							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
-						/>
-						<div
-							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
-						>
-							<span
-								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
-							>
-								Vinicunca
-							</span>
-						</div>
-					</div>
-
-					<!-- Block 4: Bottom Right Right (1x1) -->
-					<div
-						class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
-						data-src="/tour-humantay.png"
-					>
-						<img
-							src="/tour-humantay.png"
-							alt="Laguna Humantay"
-							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
-						/>
-						<div
-							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
-						>
-							<span
-								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
-							>
-								Laguna Humantay
-							</span>
-						</div>
-					</div>
-
-					<!-- Block 5: Row 3 Left (1x1) -->
-					<div
-						class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
-						data-src="/tour-ausangate.png"
-					>
-						<img
-							src="/tour-ausangate.png"
-							alt="Ausangate"
-							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
-						/>
-						<div
-							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
-						>
-							<span
-								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
-							>
-								Ausangate
-							</span>
-						</div>
-					</div>
-
-					<!-- Block 6: Row 3 Middle (1x1) -->
-					<div
-						class="gallery-item md:col-span-1 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
-						data-src="/tour-sacred-valley.png"
-					>
-						<img
-							src="/tour-sacred-valley.png"
-							alt="Valle Sagrado"
-							class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
-						/>
-						<div
-							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
-						>
-							<span
-								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
-							>
-								Valle Sagrado
-							</span>
-						</div>
-					</div>
-
-					<!-- Block 7: Row 3 Right Wide (2x1) -->
-					<div
-						class="gallery-item md:col-span-2 h-[250px] md:h-[288px] rounded-2xl overflow-hidden group relative cursor-pointer"
-						data-src="/tour-maras-moray.png"
-					>
-						<img
-							src="/tour-maras-moray.png"
-							alt="Maras y Moray"
-							class="w-full h-full object-cover object-top transition-transform duration-[1.5s] group-hover:scale-105"
-						/>
-						<div
-							class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"
-						>
-							<span
-								class="bg-white/90 backdrop-blur-md text-[#0b403a] px-6 py-3 rounded-full font-bold text-xs tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
-							>
-								Maras y Moray
-							</span>
-						</div>
-					</div>
+					))}
 				</div>
 			</div>
 		</section>
