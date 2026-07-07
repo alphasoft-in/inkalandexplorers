@@ -164,12 +164,12 @@ export const destinations: Destination[] = [
     },
     es: {
       title: 'Arequipa y Cañón del Colca',
-      description: 'La Ciudad Blanca rodeada de volcanes y hogar de uno de los cañones más profundos del mundo.',
+      description: 'La Ciudad Blanca rodeada de volcanes y hogar de uno de los canones más profundos del mundo.',
       overview: 'Arequipa, conocida como la "Ciudad Blanca" porque su centro histórico está construido casi en su totalidad con piedra volcánica blanca (sillar), es la segunda ciudad más grande del Perú. Rodeada por tres imponentes volcanes, incluido el majestuoso Misti, cuenta con un clima casi perfecto durante todo el año. Más allá de la impresionante arquitectura colonial de la ciudad y su gastronomía de renombre mundial, Arequipa es la puerta de entrada al Cañón del Colca, un desfiladero masivo dos veces más profundo que el Gran Cañón, donde el poderoso Cóndor Andino domina los cielos.',
       highlights: [
         'Monasterio de Santa Catalina: Una vibrante y colorida "ciudad dentro de una ciudad" donde las monjas vivieron en absoluta reclusión durante siglos.',
         'Plaza de Armas: Ampliamente considerada como la plaza principal más hermosa del Perú, flanqueada por la impresionante Catedral Basílica.',
-        'Cañón del Colca: Uno de los cañones más profundos del mundo, con valles en terrazas, pueblos tradicionales y aguas termales.',
+        'Cañón del Colca: Uno de los canones más profundos del mundo, con valles en terrazas, pueblos tradicionales y aguas termales.',
         'Cruz del Cóndor: El mirador definitivo para observar al majestuoso Cóndor Andino planeando sobre las corrientes térmicas.',
         'Gastronomía Arequipeña: Famosa por sus "picanterías" tradicionales que sirven platos contundentes como el Rocoto Relleno.'
       ],

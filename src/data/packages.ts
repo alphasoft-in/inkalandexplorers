@@ -2171,8 +2171,8 @@ export const packages: Package[] = [
   {
     id: 23,
     slug: 'colca-canyon-full-day',
-    image: '/arequipa/cañon-del-colca.avif',
-    heroImage: '/arequipa/bc-cañon-del-colca.avif',
+    image: '/arequipa/canon-del-colca.avif',
+    heroImage: '/arequipa/bc-canon-del-colca.avif',
     destination: 'Arequipa',
     duration: 'Full Day',
     price: '65',
@@ -2224,7 +2224,7 @@ export const packages: Package[] = [
     es: {
       title: 'Tour Full Day Cañón del Colca desde Arequipa',
       description: 'Un viaje express al majestuoso Cañón del Colca para ver los majestuosos cóndores andinos y los impresionantes paisajes de terrazas.',
-      overview: '<p class="mb-4 mt-0">Experimente la inmensidad del Cañón del Colca, uno de los cañones más profundos del mundo, en este completo tour de día completo desde Arequipa. Diseñado para viajeros con tiempo limitado, este tour lo lleva al corazón de los Andes para presenciar paisajes espectaculares, pueblos tradicionales y una vida silvestre increíble.</p><p class="mb-8 mt-0">El punto culminante del día es la visita al mirador de la Cruz del Cóndor, donde tendrá la oportunidad incomparable de observar al majestuoso Cóndor Andino deslizarse sin esfuerzo en las corrientes térmicas. En el camino, cruzará el paso de gran altitud de Patapampa, verá vicuñas y alpacas salvajes en la Reserva Nacional de Salinas y Aguada Blanca, y se maravillará con las intrincadas terrazas agrícolas preincas que bordean las paredes del valle.</p><h3 class="font-[\'Outfit\'] text-xl font-bold text-[#0b403a] mb-4 mt-0">Destacados</h3><ul class="mb-8 mt-0 text-gray-700 list-disc pl-5"><li class="mb-2"><strong>Cruz del Cóndor:</strong> El mejor lugar de Sudamérica para observar cóndores andinos salvajes en vuelo.</li><li class="mb-2"><strong>Cañón del Colca:</strong> Maravíllese con un cañón dos veces más profundo que el Gran Cañón en los EE. UU.</li><li class="mb-2"><strong>Reserva Nacional:</strong> Observe vicuñas, llamas y alpacas salvajes en su hábitat natural de gran altitud.</li><li class="mb-2"><strong>Paso de Patapampa:</strong> Alcance el punto más alto del viaje a 4,910 m (16,108 pies) para ver los volcanes Ampato, Sabancaya y Hualca Hualca.</li></ul>',
+      overview: '<p class="mb-4 mt-0">Experimente la inmensidad del Cañón del Colca, uno de los canones más profundos del mundo, en este completo tour de día completo desde Arequipa. Diseñado para viajeros con tiempo limitado, este tour lo lleva al corazón de los Andes para presenciar paisajes espectaculares, pueblos tradicionales y una vida silvestre increíble.</p><p class="mb-8 mt-0">El punto culminante del día es la visita al mirador de la Cruz del Cóndor, donde tendrá la oportunidad incomparable de observar al majestuoso Cóndor Andino deslizarse sin esfuerzo en las corrientes térmicas. En el camino, cruzará el paso de gran altitud de Patapampa, verá vicuñas y alpacas salvajes en la Reserva Nacional de Salinas y Aguada Blanca, y se maravillará con las intrincadas terrazas agrícolas preincas que bordean las paredes del valle.</p><h3 class="font-[\'Outfit\'] text-xl font-bold text-[#0b403a] mb-4 mt-0">Destacados</h3><ul class="mb-8 mt-0 text-gray-700 list-disc pl-5"><li class="mb-2"><strong>Cruz del Cóndor:</strong> El mejor lugar de Sudamérica para observar cóndores andinos salvajes en vuelo.</li><li class="mb-2"><strong>Cañón del Colca:</strong> Maravíllese con un cañón dos veces más profundo que el Gran Cañón en los EE. UU.</li><li class="mb-2"><strong>Reserva Nacional:</strong> Observe vicuñas, llamas y alpacas salvajes en su hábitat natural de gran altitud.</li><li class="mb-2"><strong>Paso de Patapampa:</strong> Alcance el punto más alto del viaje a 4,910 m (16,108 pies) para ver los volcanes Ampato, Sabancaya y Hualca Hualca.</li></ul>',
       itinerary: [
         {
           day: 1,
@@ -2270,8 +2270,8 @@ export const packages: Package[] = [
   {
     id: 24,
     slug: 'colca-canyon-trek-2-days',
-    image: '/arequipa/cañon-del-colca2d.avif',
-    heroImage: '/arequipa/bc-cañon-del-colca2d.avif',
+    image: '/arequipa/canon-del-colca2d.avif',
+    heroImage: '/arequipa/bc-canon-del-colca2d.avif',
     destination: 'Arequipa',
     duration: '2 Days / 1 Night',
     price: '95',
@@ -2335,7 +2335,7 @@ export const packages: Package[] = [
     es: {
       title: 'Trekking Cañón del Colca - 2 Días / 1 Noche',
       description: 'Camine hasta el fondo del Cañón del Colca, descanse en un exuberante oasis y desafíese a sí mismo en el empinado ascenso.',
-      overview: '<p class="mb-4 mt-0">Para los viajeros activos y aventureros, el trekking en el Cañón del Colca es un desafío físico inolvidable recompensado por una belleza natural impresionante. Esta caminata guiada de 2 días desciende a uno de los cañones más profundos de la Tierra, llevándolo a través de paisajes escarpados, puentes colgantes y remotos pueblos locales completamente aislados del mundo moderno.</p><p class="mb-8 mt-0">Después de observar los majestuosos cóndores andinos en el mirador de la Cruz del Cóndor, comienza la verdadera aventura. Caminará por las paredes del cañón durante varias horas hasta llegar al Oasis de Sangalle, un paraíso tropical exuberante ubicado en el fondo del desfiladero. Aquí, podrá relajarse en piscinas naturales y pasar la noche en rústicos albergues bajo un cielo estrellado espectacular. A la mañana siguiente, una exigente caminata antes del amanecer lo lleva de regreso al borde, concluyendo una épica aventura andina.</p><h3 class="font-[\'Outfit\'] text-xl font-bold text-[#0b403a] mb-4 mt-0">Destacados</h3><ul class="mb-8 mt-0 text-gray-700 list-disc pl-5"><li class="mb-2"><strong>Descenso y Ascenso:</strong> Desafíese físicamente caminando hasta lo profundo del enorme cañón.</li><li class="mb-2"><strong>Oasis de Sangalle:</strong> Relájese en piscinas tropicales rodeadas por imponentes paredes del cañón.</li><li class="mb-2"><strong>Cruz del Cóndor:</strong> Observe al majestuoso cóndor andino en vuelo antes de comenzar su caminata.</li><li class="mb-2"><strong>Observación de Estrellas:</strong> Disfrute de cielos nocturnos increíblemente despejados y libres de contaminación lumínica.</li></ul>',
+      overview: '<p class="mb-4 mt-0">Para los viajeros activos y aventureros, el trekking en el Cañón del Colca es un desafío físico inolvidable recompensado por una belleza natural impresionante. Esta caminata guiada de 2 días desciende a uno de los canones más profundos de la Tierra, llevándolo a través de paisajes escarpados, puentes colgantes y remotos pueblos locales completamente aislados del mundo moderno.</p><p class="mb-8 mt-0">Después de observar los majestuosos cóndores andinos en el mirador de la Cruz del Cóndor, comienza la verdadera aventura. Caminará por las paredes del cañón durante varias horas hasta llegar al Oasis de Sangalle, un paraíso tropical exuberante ubicado en el fondo del desfiladero. Aquí, podrá relajarse en piscinas naturales y pasar la noche en rústicos albergues bajo un cielo estrellado espectacular. A la mañana siguiente, una exigente caminata antes del amanecer lo lleva de regreso al borde, concluyendo una épica aventura andina.</p><h3 class="font-[\'Outfit\'] text-xl font-bold text-[#0b403a] mb-4 mt-0">Destacados</h3><ul class="mb-8 mt-0 text-gray-700 list-disc pl-5"><li class="mb-2"><strong>Descenso y Ascenso:</strong> Desafíese físicamente caminando hasta lo profundo del enorme cañón.</li><li class="mb-2"><strong>Oasis de Sangalle:</strong> Relájese en piscinas tropicales rodeadas por imponentes paredes del cañón.</li><li class="mb-2"><strong>Cruz del Cóndor:</strong> Observe al majestuoso cóndor andino en vuelo antes de comenzar su caminata.</li><li class="mb-2"><strong>Observación de Estrellas:</strong> Disfrute de cielos nocturnos increíblemente despejados y libres de contaminación lumínica.</li></ul>',
       itinerary: [
         {
           day: 1,
@@ -3778,7 +3778,7 @@ export const packages: Package[] = [
   {
     id: 36,
     slug: 'paracas-ica-full-day',
-    image: '/images/destinations/paracas.webp',
+    image: '/hero-paracas.avif',
     destination: 'Hidden',
     duration: 'Full Day (17 Hours)',
     price: '60',
@@ -3868,7 +3868,7 @@ export const packages: Package[] = [
   {
     id: 37,
     slug: 'lima-city-tour',
-    image: '/images/destinations/lima.webp',
+    image: '/lima/lima-city-tour.avif',
     destination: 'Hidden',
     duration: 'Half Day (4 Hours)',
     price: '35',
@@ -4252,8 +4252,8 @@ export const packages: Package[] = [
     },
     es: {
       title: 'Waqrapukara',
-      description: 'Camina hacia la impresionante fortaleza inca con forma de cuernos de Waqrapukara, rodeada de espectaculares cañones y formaciones rocosas.',
-      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje entre 04:00 y 04:30 a.m. para dirigirnos hacia el sur de Cusco hasta Cusipata, donde disfrutaremos del desayuno. Luego continuamos hacia el punto de inicio de la caminata.</p><p class="mb-4 mt-0">La caminata hacia Waqrapukara tiene una duración aproximada de 1.5 a 2 horas, donde apreciaremos impresionantes paisajes andinos, cañones y formaciones rocosas.</p><p class="mb-8 mt-0">Al llegar, visitaremos este complejo arqueológico inca, conocido como la "fortaleza con forma de cuernos". Después del recorrido retornamos por la misma ruta hacia el transporte y nos dirigimos a Cusipata para el almuerzo buffet. Finalmente retornamos a Cusco, llegando aproximadamente entre 17:30 y 18:30 hrs.</p>',
+      description: 'Camina hacia la impresionante fortaleza inca con forma de cuernos de Waqrapukara, rodeada de espectaculares canones y formaciones rocosas.',
+      overview: '<p class="mb-4 mt-0">El tour inicia con el recojo desde su hospedaje entre 04:00 y 04:30 a.m. para dirigirnos hacia el sur de Cusco hasta Cusipata, donde disfrutaremos del desayuno. Luego continuamos hacia el punto de inicio de la caminata.</p><p class="mb-4 mt-0">La caminata hacia Waqrapukara tiene una duración aproximada de 1.5 a 2 horas, donde apreciaremos impresionantes paisajes andinos, canones y formaciones rocosas.</p><p class="mb-8 mt-0">Al llegar, visitaremos este complejo arqueológico inca, conocido como la "fortaleza con forma de cuernos". Después del recorrido retornamos por la misma ruta hacia el transporte y nos dirigimos a Cusipata para el almuerzo buffet. Finalmente retornamos a Cusco, llegando aproximadamente entre 17:30 y 18:30 hrs.</p>',
       itinerary: [
         { time: '04:30 a.m.', activity: 'Recojo desde su hospedaje y viaje hacia Cusipata' },
         { time: '+ 2.5 horas', activity: 'Llegada a Cusipata para disfrutar del desayuno' },
