@@ -20,7 +20,7 @@ interface SliderItem {
 const sliderData: SliderItem[] = [
   {
     id: 1,
-    image: '/hero-machu-picchu.png',
+    image: '/hero-machu-picchu.avif',
     en: {
       title: 'Magical Machu Picchu 5D/4N',
       subtitle: 'A mystical journey through the Sacred Valley and the wonders of Machu Picchu.',
@@ -36,7 +36,7 @@ const sliderData: SliderItem[] = [
   },
   {
     id: 2,
-    image: '/hero-cusco.png',
+    image: '/hero-cusco.avif',
     en: {
       title: 'Cusco Adventure 4D/3N',
       subtitle: 'High-adrenaline experiences in the heart of the Inca Empire.',
@@ -52,7 +52,7 @@ const sliderData: SliderItem[] = [
   },
   {
     id: 3,
-    image: '/hero-salkantay.png',
+    image: '/hero-salkantay.avif',
     en: {
       title: 'Andes Trekking',
       subtitle: 'The ultimate trekking experience through glacial peaks and cloud forests.',
@@ -68,7 +68,7 @@ const sliderData: SliderItem[] = [
   },
   {
     id: 4,
-    image: '/hero-paracas.png',
+    image: '/hero-paracas.avif',
     en: {
       title: 'Paracas & Ica Wonders',
       subtitle: 'Discover the red sand beaches and the magic of the desert oases.',
@@ -84,7 +84,7 @@ const sliderData: SliderItem[] = [
   },
   {
     id: 5,
-    image: '/hero-colca.png',
+    image: '/hero-colca.avif',
     en: {
       title: 'Arequipa & Colca Canyon',
       subtitle: 'Witness the majestic flight of the Condor in the deepest canyon.',

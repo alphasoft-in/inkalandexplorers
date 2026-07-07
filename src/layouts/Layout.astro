@@ -16,7 +16,7 @@ interface Props {
 const { 
 	title, 
 	description = "Inkaland Explorers - Tu puerta de entrada al mundo Inca", 
-	image = "/hero-machu-picchu.png",
+	image = "/hero-machu-picchu.avif",
 	forceScrolled = false, 
 	activeTabOverride, 
 	activeDestItemOverride 
@@ -43,6 +43,7 @@ const imageURL = Astro.site ? new URL(image, Astro.site) : new URL(image, Astro.
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
+		<meta name="keywords" content="cyber, booking, tripadvisor, despegar, y tu que planes, viajes, tours, viajar, vacaciones, aventura, black friday, cyber monday, descuentos, ofertas, promociones, precios bajos, mejores ofertas, diversión, adrenalina, perú, hoteles, paquetes turísticos, turismo, año nuevo, semana santa, verano, sol, playa, arena, viaja a la playa, disfruta del sol, buen clima, disfruta con la familia, navidad, los mejores precios, precios de locura, fiestas festivas, ofertas de viaje, descuento por grupo, amigos viajando" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />

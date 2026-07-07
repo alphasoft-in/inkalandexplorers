@@ -22,7 +22,7 @@ export const destinations: Destination[] = [
   {
     id: 1,
     slug: 'cusco',
-    image: '/cusco/bc-cusco.png',
+    image: '/cusco/bc-cusco.avif',
 
     en: {
       title: 'Cusco',
@@ -54,7 +54,7 @@ export const destinations: Destination[] = [
   {
     id: 2,
     slug: 'machu-picchu',
-    image: '/machu-picchu/bc-machu-picchu.png',
+    image: '/machu-picchu/bc-machu-picchu.avif',
 
     en: {
       title: 'Machu Picchu',
@@ -86,7 +86,7 @@ export const destinations: Destination[] = [
   {
     id: 3,
     slug: 'lima',
-    image: '/lima/bc-lima.png',
+    image: '/lima/bc-lima.avif',
     en: {
       title: 'Lima',
       description: 'The culinary capital of South America and a city of kings.',
@@ -117,7 +117,7 @@ export const destinations: Destination[] = [
   {
     id: 4,
     slug: 'paracas-ica',
-    image: '/ica/bc-paracas.png',
+    image: '/ica/bc-paracas.avif',
     en: {
       title: 'Paracas & Ica',
       description: 'Where the desert meets the ocean: marine wildlife, endless dunes, and the mysterious Nazca lines.',
@@ -148,7 +148,7 @@ export const destinations: Destination[] = [
   {
     id: 5,
     slug: 'arequipa',
-    image: '/arequipa/bc-arequipa.png',
+    image: '/arequipa/bc-arequipa.avif',
     en: {
       title: 'Arequipa & Colca Canyon',
       description: 'The White City surrounded by volcanoes and home to one of the world’s deepest canyons.',
@@ -179,7 +179,7 @@ export const destinations: Destination[] = [
   {
     id: 6,
     slug: 'andes-trekking',
-    image: '/andes/bc-choquequirao.png',
+    image: '/andes/bc-choquequirao.avif',
     en: {
       title: 'Andes Trekking',
       description: 'The premier alternative route to Machu Picchu, crossing diverse Andean landscapes from snow-capped peaks to tropical cloud forests.',

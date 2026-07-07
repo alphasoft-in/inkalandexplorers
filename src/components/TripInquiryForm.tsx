@@ -48,7 +48,7 @@ Viajeros: ${formData.adults} Adultos, ${formData.children} Niños`;
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/cta-background.png" 
+          src="/cta-background.avif" 
           alt="Luxury Peru Experience" 
           className="w-full h-full object-cover"
         />
