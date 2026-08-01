@@ -39,8 +39,10 @@ const RecommendedPackages: React.FC<Props> = ({ lang, excludeId, limit = 3 }) =>
                   src={pkg.image} 
                   alt={pkg[lang].title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
-                <div className="absolute top-3 right-3 bg-[#dfa126] text-[#0b403a] px-3 py-1 rounded-full text-xs font-black shadow-md">
+                <div className="absolute top-3 right-3 bg-[#dfa126] text-white px-3 py-1 rounded-full text-xs font-black shadow-md">
                   {lang === 'en' ? 'From' : 'Desde'} ${pkg.price}
                 </div>
               </a>

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import MainHero from "../components/MainHero";
 import FeaturedPackages from "../components/FeaturedPackages";
+import AvailabilityWidget from "../components/AvailabilityWidget";
 import TripInquiryForm from "../components/TripInquiryForm";
 import SiteFooter from "../components/SiteFooter";
 ---
@@ -13,6 +14,9 @@ import SiteFooter from "../components/SiteFooter";
 
 		<!-- Featured Packages -->
 		<FeaturedPackages client:visible lang="en" />
+
+		<!-- Availability Widget -->
+		<AvailabilityWidget client:visible lang="en" />
 
 		<!-- Call to Action -->
 		<TripInquiryForm client:load lang="en" />

@@ -34,9 +34,11 @@ const FeaturedPackages: React.FC<Props> = ({ lang }) => {
                   src={pkg.image} 
                   alt={pkg[lang].title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
-                <div className="absolute top-4 right-4 bg-[#dfa126] text-[#0b403a] px-3 py-1.5 rounded-full text-xs font-black shadow-lg">
+                <div className="absolute top-4 right-4 bg-[#dfa126] text-white px-3 py-1.5 rounded-full text-xs font-black shadow-lg">
                   {lang === 'en' ? 'From' : 'Desde'} ${pkg.price}
                 </div>
               </div>

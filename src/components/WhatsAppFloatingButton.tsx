@@ -1,13 +1,19 @@
 import React from 'react';
 
-const WhatsAppFloatingButton: React.FC = () => {
+const WhatsAppFloatingButton: React.FC<{ lang?: string }> = ({ lang = 'en' }) => {
+  const isEs = lang === 'es';
+  const defaultMessage = isEs ? 'Hola Inkaland Explorers, quisiera más información.' : 'Hello Inkaland Explorers, I would like more information.';
+  const tooltipText = isEs ? '¡Chatea con nosotros!' : 'Chat with us!';
+  const ariaLabel = isEs ? 'Contáctanos por WhatsApp' : 'Contact us on WhatsApp';
+  const whatsappUrl = `https://wa.me/51972438838?text=${encodeURIComponent(defaultMessage)}`;
+
   return (
     <a
-      href="https://wa.me/51972438838"
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-8 right-8 z-[100] flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group overflow-hidden"
-      aria-label="Contact us on WhatsApp"
+      aria-label={ariaLabel}
       style={{ animation: 'float 3s ease-in-out infinite' }}
     >
       {/* Pulse Effect */}
@@ -24,7 +30,7 @@ const WhatsAppFloatingButton: React.FC = () => {
       
       {/* Label Tooltip (visible on hover) */}
       <span className="absolute right-full mr-4 bg-white text-[#0b403a] px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap opacity-0 translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 shadow-xl pointer-events-none">
-        Chat with us!
+        {tooltipText}
       </span>
 
       <style dangerouslySetInnerHTML={{ __html: `

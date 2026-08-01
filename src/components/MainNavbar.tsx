@@ -142,9 +142,11 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
           <div className="flex-shrink-0 flex items-center">
             <a href={lang === 'en' ? '/' : '/es'} className="flex items-center">
               <img 
-                src="/Logo Inkaland.webp" 
+                src="/Logo Inkaland.avif" 
                 alt="Logo" 
-                className={`h-16 w-auto transition-all duration-700 ease-in-out hover:scale-105 ${!(isScrolled || mobileMenuOpen) ? 'brightness-0 invert' : ''}`} 
+                className={`h-16 w-auto transition-all duration-700 ease-in-out hover:scale-105 ${!(isScrolled || mobileMenuOpen) ? 'brightness-0 invert' : ''}`}
+                fetchpriority="high"
+                decoding="async" 
               />
             </a>
           </div>

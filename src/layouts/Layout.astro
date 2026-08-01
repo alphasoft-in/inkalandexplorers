@@ -79,7 +79,7 @@ const imageURL = Astro.site ? new URL(image, Astro.site) : new URL(image, Astro.
 	<body class="bg-[#0b403a] text-white font-['Inter'] selection:bg-[#dfa126] selection:text-black overflow-x-hidden w-full relative">
 		<MainNavbar client:load lang={lang} forceScrolled={forceScrolled} currentPath={Astro.url.pathname} activeTabOverride={activeTabOverride} activeDestItemOverride={activeDestItemOverride} />
 		<slot />
-		<WhatsAppFloatingButton client:load />
+		<WhatsAppFloatingButton client:load lang={lang} />
 	</body>
 
 </html>
@@ -101,4 +101,3 @@ const imageURL = Astro.site ? new URL(image, Astro.site) : new URL(image, Astro.
 		border: 1px solid rgba(255, 255, 255, 0.05);
 	}
 </style>
-

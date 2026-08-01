@@ -5,6 +5,7 @@ import TripInquiryForm from "../../components/TripInquiryForm";
 import { destinations } from "../../data/destinations";
 import { packages } from "../../data/packages";
 import RecommendedPackages from "../../components/RecommendedPackages";
+import AvailabilityWidget from "../../components/AvailabilityWidget";
 
 import type { Destination } from "../../data/destinations";
 
@@ -40,7 +41,7 @@ const relatedTours = packages.filter(pkg => {
 		<!-- Hero Section -->
 		<section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
 			<div class="absolute inset-0 z-0">
-				<img src={dest.image} alt={t.title} class="w-full h-full object-cover" />
+				<img src={dest.image} alt={t.title} class="w-full h-full object-cover" fetchpriority="high" decoding="async" />
 				<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
 				<div class="absolute inset-0 bg-[#0b403a]/30"></div>
 			</div>
@@ -63,6 +64,11 @@ const relatedTours = packages.filter(pkg => {
 
 
 
+		<!-- Availability Section (Machu Picchu Only) -->
+		{dest.slug === 'machu-picchu' && (
+			<AvailabilityWidget client:visible lang="en" />
+		)}
+
 		<!-- Related Tours -->
 		{relatedTours.length > 0 && (
 			<section class="py-24 bg-white">
@@ -76,7 +82,7 @@ const relatedTours = packages.filter(pkg => {
 						{relatedTours.map((pkg) => (
 							<div class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 flex flex-col">
 								<a href={`/tours/${pkg.slug}`} class="block relative h-64 overflow-hidden">
-									<img src={pkg.image} alt={pkg.en.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+									<img src={pkg.image} alt={pkg.en.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async" />
 									<div class="absolute top-4 right-4 px-4 py-1 bg-[#dfa126] rounded-full text-[#0b403a] text-sm font-bold shadow-lg">
 										From ${pkg.price}
 									</div>
