@@ -43,7 +43,7 @@ const imageURL = Astro.site ? new URL(image, Astro.site) : new URL(image, Astro.
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="keywords" content="cyber, booking, tripadvisor, despegar, y tu que planes, viajes, tours, viajar, vacaciones, aventura, black friday, cyber monday, descuentos, ofertas, promociones, precios bajos, mejores ofertas, diversión, adrenalina, perú, hoteles, paquetes turísticos, turismo, año nuevo, semana santa, verano, sol, playa, arena, viaja a la playa, disfruta del sol, buen clima, disfruta con la familia, navidad, los mejores precios, precios de locura, fiestas festivas, ofertas de viaje, descuento por grupo, amigos viajando" />
+		<meta name="keywords" content="Inkaland Explorers, travel agency Peru, tours Cusco, Machu Picchu trekking, Sacred Valley tours, Rainbow mountain, Ausangate trek, Salkantay trek, Inca trail, Peru vacations, agencia de viajes Cusco, turismo en Perú" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -70,6 +70,28 @@ const imageURL = Astro.site ? new URL(image, Astro.site) : new URL(image, Astro.
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={imageURL} />
+
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "TravelAgency",
+			"name": "Inkaland Explorers",
+			"image": "https://inkalandexplorers.com/Logo%20Inkaland.avif",
+			"@id": "https://inkalandexplorers.com",
+			"url": "https://inkalandexplorers.com",
+			"telephone": "+51972438838",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Cusco",
+				"addressLocality": "Cusco",
+				"addressRegion": "Cusco",
+				"addressCountry": "PE"
+			},
+			"sameAs": [
+				"https://www.facebook.com/inkalandexplorers",
+				"https://www.instagram.com/inkalandexplorers"
+			]
+		})} />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

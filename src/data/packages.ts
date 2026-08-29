@@ -174,7 +174,7 @@ export const packages: Package[] = [
     difficulty: 'Moderate',
     type: 'Cultural | Private',
     departure: 'Plaza Regocijo – Kusipata',
-    destination: 'Machu Picchu',
+    destination: 'Cusco | Machu Picchu',
     latitude: -13.1631,
     longitude: -72.5450,
     en: {
@@ -282,7 +282,7 @@ export const packages: Package[] = [
     difficulty: 'Easy / Moderate',
     type: 'Cultural | Multi-day',
     departure: 'Cusco Hotels',
-    destination: 'Machu Picchu & Sacred Valley',
+    destination: 'Cusco | Machu Picchu & Sacred Valley',
     latitude: -13.1631,
     longitude: -72.5450,
     en: {
@@ -472,7 +472,7 @@ export const packages: Package[] = [
     difficulty: 'Easy to Moderate',
     type: 'Adventure | Landscape',
     departure: 'Cusco Hotels',
-    destination: 'Palccoyo Mountain',
+    destination: 'Cusco | Palccoyo Mountain',
     latitude: -14.0416,
     longitude: -71.2964,
     en: {
@@ -1075,7 +1075,7 @@ export const packages: Package[] = [
     difficulty: 'Moderate',
     type: 'Group Tour | Cultural',
     departure: 'Cusco Hotels',
-    destination: 'Machu Picchu',
+    destination: 'Cusco | Machu Picchu',
     latitude: -13.1631,
     longitude: -72.5450,
     en: {
@@ -1178,7 +1178,7 @@ export const packages: Package[] = [
     difficulty: 'Easy to Moderate',
     type: 'Group Tour | Cultural',
     departure: 'Cusco Hotels',
-    destination: 'Machu Picchu',
+    destination: 'Cusco | Machu Picchu',
     latitude: -13.1631,
     longitude: -72.5450,
     en: {
@@ -3495,7 +3495,7 @@ export const packages: Package[] = [
     slug: 'cuatrimotos-maras-moray',
     image: '/grupos/atv-maras-moray.avif',
     heroImage: '/grupos/bc-atv-maras-moray.avif',
-    destination: 'Sacred Valley',
+    destination: 'Cusco | Sacred Valley',
     duration: 'Half Day (6 Hours)',
     price: '40',
     latitude: -13.3298,
@@ -3744,7 +3744,7 @@ export const packages: Package[] = [
     slug: 'glaciar-quelccaya',
     image: '/andes/quelccaya-glacier.avif',
     heroImage: '/andes/bc-quelccaya-glacier.avif',
-    destination: 'Andes Trekking',
+    destination: 'Cusco | Andes Trekking',
     duration: 'Full Day (17 Hours)',
     price: '65',
     latitude: -13.9333,
@@ -4009,7 +4009,7 @@ export const packages: Package[] = [
     slug: 'pallay-punchu',
     image: '/andes/pallay-punchu.avif',
     heroImage: '/andes/bc-pallay-punchu.avif',
-    destination: 'Andes Trekking',
+    destination: 'Cusco | Andes Trekking',
     duration: 'Full Day (13.5 Hours)',
     price: '45',
     latitude: -14.4716,
@@ -4177,7 +4177,7 @@ export const packages: Package[] = [
     slug: 'palcoyo',
     image: '/andes/palcoyo.avif',
     heroImage: '/andes/bc-palcoyo.avif',
-    destination: 'Andes Trekking',
+    destination: 'Cusco | Andes Trekking',
     duration: 'Full Day (12.5 Hours)',
     price: '35',
     latitude: -13.9555,
@@ -4266,7 +4266,7 @@ export const packages: Package[] = [
     slug: 'waqrapukara',
     image: '/andes/waqrapukara.avif',
     heroImage: '/andes/bc-waqrapukara.avif',
-    destination: 'Andes Trekking',
+    destination: 'Cusco | Andes Trekking',
     duration: 'Full Day (13.5 Hours)',
     price: '40',
     latitude: -13.9969,
@@ -4355,7 +4355,7 @@ export const packages: Package[] = [
     heroImage: '/andes/bc-rainbow-fullday.avif',
     destination: 'Andes Trekking',
     duration: 'Full Day (13 Hours)',
-    price: '60',
+    price: '70',
     latitude: -13.8694,
     longitude: -71.3033,
     altitude: '5,036m',
@@ -4533,7 +4533,7 @@ export const packages: Package[] = [
     heroImage: '/cusco/bc-vinicunca.avif',
     destination: 'Andes Trekking',
     duration: 'Full Day (12.5 Hours)',
-    price: '30',
+    price: '35',
     latitude: -13.8694,
     longitude: -71.3033,
     altitude: '5,200m',
@@ -4626,7 +4626,7 @@ export const packages: Package[] = [
     difficulty: 'Moderate',
     type: 'Cultural | Sightseeing',
     departure: 'Cusco',
-    destination: 'Machu Picchu',
+    destination: 'Cusco | Machu Picchu',
     latitude: -13.1631,
     longitude: -72.545,
     en: {
@@ -5011,6 +5011,88 @@ export const packages: Package[] = [
         'Agua y Snacks.',
         'Poncho de lluvia o impermeables.',
         'Ropa cómoda y abrigadora.'
+      ]
+    }
+  }
+,
+  {
+    id: 50,
+    slug: 'qeswachaka',
+    image: '/cusco/qeswackaka.avif',
+    heroImage: '/cusco/qeswackaka.avif',
+    destination: 'Cusco',
+    duration: 'Full Day (10 Hours)',
+    price: '40',
+    latitude: -14.3808,
+    longitude: -71.4828,
+    altitude: '3,700m',
+    difficulty: 'Easy to Moderate',
+    type: 'Group Tour',
+    departure: '04:30 AM',
+    en: {
+      title: 'Qeswachaka Inca Bridge',
+      description: 'Visit the last surviving Inca rope bridge and explore the beautiful lagoons of the region.',
+      overview: '<p class="mb-4 mt-0">The tour begins with a pickup from your hotel early in the morning. We will travel south of Cusco through the beautiful Andean landscapes to the province of Canas.</p><p class="mb-4 mt-0">Here we will find the famous Qeswachaka Bridge, the last remaining Inca rope bridge, handwoven from ichu grass. We will cross the bridge and learn about the ancient traditions used to maintain it.</p><p class="mb-8 mt-0">After visiting the bridge, we will explore the four beautiful lagoons in the area (Pomacanchi, Acopia, Asnaqocha, and Pampamarca) before enjoying lunch and returning to Cusco.</p>',
+      itinerary: [
+        { time: '04:30 AM', activity: 'Pickup from hotel and drive south' },
+        { time: '+ 3 hours', activity: 'Arrive at the Qeswachaka bridge' },
+        { time: '+ 5 hours', activity: 'Visit the four lagoons circuit' },
+        { time: '+ 7 hours', activity: 'Lunch' },
+        { time: '05:00 PM', activity: 'Return to Cusco' }
+      ],
+      includes: [
+        'Hotel pickup',
+        'Tourist transport',
+        'Breakfast',
+        'Lunch',
+        'Professional guide',
+        'First aid kit'
+      ],
+      excludes: [
+        'Entrance fees',
+        'Personal expenses'
+      ],
+      packing: [
+        'Comfortable clothing',
+        'Sunscreen and hat',
+        'Camera',
+        'Water'
+      ],
+      tips: [
+        'Bring some extra soles for the entrance fee to the bridge.'
+      ]
+    },
+    es: {
+      title: 'Puente Inca Qeswachaka',
+      description: 'Visita el último puente colgante inca y explora el circuito de las cuatro lagunas en el sur de Cusco.',
+      overview: '<p class="mb-4 mt-0">El tour comienza con el recojo de su hotel muy temprano por la mañana. Viajaremos hacia el sur de Cusco a través de hermosos paisajes andinos hasta la provincia de Canas.</p><p class="mb-4 mt-0">Aquí encontraremos el famoso Puente Qeswachaka, el último puente colgante inca que queda, tejido a mano con paja brava (ichu). Cruzaremos el puente y aprenderemos sobre las antiguas tradiciones que se usan para mantenerlo cada año.</p><p class="mb-8 mt-0">Luego de visitar el puente, exploraremos el hermoso circuito de las cuatro lagunas (Pomacanchi, Acopia, Asnaqocha y Pampamarca) antes de almorzar y retornar a la ciudad del Cusco.</p>',
+      itinerary: [
+        { time: '04:30 a.m.', activity: 'Recojo del hotel y viaje al sur' },
+        { time: '+ 3 horas', activity: 'Llegada y visita al puente Qeswachaka' },
+        { time: '+ 5 horas', activity: 'Visita al circuito de las 4 lagunas' },
+        { time: '+ 7 horas', activity: 'Almuerzo' },
+        { time: '05:00 p.m.', activity: 'Retorno a Cusco' }
+      ],
+      includes: [
+        'Recojo del hotel',
+        'Transporte turístico',
+        'Desayuno',
+        'Almuerzo',
+        'Guía profesional',
+        'Botiquín de primeros auxilios'
+      ],
+      excludes: [
+        'Boleto de ingreso',
+        'Gastos personales'
+      ],
+      packing: [
+        'Ropa cómoda',
+        'Protector solar y sombrero',
+        'Cámara',
+        'Agua'
+      ],
+      tips: [
+        'Lleva soles extra para pagar el ingreso directo en el puente.'
       ]
     }
   }

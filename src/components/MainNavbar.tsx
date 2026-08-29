@@ -65,6 +65,10 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
 
   const currentT = t[lang];
 
+  const isEs = lang === 'es';
+  const defaultMessage = isEs ? 'Hola Inkaland Explorers, quisiera más información.' : 'Hello Inkaland Explorers, I would like more information.';
+  const whatsappUrl = `https://wa.me/51972438838?text=${encodeURIComponent(defaultMessage)}`;
+
   const isActiveHome = activeTabOverride === 'home' || (!activeTabOverride && (currentPath === '/' || currentPath === '/es' || currentPath === '/es/'));
   const isActiveDestinations = activeTabOverride === 'destinations' || (!activeTabOverride && (currentPath.includes('/destinations') || currentPath.includes('/destinos') || !!activeDestItemOverride));
   const isActivePackages = activeTabOverride === 'packages' || (!activeTabOverride && currentPath.includes('/tours'));
@@ -214,7 +218,9 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
 
           <div className="hidden lg:flex items-center space-x-6">
             <a 
-              href={lang === 'en' ? '/contact' : '/es/contact'} 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`px-6 py-3 rounded-full text-sm font-bold transition-all duration-500 transform hover:scale-105 ${(isScrolled || mobileMenuOpen) ? 'bg-[#0b403a] text-white hover:bg-[#dfa126] hover:text-white shadow-lg shadow-[#0b403a]/20' : 'bg-white text-[#0b403a] hover:bg-[#dfa126] hover:text-white shadow-lg shadow-white/20'}`}
             >
               {currentT.contact}
@@ -291,7 +297,9 @@ export default function Navbar({ lang, forceScrolled = false, currentPath = '', 
           
           <div className="pt-2">
             <a 
-              href={lang === 'en' ? '/contact' : '/es/contact'} 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)} 
               className="inline-block px-6 py-2 bg-[#0b403a] text-white rounded-full text-sm font-bold hover:bg-[#dfa126] hover:text-white transition-colors shadow-md shadow-[#0b403a]/20"
             >
