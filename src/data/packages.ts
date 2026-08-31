@@ -4751,9 +4751,9 @@ export const packages: Package[] = [
     slug: 'cusco-adventure-4d-3n',
     image: '/cusco/cusco-adventure.avif',
     heroImage: '/cusco/bc-cusco-adventure.avif',
-    price: '0',
+    price: '420',
     duration: '4 Days / 3 Nights',
-    altitude: 'Various',
+    altitude: 'Various (Max 5,200m / 17,060ft)',
     difficulty: 'Moderate to Challenging',
     type: 'Adventure',
     departure: 'Cusco',
@@ -4763,336 +4763,155 @@ export const packages: Package[] = [
     en: {
       title: 'Cusco Adventure 4D/3N',
       description: 'High-adrenaline experiences in the heart of the Inca Empire.',
-      overview: '<p class="mb-4 mt-0">Placeholder overview for Cusco Adventure 4D/3N. Please update this text.</p>',
+      overview: '<p class="mb-4 mt-0">Experience the best of Cusco with our 4-Day Adventure package. Designed for thrill-seekers and nature lovers, this tour combines cultural exploration with high-adrenaline activities.</p><p class="mb-8 mt-0">From exploring the ancient streets of Cusco and speeding through the Sacred Valley on ATVs, to witnessing the majestic Machu Picchu and hiking the vibrant Rainbow Mountain, this itinerary offers an unforgettable journey through the Andes.</p>',
       itinerary: [
         {
           day: 1,
-          title: 'Arrival and acclimatization',
+          title: 'Arrival in Cusco & City Tour',
           activities: [
-            { time: 'TBD', description: 'Arrival and transfer' }
+            { time: 'Morning', description: 'Arrival at Cusco airport, transfer to your hotel and rest to acclimatize.' },
+            { time: '01:00 PM', description: 'Start of the Cusco City Tour: Visit the Cathedral, Qoricancha, Sacsayhuaman, Qenqo, Puka Pukara, and Tambomachay.' },
+            { time: '06:30 PM', description: 'Return to your hotel.' }
           ]
         },
         {
           day: 2,
-          title: 'Adventure Activity 1',
+          title: 'Sacred Valley ATV Adventure & Train to Aguas Calientes',
           activities: [
-            { time: 'TBD', description: 'Placeholder activity' }
+            { time: '07:00 AM', description: 'Pickup and drive to Cruzpata in the Sacred Valley.' },
+            { time: '09:00 AM', description: 'ATV riding to the Maras Salt Mines and Moray circular terraces.' },
+            { time: '01:00 PM', description: 'Buffet lunch in Urubamba.' },
+            { time: '04:00 PM', description: 'Transfer to Ollantaytambo train station and board the train to Aguas Calientes.' },
+            { time: '07:00 PM', description: 'Arrival in Aguas Calientes and check-in at your hotel.' }
           ]
         },
         {
           day: 3,
-          title: 'Adventure Activity 2',
+          title: 'Machu Picchu Guided Tour & Return to Cusco',
           activities: [
-            { time: 'TBD', description: 'Placeholder activity' }
+            { time: '06:00 AM', description: 'Bus up to the Machu Picchu citadel.' },
+            { time: '07:00 AM', description: 'Guided tour of the main temples and terraces of Machu Picchu.' },
+            { time: '11:00 AM', description: 'Free time to explore on your own.' },
+            { time: '01:00 PM', description: 'Bus down to Aguas Calientes for lunch.' },
+            { time: '04:22 PM', description: 'Board the return train to Ollantaytambo, followed by bus transfer to Cusco.' }
           ]
         },
         {
           day: 4,
-          title: 'Departure',
+          title: 'Rainbow Mountain Trek & Departure',
           activities: [
-            { time: 'TBD', description: 'Transfer to airport' }
+            { time: '04:00 AM', description: 'Early pickup and drive south to the trailhead of Rainbow Mountain.' },
+            { time: '08:00 AM', description: 'Start the hike to the summit of Vinicunca (approx 1.5 - 2 hours).' },
+            { time: '10:00 AM', description: 'Free time at the summit for photos and rest.' },
+            { time: '01:00 PM', description: 'Buffet lunch in Cusipata.' },
+            { time: '04:30 PM', description: 'Return to Cusco and transfer directly to the airport for your departure flight.' }
           ]
         }
       ],
-      includes: ['Placeholder inclusion 1'],
-      excludes: ['Placeholder exclusion 1'],
-      packing: ['Placeholder item 1']
+      includes: [
+        'Airport transfers upon arrival and departure',
+        'All transportation for the tours',
+        'Professional bilingual guide',
+        '3 nights of hotel accommodation',
+        'Train tickets (Ollantaytambo - Aguas Calientes - Ollantaytambo)',
+        'Entrance tickets to Machu Picchu, Rainbow Mountain, and City Tour archaeological sites',
+        'ATV rental and safety equipment',
+        'Breakfasts at the hotels and 2 buffet lunches'
+      ],
+      excludes: [
+        'Domestic or international flights',
+        'Meals not mentioned in the itinerary',
+        'Travel insurance',
+        'Personal expenses and tips'
+      ],
+      packing: [
+        'Original Passport',
+        'Comfortable hiking shoes or boots',
+        'Warm clothing (layers, fleece, jacket)',
+        'Sun hat, sunglasses, and sunscreen',
+        'Small daypack with water and snacks',
+        'Camera or smartphone'
+      ],
+      tips: [
+        'Drink plenty of coca tea upon arrival to help with altitude acclimatization.',
+        'Book your flights to arrive in the morning of Day 1, and depart after 7:00 PM on Day 4.'
+      ]
     },
     es: {
       title: 'Cusco Aventura 4D/3N',
       description: 'Experiencias de pura adrenalina en el corazón del Imperio Inca.',
-      overview: '<p class="mb-4 mt-0">Resumen de prueba para Cusco Aventura 4D/3N. Por favor actualizar.</p>',
+      overview: '<p class="mb-4 mt-0">Experimenta lo mejor del Cusco con nuestro paquete de Aventura de 4 Días. Diseñado para buscadores de emociones y amantes de la naturaleza, este tour combina la exploración cultural con actividades llenas de adrenalina.</p><p class="mb-8 mt-0">Desde explorar las antiguas calles de Cusco y recorrer el Valle Sagrado en cuatrimotos, hasta presenciar el majestuoso Machu Picchu y caminar por la vibrante Montaña de 7 Colores, este itinerario ofrece un viaje inolvidable por los Andes.</p>',
       itinerary: [
         {
           day: 1,
-          title: 'Llegada y aclimatación',
+          title: 'Llegada a Cusco y City Tour',
           activities: [
-            { time: 'TBD', description: 'Llegada y traslado' }
+            { time: 'Mañana', description: 'Llegada al aeropuerto de Cusco, traslado a su hotel y descanso para aclimatarse.' },
+            { time: '01:00 PM', description: 'Inicio del City Tour Cusco: Visita a la Catedral, Qoricancha, Sacsayhuamán, Qenqo, Puca Pucara y Tambomachay.' },
+            { time: '06:30 PM', description: 'Retorno a su hotel en Cusco.' }
           ]
         },
         {
           day: 2,
-          title: 'Actividad de Aventura 1',
+          title: 'Aventura en Cuatrimotos y Tren a Aguas Calientes',
           activities: [
-            { time: 'TBD', description: 'Actividad de prueba' }
+            { time: '07:00 AM', description: 'Recojo y viaje hacia Cruzpata en el Valle Sagrado.' },
+            { time: '09:00 AM', description: 'Paseo en cuatrimotos (ATV) hacia las Salineras de Maras y terrazas de Moray.' },
+            { time: '01:00 PM', description: 'Almuerzo buffet en Urubamba.' },
+            { time: '04:00 PM', description: 'Traslado a la estación de tren de Ollantaytambo y abordaje del tren hacia Aguas Calientes.' },
+            { time: '07:00 PM', description: 'Llegada a Aguas Calientes e instalación en su hotel.' }
           ]
         },
         {
           day: 3,
-          title: 'Actividad de Aventura 2',
+          title: 'Tour Guiado en Machu Picchu y Retorno a Cusco',
           activities: [
-            { time: 'TBD', description: 'Actividad de prueba' }
+            { time: '06:00 AM', description: 'Subida en bus a la ciudadela de Machu Picchu.' },
+            { time: '07:00 AM', description: 'Tour guiado por los principales templos y sectores de Machu Picchu.' },
+            { time: '11:00 AM', description: 'Tiempo libre para explorar por cuenta propia.' },
+            { time: '01:00 PM', description: 'Bajada en bus a Aguas Calientes para el almuerzo.' },
+            { time: '04:22 PM', description: 'Abordar el tren de retorno a Ollantaytambo y posterior traslado en bus a Cusco.' }
           ]
         },
         {
           day: 4,
-          title: 'Salida',
+          title: 'Trek Montaña de Colores y Salida',
           activities: [
-            { time: 'TBD', description: 'Traslado al aeropuerto' }
-          ]
-        }
-      ],
-      includes: ['Inclusión de prueba 1'],
-      excludes: ['Exclusión de prueba 1'],
-      packing: ['Articulo 1']
-    }
-  },
-  {
-    id: 47,
-    slug: 'cusco-machupicchu-titicaca-6d-5n',
-    image: '/cusco/cuscolake6d5n.png',
-    heroImage: '/cusco/cuscolake6d5n.png',
-    price: '630',
-    duration: '6 Days / 5 Nights',
-    altitude: '3,812 m / 12,506 ft',
-    difficulty: 'Easy',
-    type: 'Cultural | Sightseeing',
-    departure: 'Cusco',
-    destination: 'Cusco, Machu Picchu, Puno',
-    latitude: -13.5167,
-    longitude: -71.978,
-    en: {
-      title: 'Cusco, Machu Picchu and Lake Titicaca 6D/5N',
-      description: 'One of the best options to visit Cusco, Machu Picchu and Lake Titicaca.',
-      overview: '<p class="mb-4 mt-0">One of the best options to visit Cusco, Machu Picchu and Lake Titicaca, where you will not miss the impressive Saqsayhuaman, the Sacred Valley, plus you will have an excellent day to visit Machu Picchu. Afterwards, a Bus Tour will take us to the beginning of Inca History (Puno) making several stops at viewpoints and places where the Incas passed before arriving in Cusco.</p><p class="mb-4 mt-0">We will sail on Lake Titicaca where we will visit the floating islands of Uros, as well as Taquile where we can appreciate the local people, letting ourselves be carried away by a journey of history and joy.</p>',
-      itinerary: [
-        {
-          day: 1,
-          title: 'Cusco – City Tour – Cusco',
-          activities: [
-            { time: '13:30 hrs', description: 'Welcome and reception at the airport or bus terminal and transfer to your hotel. Free morning to acclimatize (3350 masl). In the afternoon we will pick you up to start the City Tour. We will visit Qoricancha (Temple of the Sun), Saqsayhuaman with its cyclopean construction, Qenqo (ceremonial center dedicated to Mother Earth), Pukapukara, and Tambomachay (temple of water). Return to Cusco at 18:30 hrs.' }
-          ]
-        },
-        {
-          day: 2,
-          title: 'Cusco – Sacred Valley – Aguas Calientes',
-          activities: [
-            { time: '06:50 hrs', description: 'Pick up from your hotel to visit the Sacred Valley. First, we will arrive at Chinchero (3800 masl) to see its landscapes and textile markets. Then we continue to Moray (Inca agricultural laboratory) and the Maras Salt Mines. We will have free time for lunch in Urubamba. Later, we visit Ollantaytambo, a living Inca town. After the tour, free time before taking the train to Aguas Calientes, where you will be met and transferred to your hotel.' }
-          ]
-        },
-        {
-          day: 3,
-          title: 'Aguas Calientes – Machu Picchu – Cusco',
-          activities: [
-            { time: 'Morning', description: 'Early breakfast and bus to Machu Picchu (25 min ride). The guide will be waiting for a 2-hour guided tour. Afterwards, you will have free time to explore on your own or climb Huayna Picchu/Machu Picchu mountain (if booked). Then, we take the bus back to Aguas Calientes for lunch. In the afternoon (approx 16:12 hrs), we take the train back to Ollantaytambo, where transport will take us to Cusco, arriving around 20:00 hrs.' }
-          ]
-        },
-        {
-          day: 4,
-          title: 'Cusco – Puno (Bus Tour)',
-          activities: [
-            { time: '06:30 hrs', description: 'Pick up to take the special Bus Tour to Puno. We will visit the Andahuaylillas chapel (Sistine Chapel of America), the Raqchi Inca temple, and enjoy a buffet lunch. Then we stop at La Raya pass (4350 masl) and the Pucará pre-Inca center. Arrival in Puno at 17:00 hrs and transfer to your hotel.' }
-          ]
-        },
-        {
-          day: 5,
-          title: 'Puno – Lake Titicaca – Puno',
-          activities: [
-            { time: '07:30 hrs', description: 'Transfer to the dock to board our motorboat on the highest navigable lake in the world. We visit the Uros floating islands, home to ancient ethnic groups. Then we continue to Taquile Island, famous for its hand-weavers. After a local lunch (included), we return to Puno at 16:30 hrs and transfer to your hotel.' }
-          ]
-        },
-        {
-          day: 6,
-          title: 'Puno – Airport or Bus Station',
-          activities: [
-            { time: 'Morning', description: 'Transfer to the Juliaca airport (1 hour) or the bus station to continue to your next destination. End of our services.' }
+            { time: '04:00 AM', description: 'Recojo muy temprano y viaje al sur hacia el inicio del sendero.' },
+            { time: '08:00 AM', description: 'Inicio de la caminata hacia la cima del Vinicunca (aprox. 1.5 - 2 horas).' },
+            { time: '10:00 AM', description: 'Tiempo libre en la cumbre para fotos y descanso.' },
+            { time: '01:00 PM', description: 'Almuerzo buffet en Cusipata.' },
+            { time: '04:30 PM', description: 'Retorno a Cusco y traslado directo al aeropuerto para su vuelo de salida.' }
           ]
         }
       ],
       includes: [
-        'Reception and transfer at airports/terminals in Cusco and Puno.',
-        'Informative briefing one day before the tour.',
-        'Entrance Tickets: General Tourist Ticket + Qoricancha + Salineras.',
-        'Tourist transport (minibuses with first aid kit).',
-        'Guide Service (City Tour, Sacred Valley, Machu Picchu and Islands).',
-        'Round-trip train tickets (Voyager IncaRail Train).',
-        'Round-trip bus tickets to Machu Picchu.',
-        'Entrance ticket to Machu Picchu.',
-        'Return transport from Ollantaytambo to Cusco.',
-        'Bus Tour Cusco to Puno including entrances, guide and buffet lunch.',
-        'Fast motorboat transport for Lake Titicaca.',
-        'Permanent assistance during the trip.'
+        'Traslados del aeropuerto al llegar y al salir',
+        'Todo el transporte para los tours',
+        'Guía profesional bilingüe',
+        '3 noches de alojamiento en hotel',
+        'Tickets de tren (Ollantaytambo - Aguas Calientes - Ollantaytambo)',
+        'Boletos de ingreso a Machu Picchu, Montaña de Colores y sitios del City Tour',
+        'Alquiler de cuatrimotos y equipo de seguridad',
+        'Desayunos en los hoteles y 2 almuerzos buffet'
       ],
       excludes: [
-        'Meals (except for the indicated lunches).',
-        'Entrance to Machu Picchu Mountain (extra hike, subject to availability).',
-        'Entrance to Waynapicchu Mountain (extra hike, subject to availability).',
-        'Accommodation nights.',
-        'Flights.',
-        'Tips (optional).'
+        'Vuelos nacionales o internacionales',
+        'Comidas no mencionadas en el itinerario',
+        'Seguro de viaje',
+        'Gastos personales y propinas'
       ],
       packing: [
-        'Tickets provided in the briefing.',
-        'Passport or ID (required for transport and Machu Picchu entry).',
-        'Small backpack (max 30 liters).',
-        'Extra cash in Soles.',
-        'Mosquito repellent and Sunscreen.',
-        'Water and Snacks.',
-        'Rain poncho or waterproof clothing.',
-        'Comfortable and warm clothing.'
-      ]
-    },
-    es: {
-      title: 'Cusco, Machu Picchu y Lago Titicaca 6D/5N',
-      description: 'Una de las mejores opciones para visitar Cusco, Machupicchu y el Lago Titicaca.',
-      overview: '<p class="mb-4 mt-0">Una de las mejores opciones para visitar Cusco, Machupicchu y el Lago Titicaca, donde no se perderán del Impresionante Saqsayhuaman, del Valle Sagrado, además tendrán un excelente día para visitar Machu Picchu. Después tomaremos un bus Tour que nos llevará al comienzo de la Historia Inca (Puno) haciendo varias paradas en miradores y lugares por donde pasaron los Incas antes de llegar al Cusco.</p><p class="mb-4 mt-0">Navegaremos por el Lago Titicaca donde visitaremos las islas flotantes de Uros, además Taquile donde podremos apreciar a la gente local, déjense llevar por un viaje de Historia y alegría.</p>',
-      itinerary: [
-        {
-          day: 1,
-          title: 'Cusco – City Tour – Cusco',
-          activities: [
-            { time: '13:30 hrs', description: 'Bienvenida y recepción en el aeropuerto o terminal terrestre para luego trasladarlos al hotel que eligió, mañana libre para aclimatarse (3350 m.s.n.m.). Por la tarde (13:30 horas) comenzamos el City tour. Visitaremos Qoricancha (el templo del sol), Saqsayhuaman, Qenqo (lugar ceremonial dedicado a la Pachamama), Pukapukara y Tambomachay (templo dedicado al agua). Retorno a Cusco (18:30 horas).' }
-          ]
-        },
-        {
-          day: 2,
-          title: 'Cusco – Valle Sagrado – Aguas Calientes',
-          activities: [
-            { time: '06:50 hrs', description: 'Saldremos a visitar parte del hermoso Valle Sagrado de los Incas. Primero llegarán al centro arqueológico de Chinchero, luego continuaremos hacia Moray (centro de experimentación agrícola) y Las Salineras de Maras. Tendrán tiempo libre para el almuerzo en Urubamba. Luego continuaremos hasta Ollantaytambo, la ciudad inca viviente. A las 16:00 hrs nos dirigimos a la estación para tomar el tren hacia Aguas Calientes (pueblo de Machupicchu). Llegada y traslado al hotel.' }
-          ]
-        },
-        {
-          day: 3,
-          title: 'Aguas Calientes – Machupicchu – Cusco',
-          activities: [
-            { time: 'Mañana', description: 'Desayuno temprano y nos dirigimos a Machupicchu en bus (25 min). El guía nos esperará para comenzar el tour guiado de 2 horas. Luego tendrán tiempo libre para visitar por su cuenta o subir a las montañas Waynapicchu / Cerro Machupicchu (si reservó). Después descenderemos a Aguas Calientes, almuerzo libre, y abordaremos el tren de retorno (16:12 hrs) hasta Ollantaytambo. Allí los recogemos en bus hasta Cusco, llegando a las 8:00 p.m.' }
-          ]
-        },
-        {
-          day: 4,
-          title: 'Cusco – Puno (Bus Tour)',
-          activities: [
-            { time: '06:30 hrs', description: 'Les recogemos para ir al terminal del BUS TOUR hacia Puno. Visitaremos la capilla de Andahuaylillas (la capilla Sixtina de América), el templo Inca de Raqchi, y disfrutaremos de un almuerzo buffet. Pararemos en el mirador de LA RAYA (4350 m.s.n.m.) y en Pucará (centro pre-Inca). Llegada a Puno a las 5:00 p.m. y traslado al hospedaje.' }
-          ]
-        },
-        {
-          day: 5,
-          title: 'Puno – Lago Titicaca – Puno',
-          activities: [
-            { time: '07:30 hrs', description: 'Traslado al embarcadero para tomar nuestro bote a motor hacia el LAGO TITICACA. Visitaremos las Islas Flotantes de UROS, donde la gente local sigue viviendo de forma tradicional. Luego iremos a la isla de Taquile, conocida por sus tejidos a mano. Almuerzo incluido. Retornaremos a Puno a las 4:30 p.m. y traslado al hostal.' }
-          ]
-        },
-        {
-          day: 6,
-          title: 'Puno – Estación de bus o aeropuerto',
-          activities: [
-            { time: 'Mañana', description: 'Por la mañana les trasladamos hasta el aeropuerto de Juliaca (1 hora) para tomar su vuelo de vuelta a Lima o al terminal de bus para continuar su viaje. Fin de nuestros servicios.' }
-          ]
-        }
-      ],
-      includes: [
-        'Recepción y traslado en aeropuertos/terminales en Cusco y Puno.',
-        'Charla informativa un día antes del tour.',
-        'Tickets de Ingresos: Boleto Turístico General + Qoricancha + Salineras.',
-        'Transporte turístico (minibuses implementados con botiquín).',
-        'Servicio de Guía (City Tour, Valle Sagrado, Machupicchu e Islas).',
-        'Tickets de tren Ida y Retorno (Tren Voyager IncaRail).',
-        'Tickets de bus subida y bajada en Machupicchu.',
-        'Ticket de Ingreso a Machu Picchu.',
-        'Transporte de retorno de Ollantaytambo a Cusco.',
-        'Bus Tour Cusco a Puno con ingresos, guía y almuerzo buffet.',
-        'Transporte en Deslizador veloz para el Lago Titicaca.',
-        'Asistencia permanente durante el viaje.'
-      ],
-      excludes: [
-        'Alimentación (a excepción de los almuerzos indicados).',
-        'Entrada a la Montaña Machupicchu (caminata extra, sujeto a cupos).',
-        'Entrada a la Montaña Waynapicchu (caminata extra, sujeto a cupos).',
-        'Noche de Alojamiento.',
-        'Vuelos aéreos.',
-        'Propinas (opcional).'
-      ],
-      packing: [
-        'Los Tickets entregados en la charla informativa.',
-        'Pasaporte o DNI (necesario para abordar transportes y entrar a Machupicchu).',
-        'Mochila pequeña no mayor a 30 litros.',
-        'Dinero extra en Soles.',
-        'Repelente contra mosquitos y Bloqueador Solar.',
-        'Agua y Snacks.',
-        'Poncho de lluvia o impermeables.',
-        'Ropa cómoda y abrigadora.'
-      ]
-    }
-  }
-,
-  {
-    id: 50,
-    slug: 'qeswachaka',
-    image: '/cusco/qeswackaka.avif',
-    heroImage: '/cusco/qeswackaka.avif',
-    destination: 'Cusco',
-    duration: 'Full Day (10 Hours)',
-    price: '40',
-    latitude: -14.3808,
-    longitude: -71.4828,
-    altitude: '3,700m',
-    difficulty: 'Easy to Moderate',
-    type: 'Group Tour',
-    departure: '04:30 AM',
-    en: {
-      title: 'Qeswachaka Inca Bridge',
-      description: 'Visit the last surviving Inca rope bridge and explore the beautiful lagoons of the region.',
-      overview: '<p class="mb-4 mt-0">The tour begins with a pickup from your hotel early in the morning. We will travel south of Cusco through the beautiful Andean landscapes to the province of Canas.</p><p class="mb-4 mt-0">Here we will find the famous Qeswachaka Bridge, the last remaining Inca rope bridge, handwoven from ichu grass. We will cross the bridge and learn about the ancient traditions used to maintain it.</p><p class="mb-8 mt-0">After visiting the bridge, we will explore the four beautiful lagoons in the area (Pomacanchi, Acopia, Asnaqocha, and Pampamarca) before enjoying lunch and returning to Cusco.</p>',
-      itinerary: [
-        { time: '04:30 AM', activity: 'Pickup from hotel and drive south' },
-        { time: '+ 3 hours', activity: 'Arrive at the Qeswachaka bridge' },
-        { time: '+ 5 hours', activity: 'Visit the four lagoons circuit' },
-        { time: '+ 7 hours', activity: 'Lunch' },
-        { time: '05:00 PM', activity: 'Return to Cusco' }
-      ],
-      includes: [
-        'Hotel pickup',
-        'Tourist transport',
-        'Breakfast',
-        'Lunch',
-        'Professional guide',
-        'First aid kit'
-      ],
-      excludes: [
-        'Entrance fees',
-        'Personal expenses'
-      ],
-      packing: [
-        'Comfortable clothing',
-        'Sunscreen and hat',
-        'Camera',
-        'Water'
+        'Pasaporte original',
+        'Zapatos o botas de senderismo cómodas',
+        'Ropa de abrigo (capas, polar, chaqueta)',
+        'Sombrero, gafas de sol y protector solar',
+        'Mochila pequeña con agua y snacks',
+        'Cámara o teléfono'
       ],
       tips: [
-        'Bring some extra soles for the entrance fee to the bridge.'
-      ]
-    },
-    es: {
-      title: 'Puente Inca Qeswachaka',
-      description: 'Visita el último puente colgante inca y explora el circuito de las cuatro lagunas en el sur de Cusco.',
-      overview: '<p class="mb-4 mt-0">El tour comienza con el recojo de su hotel muy temprano por la mañana. Viajaremos hacia el sur de Cusco a través de hermosos paisajes andinos hasta la provincia de Canas.</p><p class="mb-4 mt-0">Aquí encontraremos el famoso Puente Qeswachaka, el último puente colgante inca que queda, tejido a mano con paja brava (ichu). Cruzaremos el puente y aprenderemos sobre las antiguas tradiciones que se usan para mantenerlo cada año.</p><p class="mb-8 mt-0">Luego de visitar el puente, exploraremos el hermoso circuito de las cuatro lagunas (Pomacanchi, Acopia, Asnaqocha y Pampamarca) antes de almorzar y retornar a la ciudad del Cusco.</p>',
-      itinerary: [
-        { time: '04:30 a.m.', activity: 'Recojo del hotel y viaje al sur' },
-        { time: '+ 3 horas', activity: 'Llegada y visita al puente Qeswachaka' },
-        { time: '+ 5 horas', activity: 'Visita al circuito de las 4 lagunas' },
-        { time: '+ 7 horas', activity: 'Almuerzo' },
-        { time: '05:00 p.m.', activity: 'Retorno a Cusco' }
-      ],
-      includes: [
-        'Recojo del hotel',
-        'Transporte turístico',
-        'Desayuno',
-        'Almuerzo',
-        'Guía profesional',
-        'Botiquín de primeros auxilios'
-      ],
-      excludes: [
-        'Boleto de ingreso',
-        'Gastos personales'
-      ],
-      packing: [
-        'Ropa cómoda',
-        'Protector solar y sombrero',
-        'Cámara',
-        'Agua'
-      ],
-      tips: [
-        'Lleva soles extra para pagar el ingreso directo en el puente.'
+        'Beber abundante mate de coca a su llegada para ayudar con la aclimatación.',
+        'Reserve sus vuelos para llegar por la mañana del Día 1, y salir después de las 7:00 PM del Día 4.'
       ]
     }
   }
